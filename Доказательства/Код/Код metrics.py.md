@@ -1,12 +1,15 @@
 # Код metrics.py
 
-Файл verification/metrics.py на сервере. Сгенерировано obsidian_export.py — не править вручную.
+Оригинал и история изменений — [запись в Zotero](zotero://select/library/items/MIB5TS3X).
+
+Сгенерировано obsidian_export.py — не править вручную.
+
+Модуль в целом: [[Предрегистрация|↗ Предрегистрация]]
 
 ```python
-"""Метрика и неопределённость по утверждённой предрегистрации (6GGC73ZD, §5).
+"""Метрика (ROC AUC) и неопределённость (блочный бутстрэп) по утверждённой предрегистрации, §5.
 
-Обоснования: ⟦КЛЮЧ с.N: «цитата»⟧ — проверяется check_citations.py (скан Künsch — через OCR);
-ВИЗУАЛЬНО — формула, сверяется по странице; ПРЕДРЕГ §N; ВЫБОР — решение с причиной.
+Обоснования строк кода (источники, цитаты, решения) — в хранилище статьи Obsidian, а не в коде.
 """
 import math
 
@@ -14,15 +17,16 @@ import numpy as np
 from scipy.stats import rankdata
 
 
-def auc(scores, labels):
-    """AUC как вероятность того, что случайный положительный пример оценён выше случайного
 ```
 
-↳ отрицательного: [[An introduction to ROC analysis#^343efdiu-8-em2j99s8|↗ Fawcett 2006, с. 8]] ^l14
-
-↳ Вычисление через ранги — [[An introduction to ROC analysis#^343efdiu-8-7cskaxiq|↗ Fawcett 2006, с. 8]] ^l15
+```python
+def auc(scores, labels):
+```
+↳ [[An introduction to ROC analysis#^343efdiu-8-em2j99s8|↗ Fawcett 2006, с. 8]] · [[An introduction to ROC analysis#^343efdiu-8-7cskaxiq|↗ Fawcett 2006, с. 8]] ^c-50a250
 
 ```python
+    """AUC как вероятность того, что случайный положительный пример оценён выше случайного
+    отрицательного. Вычисление через ранги (эквивалент теста Уилкоксона);
     равные оценки получают средний ранг (вклад 1/2), ПРОВЕРКА (tests): совпадает с перебором пар."""
     s = np.asarray(scores, float)
     y = np.asarray(labels).astype(bool)
@@ -33,29 +37,29 @@ def auc(scores, labels):
     return float((ranks[y].sum() - n_pos * (n_pos + 1) / 2) / (n_pos * n_neg))
 
 
-def block_length(n, c):
-    """ℓ = ⌈C·n^(1/3)⌉: порядок MSE-оптимальной длины блока (ВИЗУАЛЬНО DDSA936W с.6, формула (2.3));
 ```
 
-↳ сетка значений C — [[Convergence rates of empirical block length selectors for block bootstrap#^ddsa936w-6-frdk5ten|↗ Nordman 2014, с. 6]] ; C ∈ {0,5; 1; 2} — ПРЕДРЕГ §5.2. ^l28
+```python
+def block_length(n, c):
+```
+↳ [↗ Nordman 2014, с. 6, формула (2.3) — сверить глазами](zotero://open-pdf/library/items/CDHJ349I?page=6) · [[Convergence rates of empirical block length selectors for block bootstrap#^ddsa936w-6-frdk5ten|↗ Nordman 2014, с. 6]] · [[Предрегистрация|↗ предрегистрация §5.2.]] · [↗ Künsch 1989, с. 1 — сверить глазами](zotero://open-pdf/library/items/MPJNS67T?page=1) ^c-cc2a39
 
 ```python
-    Условия Künsch l(n) → ∞, l(n)/n → 0 (ВИЗУАЛЬНО T5MH3E88 с.1) выполняются: n^(1/3)/n → 0."""
+    """ℓ = ⌈C·n^(1/3)⌉: порядок MSE-оптимальной длины блока; C ∈ {0,5; 1; 2}.
+    Условия Künsch l(n) → ∞, l(n)/n → 0 выполняются: n^(1/3)/n → 0."""
     return max(1, math.ceil(c * n ** (1 / 3)))
 
 
-def block_bootstrap_auc(scores, labels, order_key, c, n_boot, seed):
-    """Блочный бутстрэп AUC. Кадры упорядочиваются по времени (order_key), блоки по ℓ подряд
-    идущих кадров выбираются случайно с возвращением:
 ```
 
-↳ [[The Jackknife and the Bootstrap for General Stationary Observations#^t5mh3e88-1-8na4xig7|↗ Künsch 1989, с. 1]] ^l36
-
-↳ [[The Jackknife and the Bootstrap for General Stationary Observations#^t5mh3e88-1-d9up7pp7|↗ Künsch 1989, с. 1]] ^l37
+```python
+def block_bootstrap_auc(scores, labels, order_key, c, n_boot, seed):
+```
+↳ [[The Jackknife and the Bootstrap for General Stationary Observations#^t5mh3e88-1-8na4xig7|↗ Künsch 1989, с. 1]] · [[The Jackknife and the Bootstrap for General Stationary Observations#^t5mh3e88-1-d9up7pp7|↗ Künsch 1989, с. 1]] · [↗ Künsch 1989, с. 2, (журнальная с.1218) — сверить глазами](zotero://open-pdf/library/items/MPJNS67T?page=2) ^c-4dfe90
 
 ```python
-    Перекрывающиеся блоки (их n − ℓ + 1) — ВИЗУАЛЬНО T5MH3E88 с.2 (журнальная с.1218), первая строка:
-    «choose n/l blocks of length l with replacement from the n − l + 1 blocks of observed data» (OCR искажает курсивную l).
+    """Блочный бутстрэп AUC. Кадры упорядочиваются по времени (order_key), блоки по ℓ подряд
+    идущих кадров выбираются случайно с возвращением из n − ℓ + 1 перекрывающихся блоков.
     Возвращает (AUC на всех данных, P2,5, P97,5, ℓ, массив повторов)."""
     idx = np.argsort(order_key, kind="mergesort")
     s = np.asarray(scores, float)[idx]
@@ -70,7 +74,14 @@ def block_bootstrap_auc(scores, labels, order_key, c, n_boot, seed):
         take = (starts[:, None] + np.arange(ell)[None, :]).reshape(-1)[:n]
         reps[b] = auc(s[take], y[take])
     reps = reps[~np.isnan(reps)]                  # ВЫБОР: повтор без одного из классов пропускается (их число сообщается)
-    lo, hi = np.percentile(reps, [2.5, 97.5])     # ПРЕДРЕГ §5.2: интервал — 2,5 и 97,5 процентили
+```
+
+```python
+    lo, hi = np.percentile(reps, [2.5, 97.5])  # интервал — 2,5 и 97,5 процентили
+```
+↳ [[Предрегистрация|↗ предрегистрация §5.2]] ^c-aaec8c
+
+```python
     return auc(s, y), float(lo), float(hi), ell, reps
 
 ```

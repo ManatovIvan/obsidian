@@ -1,15 +1,18 @@
 # Код experiments.py
 
-Файл verification/experiments.py на сервере. Сгенерировано obsidian_export.py — не править вручную.
+Оригинал и история изменений — [запись в Zotero](zotero://select/library/items/E565W2EF).
+
+Сгенерировано obsidian_export.py — не править вручную.
+
+Модуль в целом: [[Предрегистрация|↗ Предрегистрация]]
 
 ```python
-"""Эксперименты по утверждённой предрегистрации (6GGC73ZD, PREREG_v3_approved.md, §2–§5).
+"""Эксперименты по утверждённой предрегистрации (PREREG_v3_approved.md, §2–§5).
 
 Вход: out/dataset.npz (dataset_build.py). Выход: out/results.jsonl (по строке на модель × разбиение ×
 вариант), out/experiments_log.txt (ход обучения). Повторный запуск пропускает уже посчитанные строки.
 
-Обоснования: ПРЕДРЕГ §N — пункт утверждённой предрегистрации (там же источники);
-⟦КЛЮЧ: «цитата»⟧ — проверяется check_citations.py; ВЫБОР — решение с причиной.
+Обоснования строк кода (источники, цитаты, решения) — в хранилище статьи Obsidian, а не в коде.
 """
 import hashlib
 import json
@@ -24,15 +27,33 @@ import metrics
 import models
 
 OUT = Path(__file__).resolve().parent / "out"
-SESSIONS = ["R1", "E1", "R2", "R3", "E3"]         # порядок записи без E2 (ПРЕДРЕГ §1)
 ```
 
-`SESSION_S = 120.0` [↗ Манатов 2026](zotero://select/library/items/83U3GZXN) ^l23
+```python
+SESSIONS = ["R1", "E1", "R2", "R3", "E3"]  # порядок записи без E2
+```
+↳ [[Предрегистрация|↗ предрегистрация §1]] ^c-48922e
+
+```python
+SESSION_S = 120.0
+```
+↳ [[Показание 83U3GZXN#^t-83u3gzxn-0|↗ Показание 83U3GZXN]] ^c-feae7f
 
 ```python
 SEED = 20260504                                   # ВЫБОР: одно фиксированное зерно для всего
-BOOT_C = (0.5, 1, 2)                              # ПРЕДРЕГ §5.2–5.3
-BOOT_N = (1000, 2000)                             # ПРЕДРЕГ §5.3
+```
+
+```python
+BOOT_C = (0.5, 1, 2)
+```
+↳ [[Предрегистрация|↗ предрегистрация §5.2–5.3]] ^c-0e6937
+
+```python
+BOOT_N = (1000, 2000)
+```
+↳ [[Предрегистрация|↗ предрегистрация §5.3]] ^c-5275ba
+
+```python
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 torch.backends.cudnn.deterministic = False        # ВЫБОР: в 2,8 раза быстрее (замер 36,5 → 12,9 с/эпоху M2);
 torch.backends.cudnn.benchmark = False            #   зёрна фиксированы, повтор может отличаться в последних знаках (DEVIATIONS.md п.11)
@@ -58,8 +79,15 @@ def time_split(d, idx, tr_frac, va_frac):
     return idx[t < a], idx[(t >= a) & (t < b)], idx[t >= b]
 
 
+```
+
+```python
 def splits(d):
-    """ПРЕДРЕГ §4. Возвращает список (имя, обучение, валидация, тест, метки)."""
+```
+↳ [[Предрегистрация|↗ предрегистрация §4.]] ^c-db7c07
+
+```python
+    """Возвращает список (имя, обучение, валидация, тест, метки)."""
     n = len(d["label"])
     out = []
     rng = np.random.default_rng(SEED)
@@ -132,7 +160,14 @@ def main():
                 if not name.startswith("S4"):
                     variants.append(("M2", snr, cfo_rm))
         if name.startswith("S4"):
-            variants = [v for v in variants if v[0] == "M1"]   # ПРЕДРЕГ §4 S4: только M1
+```
+
+```python
+            variants = [v for v in variants if v[0] == "M1"]  # только M1
+```
+↳ [[Предрегистрация|↗ предрегистрация §4 S4]] ^c-30633a
+
+```python
         for mdl, snr, cfo_rm in variants:
             key = f"{name}|{mdl}|snr={int(snr)}|cfo_removed={int(cfo_rm)}"
             if key in done:

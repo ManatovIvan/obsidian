@@ -1,16 +1,19 @@
 # Код dataset_build.py
 
-Файл verification/dataset_build.py на сервере. Сгенерировано obsidian_export.py — не править вручную.
+Оригинал и история изменений — [запись в Zotero](zotero://select/library/items/FTD9WD4T).
+
+Сгенерировано obsidian_export.py — не править вручную.
+
+Модуль в целом: [[Предрегистрация|↗ Предрегистрация]]
 
 ```python
-"""Сборка набора кадров по утверждённой предрегистрации (6GGC73ZD, PREREG_v3_approved.md, §1–§2).
+"""Сборка набора кадров по утверждённой предрегистрации (PREREG_v3_approved.md, §1–§2).
 
-Вход: out/frames_<ID>.csv (разметка, GZJDPPNF) и файлы сессий. Выход:
+Вход: out/frames_<ID>.csv (разметка сессий) и файлы сессий. Выход:
   out/dataset.npz        — окна IQ (1280 отсчётов) и сведения о каждом кадре;
   out/dataset_report.txt — объёмы классов, проверка C3 (биты SYNC), шум и SNR (C2).
 
-Обоснования: ⟦КЛЮЧ с.N: «цитата»⟧ — проверяется check_citations.py; ПРЕДРЕГ §N — пункт
-утверждённой предрегистрации; ВЫБОР — решение этого кода с причиной.
+Обоснования строк кода (источники, цитаты, решения) — в хранилище статьи Obsidian, а не в коде.
 """
 import csv
 import hashlib
@@ -26,15 +29,25 @@ import iq_io
 OUT = Path(__file__).resolve().parent / "out"
 ```
 
-`ROUTER = "28:28:5d:e0:6c:c6"` [↗ Манатов 2026](zotero://select/library/items/JV2GWUWN) ^l22
-
-`SESSIONS = ["R1", "E1", "R2", "R3", "E3"]` [↗ Манатов 2026](zotero://select/library/items/MTFI5CTD) (E2) ^l23
+```python
+ROUTER = "28:28:5d:e0:6c:c6"
+```
+↳ [[Показание JV2GWUWN#^t-jv2gwuwn-4|↗ Показание JV2GWUWN]] ^c-52518d
 
 ```python
-WIN_SYMBOLS = 64                                  # ПРЕДРЕГ §2 C3: последние 64 символа SYNC+SFD
+SESSIONS = ["R1", "E1", "R2", "R3", "E3"]
 ```
+↳ [[Показание MTFI5CTD#^t-mtfi5ctd-0|↗ Показание MTFI5CTD]] ^c-84cdca
 
-`WIN = WIN_SYMBOLS * rx.SPS` 1280 отсчётов; [[Deep Learning for RF Fingerprinting  A Massive Experimental Study#^5ag9m5dk-7-wnwnxzpg|↗ Jian 2020, с. 7]] ^l25
+```python
+WIN_SYMBOLS = 64  # последние 64 символа SYNC+SFD
+```
+↳ [[Предрегистрация|↗ предрегистрация §2 C3]] ^c-409ccb
+
+```python
+WIN = WIN_SYMBOLS * rx.SPS  # 1280 отсчётов
+```
+↳ [[Deep Learning for RF Fingerprinting  A Massive Experimental Study#^5ag9m5dk-7-wnwnxzpg|↗ Jian 2020, с. 7]] ^c-62b4ee
 
 ```python
 NOISE_BLOCK = 2000                                # ВЫБОР: 100 мкс — короче любого промежутка между кадрами роутера (beacon раз в ~0,1 с)
@@ -48,19 +61,32 @@ def load_frames(sid):
         return list(csv.DictReader(f))
 
 
+```
+
+```python
 def tsf_offset_s(r):
-    """(TSF − время в записи), округлённое до секунды — «семья» передатчика (ПРЕДРЕГ §1, L2).
+```
+↳ [[Предрегистрация|↗ предрегистрация §1]] ^c-7dc46a
+
+```python
+    """(TSF − время в записи), округлённое до секунды — «семья» передатчика (L2).
     Timestamp — первые 8 октетов тела Beacon/Probe Response, младший октет первым (см. mac80211.parse)."""
     b = bytes.fromhex(r["mpdu_hex"])
 ```
 
-`tsf = int.from_bytes(b[24:32], "little")` [[IEEE Std 802.11-2020#^ieee-880-kxg73qva|↗ IEEE 802.11-2020, с. 880]] ^l41
+```python
+    tsf = int.from_bytes(b[24:32], "little")
+```
+↳ [[IEEE Std 802.11-2020#^ieee-880-kxg73qva|↗ IEEE 802.11-2020, с. 880]] ^c-49ec4b
 
 ```python
     t_us = int(r["a"]) / iq_io.SAMPLE_RATE * 1e6
 ```
 
-`return round((tsf - t_us) / 1e6)` [[IEEE Std 802.11-2020#^ieee-2050-hk6zva2u|↗ IEEE 802.11-2020, с. 2050]] ^l43
+```python
+    return round((tsf - t_us) / 1e6)
+```
+↳ [[IEEE Std 802.11-2020#^ieee-2050-hk6zva2u|↗ IEEE 802.11-2020, с. 2050]] ^c-60eab4
 
 ```python
 
@@ -69,19 +95,47 @@ def label_session(rows, prev_router_offset):
     """Метки L1–L3 для кадров с верной FCS и TA = MAC роутера. Возвращает (список, offset роутера)."""
     ok = [r for r in rows if r["fcs"] == "True" and r["a2"] == ROUTER]
     fams = Counter(tsf_offset_s(r) for r in ok if r["name"] in ("beacon", "probe_resp"))
+```
+
+```python
     router_fams = {f for f in fams if prev_router_offset is None or f >= prev_router_offset}
-    # ПРЕДРЕГ §1 L2: семья роутера продолжает возрастающий ряд; в первой сессии семья должна быть одна
+    # семья роутера продолжает возрастающий ряд; в первой сессии семья должна быть одна
+```
+↳ [[Предрегистрация|↗ предрегистрация §1 L2]] ^c-a1a401
+
+```python
     if prev_router_offset is None and len(fams) != 1:
         raise RuntimeError(f"в первой сессии {len(fams)} семей TSF, правило L2 неприменимо")
     out = []
     for r in ok:
         if (r["name"] == "deauth" and r["a1"] == "ff:ff:ff:ff:ff:ff" and r["reason"] == "2"
                 and r["seq"] == "4095"):
-            lab, rule = 1, "L1"                   # ПРЕДРЕГ §1 L1
+```
+
+```python
+            lab, rule = 1, "L1"
+```
+↳ [[Предрегистрация|↗ предрегистрация §1 L1]] ^c-880602
+
+```python
         elif r["name"] in ("beacon", "probe_resp") and tsf_offset_s(r) not in router_fams:
-            lab, rule = 1, "L2"                   # ПРЕДРЕГ §1 L2
+```
+
+```python
+            lab, rule = 1, "L2"
+```
+↳ [[Предрегистрация|↗ предрегистрация §1 L2]] ^c-010887
+
+```python
         else:
-            lab, rule = 0, "L3"                   # ПРЕДРЕГ §1 L3
+```
+
+```python
+            lab, rule = 0, "L3"
+```
+↳ [[Предрегистрация|↗ предрегистрация §1 L3]] ^c-c1a4ee
+
+```python
         out.append((r, lab, rule))
     new_offset = max(router_fams) if router_fams else prev_router_offset
     return out, new_offset
@@ -101,13 +155,15 @@ def sync_raw_bits(mm, a, cfo_hz):
     return rx._dbpsk_bits(s[:-1], s[1:], theta)    # биты символов −63..0 (табл. 15-7, см. dsss_rx)
 
 
-def noise_power(mm, rows, rng):
-    """C2: мощность шума на интервалах без найденных кадров —
 ```
 
-↳ [[IEEE Std 802.11-2020#^ieee-159-ztf6ht9v|↗ IEEE 802.11-2020, с. 159]] ^l84
+```python
+def noise_power(mm, rows, rng):
+```
+↳ [[IEEE Std 802.11-2020#^ieee-159-ztf6ht9v|↗ IEEE 802.11-2020, с. 159]] ^c-9a363b
 
 ```python
+    """C2: мощность шума на интервалах без найденных кадров —
     Медиана по блокам (ВЫБОР: устойчива к редким кадрам OFDM, которые приёмник DSSS не видит)."""
     busy = []
     for r in rows:

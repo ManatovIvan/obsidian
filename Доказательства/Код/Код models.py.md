@@ -1,11 +1,15 @@
 # Код models.py
 
-Файл verification/models.py на сервере. Сгенерировано obsidian_export.py — не править вручную.
+Оригинал и история изменений — [запись в Zotero](zotero://select/library/items/8EW7PQZE).
+
+Сгенерировано obsidian_export.py — не править вручную.
+
+Модуль в целом: [[Предрегистрация|↗ предрегистрация §2]] · [[Предрегистрация|↗ предрегистрация §3]] · [[Предрегистрация|↗ Предрегистрация]]
 
 ```python
-"""Предобработка (ПРЕДРЕГ §2: C1, C2, C4) и модели M1–M3 (ПРЕДРЕГ §3), утверждённая предрегистрация 6GGC73ZD.
+"""Предобработка (C1, C2, C4) и модели M1–M3 по утверждённой предрегистрации.
 
-Обоснования: ⟦КЛЮЧ с.N: «цитата»⟧ — проверяется check_citations.py; ПРЕДРЕГ §N; ВЫБОР — решение с причиной.
+Обоснования строк кода (источники, цитаты, решения) — в хранилище статьи Obsidian, а не в коде.
 """
 import numpy as np
 import torch
@@ -16,19 +20,28 @@ import iq_io
 # --- Предобработка ---------------------------------------------------------------------------
 
 
+```
+
+```python
 def remove_cfo(iq, cfo_hz):
-    """C4 (б): поворот каждого окна на оценку CFO кадра (оценка — из dsss_rx). ПРЕДРЕГ §2 C4."""
+```
+↳ [[Предрегистрация|↗ предрегистрация §2 C4]] ^c-4b0a68
+
+```python
+    """C4 (б): поворот каждого окна на оценку CFO кадра (оценка — из dsss_rx)."""
     n = np.arange(iq.shape[1])
     return iq * np.exp(-2j * np.pi * cfo_hz[:, None] * n[None, :] / iq_io.SAMPLE_RATE)
 
 
-def match_snr(iq, p_win, noise, is_router, pair_snr, rng):
-    """C2: к кадрам роутера добавляется белый гауссов шум до SNR парного кадра ESP32:
 ```
 
-↳ [[Radio frequency fingerprint identification for Internet of Things  A survey#^zvd6asea-17-4m8xmchv|↗ Xie 2023, с. 17]] ^l22
+```python
+def match_snr(iq, p_win, noise, is_router, pair_snr, rng):
+```
+↳ [[Radio frequency fingerprint identification for Internet of Things  A survey#^zvd6asea-17-4m8xmchv|↗ Xie 2023, с. 17]] ^c-e9eb1f
 
 ```python
+    """C2: к кадрам роутера добавляется белый гауссов шум до SNR парного кадра ESP32:
     SNR = (P − Pш)/Pш; новая дисперсия шума σ² = (P − Pш)/SNR_цель − Pш (если > 0)."""
     out = iq.copy()
     for i in np.nonzero(is_router)[0]:
@@ -39,43 +52,52 @@ def match_snr(iq, p_win, noise, is_router, pair_snr, rng):
     return out
 
 
-def energy_normalize(iq):
 ```
 
-↳ """C1: энергия окна нормируется к 1 (средняя мощность 1) — [[Design a Deep Neural Network with Simulated Data to Detect WLAN Router Impersonation#^8b73m9nd-4-e5srk9qu|↗ MathWorks, с. 4]] ^l34
+```python
+def energy_normalize(iq):
+```
+↳ [[Design a Deep Neural Network with Simulated Data to Detect WLAN Router Impersonation#^8b73m9nd-4-e5srk9qu|↗ MathWorks, с. 4]] ^c-2e61cf
 
 ```python
+    """C1: энергия окна нормируется к 1 (средняя мощность 1)."""
     p = np.mean(np.abs(iq) ** 2, axis=1, keepdims=True)
     return iq / np.sqrt(p)
 
 
-def to_tensor_m1(iq):
 ```
 
-↳ """M1: вход 2 × L (строки I и Q) — [[Exposing the Fingerprint  Dissecting the Impact of the Wireless Channel on Radio Fingerprinting#^m8af4mw7-3-qfbxfmh9|↗ Al-Shawabka 2020, с. 3]] ^l40
+```python
+def to_tensor_m1(iq):
+```
+↳ [[Exposing the Fingerprint  Dissecting the Impact of the Wireless Channel on Radio Fingerprinting#^m8af4mw7-3-qfbxfmh9|↗ Al-Shawabka 2020, с. 3]] ^c-0caa6b
 
 ```python
+    """M1: вход 2 × L (строки I и Q), чтобы ядра свёртки видели I и Q вместе."""
     x = np.stack([iq.real, iq.imag], axis=1).astype(np.float32)       # (N, 2, L)
+```
+
+```python
     return torch.from_numpy(x[:, None])                               # (N, 1, 2, L)
+```
+↳ [[Radio Frequency Fingerprint Identification Based on Denoising Autoencoders#^8m6ki8he-4-ixqha2ne|↗ Yu 2019, с. 4]] · [[Radio Frequency Fingerprint Identification Based on Denoising Autoencoders#^8m6ki8he-4-r6mqju5g|↗ Yu 2019, с. 4]] · [[Radio Frequency Fingerprint Identification Based on Denoising Autoencoders#^8m6ki8he-4-ttggmsga|↗ Yu 2019, с. 4]] · [[Radio Frequency Fingerprint Identification Based on Denoising Autoencoders#^8m6ki8he-4-mrnw7if3|↗ Yu 2019, с. 4]] ^c-30e0ef
+
+```python
 
 
 # --- M1: CNN «Homegrown» ---------------------------------------------------------------------
 
 
-class Homegrown(nn.Module):
 ```
 
-↳ [[Exposing the Fingerprint  Dissecting the Impact of the Wireless Channel on Radio Fingerprinting#^m8af4mw7-3-d7ua9p5g|↗ Al-Shawabka 2020, с. 3]] ^l49
-
-↳ [[Exposing the Fingerprint  Dissecting the Impact of the Wireless Channel on Radio Fingerprinting#^m8af4mw7-3-watm7kbz|↗ Al-Shawabka 2020, с. 3]] ^l50
-
-↳ [[Exposing the Fingerprint  Dissecting the Impact of the Wireless Channel on Radio Fingerprinting#^m8af4mw7-3-5sd89kf8|↗ Al-Shawabka 2020, с. 3]] ^l51
-
-↳ [[Exposing the Fingerprint  Dissecting the Impact of the Wireless Channel on Radio Fingerprinting#^m8af4mw7-3-xfun3crc|↗ Al-Shawabka 2020, с. 3]] ^l52
-
-↳ [[Exposing the Fingerprint  Dissecting the Impact of the Wireless Channel on Radio Fingerprinting#^m8af4mw7-3-t7pjdbsj|↗ Al-Shawabka 2020, с. 3]] ^l53
+```python
+class Homegrown(nn.Module):
+```
+↳ [[Exposing the Fingerprint  Dissecting the Impact of the Wireless Channel on Radio Fingerprinting#^m8af4mw7-3-d7ua9p5g|↗ Al-Shawabka 2020, с. 3]] · [[Exposing the Fingerprint  Dissecting the Impact of the Wireless Channel on Radio Fingerprinting#^m8af4mw7-3-watm7kbz|↗ Al-Shawabka 2020, с. 3]] · [[Exposing the Fingerprint  Dissecting the Impact of the Wireless Channel on Radio Fingerprinting#^m8af4mw7-3-5sd89kf8|↗ Al-Shawabka 2020, с. 3]] · [[Exposing the Fingerprint  Dissecting the Impact of the Wireless Channel on Radio Fingerprinting#^m8af4mw7-3-xfun3crc|↗ Al-Shawabka 2020, с. 3]] · [[Exposing the Fingerprint  Dissecting the Impact of the Wireless Channel on Radio Fingerprinting#^m8af4mw7-3-t7pjdbsj|↗ Al-Shawabka 2020, с. 3]] ^c-be1a2b
 
 ```python
+    """CNN «Homegrown»: две 1D-свёртки по 50 фильтров (ядра 1×7 и 2×7), ReLU, два полносвязных слоя
+    256 и 80, softmax, dropout 0,5.
     ВЫБОР: свёртки без дополнения (padding) — в статье не указано; dropout — после слоя 256
     (в статье одно место не названо)."""
 
@@ -88,7 +110,10 @@ class Homegrown(nn.Module):
         self.out = nn.Linear(80, 2)
 ```
 
-`self.act = nn.ReLU()` [[Exposing the Fingerprint  Dissecting the Impact of the Wireless Channel on Radio Fingerprinting#^m8af4mw7-3-w9exzxst|↗ Al-Shawabka 2020, с. 3]] ^l64
+```python
+        self.act = nn.ReLU()
+```
+↳ [[Exposing the Fingerprint  Dissecting the Impact of the Wireless Channel on Radio Fingerprinting#^m8af4mw7-3-w9exzxst|↗ Al-Shawabka 2020, с. 3]] ^c-ba3076
 
 ```python
         self.drop = nn.Dropout(0.5)
@@ -102,18 +127,17 @@ class Homegrown(nn.Module):
 # --- M2: свёрточный автоэнкодер (Yu et al., табл. I) -----------------------------------------
 
 
-class CDAE(nn.Module):
 ```
 
-↳ """Кодировщик и декодер из табл. I (8M6KI8HE), вход [[Radio Frequency Fingerprint Identification Based on Denoising Autoencoders#^8m6ki8he-4-r2rskxhm|↗ Yu 2019, с. 4]] ^l77
-
-↳ [[Radio Frequency Fingerprint Identification Based on Denoising Autoencoders#^8m6ki8he-4-4fddxmzu|↗ Yu 2019, с. 4]] , MaxPool 4×1, [[Radio Frequency Fingerprint Identification Based on Denoising Autoencoders#^8m6ki8he-4-kk4wmij3|↗ Yu 2019, с. 4]] , MaxPool 4×1; ^l78
-
-↳ декодер зеркально с [[Radio Frequency Fingerprint Identification Based on Denoising Autoencoders#^8m6ki8he-4-8uic8a9p|↗ Yu 2019, с. 4]] , выход [[Radio Frequency Fingerprint Identification Based on Denoising Autoencoders#^8m6ki8he-4-zhft5nqx|↗ Yu 2019, с. 4]] с [[Radio Frequency Fingerprint Identification Based on Denoising Autoencoders#^8m6ki8he-4-erpih9vi|↗ Yu 2019, с. 4]] ^l79
-
-↳ Классификатор из табл. I не используется: [[Physical Layer-Based Device Fingerprinting for Wireless Security  From Theory to Practice#^4wi4s249-5-x7aiucm3|↗ Zhang 2025, с. 5]] ^l80
+```python
+class CDAE(nn.Module):
+```
+↳ [[Radio Frequency Fingerprint Identification Based on Denoising Autoencoders#^8m6ki8he-4-r2rskxhm|↗ Yu 2019, с. 4]] · [↗ Yu 2019](zotero://select/library/items/8M6KI8HE) · [[Radio Frequency Fingerprint Identification Based on Denoising Autoencoders#^8m6ki8he-4-4fddxmzu|↗ Yu 2019, с. 4]] · [[Radio Frequency Fingerprint Identification Based on Denoising Autoencoders#^8m6ki8he-4-kk4wmij3|↗ Yu 2019, с. 4]] · [[Radio Frequency Fingerprint Identification Based on Denoising Autoencoders#^8m6ki8he-4-8uic8a9p|↗ Yu 2019, с. 4]] · [[Radio Frequency Fingerprint Identification Based on Denoising Autoencoders#^8m6ki8he-4-zhft5nqx|↗ Yu 2019, с. 4]] · [[Radio Frequency Fingerprint Identification Based on Denoising Autoencoders#^8m6ki8he-4-erpih9vi|↗ Yu 2019, с. 4]] · [[Physical Layer-Based Device Fingerprinting for Wireless Security  From Theory to Practice#^4wi4s249-5-x7aiucm3|↗ Zhang 2025, с. 5]] ^c-fcf652
 
 ```python
+    """Свёрточный автоэнкодер (Yu et al., табл. I), вход 1280 × 2: кодировщик Conv 128×(10×1), MaxPool 4×1,
+    Conv 128×(3×2), MaxPool 4×1; декодер — зеркально с UpSampling, выход Conv 1×(3×1) с Sigmoid.
+    Классификатор из табл. I не используется: атакующий при обучении недоступен.
     ВЫБОР: дополнение 'same' — иначе размер выхода не совпадёт со входом (в статье не указано)."""
 
     def __init__(self):
@@ -130,14 +154,16 @@ class CDAE(nn.Module):
         return self.net(x)
 
 
-def minmax_fit(x):
 ```
 
-↳ [[Radio Frequency Fingerprint Identification Based on Denoising Autoencoders#^8m6ki8he-2-asf56xtq|↗ Yu 2019, с. 2]] берутся на обучающих ^l98
-
-↳ данных (min и max по каждому измерению), выход декодера — [[Radio Frequency Fingerprint Identification Based on Denoising Autoencoders#^8m6ki8he-2-cup66e65|↗ Yu 2019, с. 2]] ^l99
+```python
+def minmax_fit(x):
+```
+↳ [[Radio Frequency Fingerprint Identification Based on Denoising Autoencoders#^8m6ki8he-2-asf56xtq|↗ Yu 2019, с. 2]] · [[Radio Frequency Fingerprint Identification Based on Denoising Autoencoders#^8m6ki8he-2-cup66e65|↗ Yu 2019, с. 2]] ^c-f91fcd
 
 ```python
+    """Min-max нормировка: min и max по каждому измерению берутся на обучающих данных,
+    чтобы вход был в том же диапазоне [0, 1], что выход декодера (Sigmoid)."""
     return x.min(axis=0), x.max(axis=0)
 
 
@@ -151,43 +177,34 @@ def to_tensor_m2(iq, mm):
 # --- Обучение (общая процедура по Yu et al.) -------------------------------------------------
 ```
 
-↳ [[Radio Frequency Fingerprint Identification Based on Denoising Autoencoders#^8m6ki8he-4-ixqha2ne|↗ Yu 2019, с. 4]] [[Radio Frequency Fingerprint Identification Based on Denoising Autoencoders#^8m6ki8he-4-r6mqju5g|↗ Yu 2019, с. 4]] ^l111
-
-↳ [[Radio Frequency Fingerprint Identification Based on Denoising Autoencoders#^8m6ki8he-4-ttggmsga|↗ Yu 2019, с. 4]] ^l112
-
-↳ [[Radio Frequency Fingerprint Identification Based on Denoising Autoencoders#^8m6ki8he-4-mrnw7if3|↗ Yu 2019, с. 4]] ^l113
-
 ```python
 BATCH, LR, PATIENCE = 64, 1e-3, 10
-# Что считать улучшением при обучении мини-батчами — только значимое улучшение на валидации:
+# Что считать улучшением при обучении мини-батчами — только значимое улучшение на валидации;
+# порог значимости — относительное улучшение не менее 0,5 % (improvement_threshold = 0.995).
 ```
-
-↳ [[Practical recommendations for gradient-based training of deep architectures#^m6rcp432-10-kuk4ruqs|↗ Bengio 2012, с. 10]] ^l116
-
-```python
-# Порог значимости — из Deep Learning Tutorials, на которые ссылается та же страница
-```
-
-↳ [[Practical recommendations for gradient-based training of deep architectures#^m6rcp432-10-qmi9kw9w|↗ Bengio 2012, с. 10]] ^l118
-
-↳ [↗ DeepLearningTutorials: code/mlp.py (ранн](zotero://select/library/items/V5RD886G) [↗ DeepLearningTutorials: code/mlp.py (ранн](zotero://select/library/items/V5RD886G) ^l119
-
-↳ [↗ DeepLearningTutorials: code/mlp.py (ранн](zotero://select/library/items/V5RD886G) ^l120
+↳ [[Practical recommendations for gradient-based training of deep architectures#^m6rcp432-10-kuk4ruqs|↗ Bengio 2012, с. 10]] · [[Practical recommendations for gradient-based training of deep architectures#^m6rcp432-10-qmi9kw9w|↗ Bengio 2012, с. 10]] · [↗ DeepLearningTutorials  code mlp.py (ранн](zotero://select/library/items/V5RD886G) ^c-f61f50
 
 ```python
 IMPROVEMENT_THRESHOLD = 0.995
 # Терпение Yu сбрасывается только значимым улучшением; лучшие веса сохраняются при любом улучшении,
 # как в Tutorials (best_validation_loss обновляется при любом this_validation_loss < best_validation_loss).
+# Предел числа эпох — только страховка
 ```
-
-↳ Предел числа эпох — только страховка: [[Early Stopping - But When#^up4ah8pi-5-4cb8krm9|↗ Prechelt 1998, с. 5]] ^l124
+↳ [[Early Stopping - But When#^up4ah8pi-5-4cb8krm9|↗ Prechelt 1998, с. 5]] ^c-11aea1
 
 ```python
 MAX_EPOCHS = 3000
 
 
+```
+
+```python
 def significant(new_loss, best_loss):
-    """Новый минимум значим, если ошибка меньше лучшей не менее чем в 0,995 раза (V5RD886G)."""
+```
+↳ [↗ DeepLearningTutorials  code mlp.py (ранн](zotero://select/library/items/V5RD886G) ^c-6699fb
+
+```python
+    """Новый минимум значим, если ошибка меньше лучшей не менее чем в 0,995 раза."""
     return new_loss < best_loss * IMPROVEMENT_THRESHOLD
 
 
@@ -206,20 +223,18 @@ def _predict(model, x, device, fn):
     return torch.cat(out).numpy()
 
 
+```
+
+```python
 def train_m1(xtr, ytr, xva, yva, device, seed, log):
 ```
-
-↳ """M1: функция потерь — [[Exposing the Fingerprint  Dissecting the Impact of the Wireless Channel on Radio Fingerprinting#^m8af4mw7-3-rmcjgpdd|↗ Al-Shawabka 2020, с. 3]] ^l149
-
-```python
-    Ошибка на валидации для правила остановки — доля неверных ответов (как zero-one loss в
-```
-
-↳ Deep Learning Tutorials, V5RD886G: [↗ DeepLearningTutorials: code/mlp.py (ранн](zotero://select/library/items/V5RD886G) ^l151
+↳ [[Exposing the Fingerprint  Dissecting the Impact of the Wireless Channel on Radio Fingerprinting#^m8af4mw7-3-rmcjgpdd|↗ Al-Shawabka 2020, с. 3]] · [↗ DeepLearningTutorials  code mlp.py (ранн](zotero://select/library/items/V5RD886G) ^c-30b154
 
 ```python
+    """M1: функция потерь — categorical cross-entropy.
+    Ошибка на валидации для правила остановки — доля неверных ответов (zero-one loss).
     ВЫБОР: в каждой эпохе класс-большинство случайно прореживается до размера меньшего класса
-    (в E1 кадров ESP32 в 18 раз больше, чем роутера); критерий остановки — точность на валидации (как у Yu)."""
+    (в E1 кадров ESP32 в 18 раз больше, чем роутера)."""
     torch.manual_seed(seed)
     rng = np.random.default_rng(seed)
     model = Homegrown(xtr.shape[-1]).to(device)
@@ -256,12 +271,15 @@ def score_m1(model, x, device):
     return _predict(model, x, device, lambda md, xx: torch.softmax(md(xx), 1)[:, 1])
 
 
-def train_m2(xtr, xva, device, seed, log):
 ```
 
-↳ """M2: обучение только на кадрах роутера; ошибка — [[Physical Layer-Based Device Fingerprinting for Wireless Security  From Theory to Practice#^4wi4s249-6-2zdp597x|↗ Zhang 2025, с. 6]] ^l191
+```python
+def train_m2(xtr, xva, device, seed, log):
+```
+↳ [[Physical Layer-Based Device Fingerprinting for Wireless Security  From Theory to Practice#^4wi4s249-6-2zdp597x|↗ Zhang 2025, с. 6]] ^c-7b16f0
 
 ```python
+    """M2: обучение только на кадрах роутера; ошибка восстановления — MSE.
     ВЫБОР: ошибка на валидации для остановки — MSE (у автоэнкодера нет точности); правило — как в M1."""
     torch.manual_seed(seed)
     rng = np.random.default_rng(seed)
@@ -294,8 +312,15 @@ def score_m2(model, x, device):
     return _predict(model, x, device, lambda md, xx: torch.mean((md(xx) - xx) ** 2, dim=(1, 2, 3)))
 
 
+```
+
+```python
 def score_m3(cfo_test, cfo_train_router):
-    """M3 (ПРЕДРЕГ §3): |CFO кадра − медиана CFO роутера на обучающих данных|."""
+```
+↳ [[Предрегистрация|↗ предрегистрация §3]] ^c-b503b8
+
+```python
+    """M3: |CFO кадра − медиана CFO роутера на обучающих данных|."""
     return np.abs(cfo_test - np.median(cfo_train_router))
 
 ```

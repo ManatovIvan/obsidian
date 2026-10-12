@@ -1,0 +1,2094 @@
+[
+ {
+  "file": "iq_io.py",
+  "anchor": "import hashlib",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "item",
+    "key": "GJI5ZH7N"
+   }
+  ]
+ },
+ {
+  "file": "iq_io.py",
+  "anchor": "SAMPLE_RATE = 20_000_000",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "AFRD8SPW",
+    "page": null,
+    "quote": "-s 20000000"
+   }
+  ]
+ },
+ {
+  "file": "iq_io.py",
+  "anchor": "N_SAMPLES = 2_400_000_000",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "AFRD8SPW",
+    "page": null,
+    "quote": "-n 2400000000"
+   }
+  ]
+ },
+ {
+  "file": "iq_io.py",
+  "anchor": "BYTES_PER_SAMPLE = 2",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "EQKQ2C4M",
+    "page": "3",
+    "quote": "binary IQ file of int8 samples (2 bytes per IQ sample)"
+   }
+  ]
+ },
+ {
+  "file": "iq_io.py",
+  "anchor": "DATASET = Path(__file__).resolve().parent.parent / \"dataset\"",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "GJI5ZH7N",
+    "page": null,
+    "quote": "igr@server:~/hackrf_poc/dataset$"
+   }
+  ]
+ },
+ {
+  "file": "iq_io.py",
+  "anchor": "SESSION_ORDER = [\"R1\", \"E1\", \"R2\", \"E2\", \"R3\", \"E3\"]",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "QNVEHN9R",
+    "page": null,
+    "quote": "сессии записывались в порядке R1, E1, R2, E2, R3, E3"
+   }
+  ]
+ },
+ {
+  "file": "iq_io.py",
+  "anchor": "\"E1\": \"902d78940b554820b5348e2b902923e9449709cfcecf80ade01f9b0a9f2eb585\",",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "GJI5ZH7N",
+    "page": null,
+    "quote": "902d78940b554820b5348e2b902923e9449709cfcecf80ade01f9b0a9f2eb585 session_E1.bin"
+   }
+  ]
+ },
+ {
+  "file": "iq_io.py",
+  "anchor": "\"E2\": \"21390b857ea21b943d25c067b4d04038e565624d449a4f1da04462544c893ec6\",",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "GJI5ZH7N",
+    "page": null,
+    "quote": "21390b857ea21b943d25c067b4d04038e565624d449a4f1da04462544c893ec6 session_E2.bin"
+   }
+  ]
+ },
+ {
+  "file": "iq_io.py",
+  "anchor": "\"E3\": \"af9ec037b7dfe955378540cd15ae9e94b20ae8cd8da68a978daf864711dd5514\",",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "GJI5ZH7N",
+    "page": null,
+    "quote": "af9ec037b7dfe955378540cd15ae9e94b20ae8cd8da68a978daf864711dd5514 session_E3.bin"
+   }
+  ]
+ },
+ {
+  "file": "iq_io.py",
+  "anchor": "\"R1\": \"55392275ee5394e53cfa62fac43f17b3dc73166110f45188cdb52cfb5606fa55\",",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "GJI5ZH7N",
+    "page": null,
+    "quote": "55392275ee5394e53cfa62fac43f17b3dc73166110f45188cdb52cfb5606fa55 session_R1.bin"
+   }
+  ]
+ },
+ {
+  "file": "iq_io.py",
+  "anchor": "\"R2\": \"666803985dfc268d10818c1b6339ad7853dee8353bfd20f2a9eaf7ed123159ef\",",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "GJI5ZH7N",
+    "page": null,
+    "quote": "666803985dfc268d10818c1b6339ad7853dee8353bfd20f2a9eaf7ed123159ef session_R2.bin"
+   }
+  ]
+ },
+ {
+  "file": "iq_io.py",
+  "anchor": "\"R3\": \"3444ef5359ecd51e3b35df5d88f8b0d7d9833f981c94b25a390556428afcb143\",",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "GJI5ZH7N",
+    "page": null,
+    "quote": "3444ef5359ecd51e3b35df5d88f8b0d7d9833f981c94b25a390556428afcb143 session_R3.bin"
+   }
+  ]
+ },
+ {
+  "file": "iq_io.py",
+  "anchor": "return DATASET / f\"session_{sid}.bin\"",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "GJI5ZH7N",
+    "page": null,
+    "quote": "4800000000 2026-10-11 23:08:44.392985506 +0300 session_E1.bin"
+   }
+  ]
+ },
+ {
+  "file": "iq_io.py",
+  "anchor": "if size != N_SAMPLES * BYTES_PER_SAMPLE:",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "GJI5ZH7N",
+    "page": null,
+    "quote": "-rw-r--r-- 1 igr igr 4800000000"
+   }
+  ]
+ },
+ {
+  "file": "iq_io.py",
+  "anchor": "return np.memmap(p, dtype=np.int8, mode=\"r\")",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "EQKQ2C4M",
+    "page": "3",
+    "quote": "samples = np.fromfile('out.iq', dtype=np.int8)"
+   }
+  ]
+ },
+ {
+  "file": "iq_io.py",
+  "anchor": "return raw[0::2] + 1j * raw[1::2]",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "EQKQ2C4M",
+    "page": "3",
+    "quote": "samples = samples[::2] + 1j * samples[1::2]"
+   }
+  ]
+ },
+ {
+  "file": "iq_io.py",
+  "anchor": "return to_complex(mm[2 * start:2 * stop]).astype(np.complex64)",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "EQKQ2C4M",
+    "page": "3",
+    "quote": "2 bytes per IQ sample"
+   }
+  ]
+ },
+ {
+  "file": "iq_io.py",
+  "anchor": "yield np.frombuffer(buf, dtype=np.int8)",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "EQKQ2C4M",
+    "page": "3",
+    "quote": "dtype=np.int8"
+   }
+  ]
+ },
+ {
+  "file": "dsss_rx.py",
+  "anchor": "SYMBOL_RATE = 1_000_000",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "JHCW99MH",
+    "page": "2754",
+    "quote": "The entire PHY preamble and header shall be transmitted using the 1 Mb/s DBPSK modulation"
+   }
+  ]
+ },
+ {
+  "file": "dsss_rx.py",
+  "anchor": "CHIPS = 11",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "JHCW99MH",
+    "page": "2765",
+    "quote": "The symbol duration shall be exactly 11 chips long."
+   }
+  ]
+ },
+ {
+  "file": "dsss_rx.py",
+  "anchor": "BARKER = np.array([+1, -1, +1, +1, -1, +1, +1, +1, -1, -1, -1], dtype=np.float32)",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "JHCW99MH",
+    "page": "2765",
+    "quote": "+1, –1, +1, +1, –1, +1, +1, +1, –1, –1, –1"
+   }
+  ]
+ },
+ {
+  "file": "dsss_rx.py",
+  "anchor": "BARKER = np.array([+1, -1, +1, +1, -1, +1, +1, +1, -1, -1, -1], dtype=np.float32)",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "JHCW99MH",
+    "page": "2765",
+    "quote": "The leftmost chip shall be output first in time."
+   }
+  ]
+ },
+ {
+  "file": "dsss_rx.py",
+  "anchor": "def make_template():",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "JHCW99MH",
+    "page": "2765",
+    "quote": "The first chip shall be aligned at the start of a transmitted symbol."
+   }
+  ]
+ },
+ {
+  "file": "dsss_rx.py",
+  "anchor": "def make_template():",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "JHCW99MH",
+    "page": "2767",
+    "quote": "The transmitted spectral products shall be less than –30 dBr"
+   }
+  ]
+ },
+ {
+  "file": "dsss_rx.py",
+  "anchor": "TEMPLATE = make_template()",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "5FRQD424",
+    "page": "97",
+    "quote": "Согласованные фильтры предназначены для выделения сигналов известной формы на фоне шумов"
+   }
+  ]
+ },
+ {
+  "file": "dsss_rx.py",
+  "anchor": "TEMPLATE = make_template()",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "5FRQD424",
+    "page": "97",
+    "quote": "Реакция согласованного фильтра эквивалентна действию корреляционного приемника"
+   }
+  ]
+ },
+ {
+  "file": "dsss_rx.py",
+  "anchor": "SFD_LONG = 0xF3A0",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "JHCW99MH",
+    "page": "2754",
+    "quote": "The SFD shall be X'F3A0' (MSB to LSB). The LSB shall be transmitted first in time."
+   }
+  ]
+ },
+ {
+  "file": "dsss_rx.py",
+  "anchor": "SFD_SHORT = 0x05CF",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "JHCW99MH",
+    "page": "2780",
+    "quote": "The field is the bit pattern 0000 0101 1100 1111. The right end bit shall be transmitted first in time."
+   }
+  ]
+ },
+ {
+  "file": "dsss_rx.py",
+  "anchor": "SIGNAL_RATE = {0x0A: 1, 0x14: 2, 0x37: 5.5, 0x6E: 11}",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "JHCW99MH",
+    "page": "2754",
+    "quote": "X'0A' (MSB to LSB) for 1 Mb/s DBPSK"
+   },
+   {
+    "kind": "cite",
+    "key": "JHCW99MH",
+    "page": "2754",
+    "quote": "X'14' (MSB to LSB) for 2 Mb/s DQPSK"
+   }
+  ]
+ },
+ {
+  "file": "dsss_rx.py",
+  "anchor": "SIGNAL_RATE = {0x0A: 1, 0x14: 2, 0x37: 5.5, 0x6E: 11}",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "JHCW99MH",
+    "page": "2781",
+    "quote": "X'37' (MSB to LSB) for 5.5 Mb/s"
+   },
+   {
+    "kind": "cite",
+    "key": "JHCW99MH",
+    "page": "2781",
+    "quote": "X'6E' (MSB to LSB) for 11 Mb/s"
+   }
+  ]
+ },
+ {
+  "file": "dsss_rx.py",
+  "anchor": "OCTET_PER_US = {1: 1 / 8, 2: 1 / 4}",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "JHCW99MH",
+    "page": "2757",
+    "quote": "by multiplying by 8 for 1 Mb/s and by 4 for 2 Mb/s"
+   }
+  ]
+ },
+ {
+  "file": "dsss_rx.py",
+  "anchor": "PSDU_MAX_OCTETS = 2 ** 12 - 1",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "JHCW99MH",
+    "page": "2764",
+    "quote": "aPSDUMaxLength 212 – 1 octets"
+   }
+  ]
+ },
+ {
+  "file": "dsss_rx.py",
+  "anchor": "HDR_SYMBOLS = {\"long\": 48, \"short\": 24}",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "JHCW99MH",
+    "page": "2753",
+    "quote": "144 bits 48 bits"
+   },
+   {
+    "kind": "cite",
+    "key": "JHCW99MH",
+    "page": "2775",
+    "quote": "48 bits at 2 Mb/s"
+   }
+  ]
+ },
+ {
+  "file": "dsss_rx.py",
+  "anchor": "SYNC_SYMBOLS = {\"long\": 128, \"short\": 56}",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "JHCW99MH",
+    "page": "2753",
+    "quote": "128 bits 16 bits 8 bits 8 bits 16 bits 16 bits"
+   },
+   {
+    "kind": "cite",
+    "key": "JHCW99MH",
+    "page": "2775",
+    "quote": "56 bits 16 bits"
+   }
+  ]
+ },
+ {
+  "file": "dsss_rx.py",
+  "anchor": "TRACK_BLOCK = 32",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "JHCW99MH",
+    "page": "2767",
+    "quote": "The PN code chip clock frequency tolerance shall be ± 25 ppm."
+   }
+  ]
+ },
+ {
+  "file": "dsss_rx.py",
+  "anchor": "def descramble(raw_bits, prev7=None):",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "JHCW99MH",
+    "page": "2756",
+    "quote": "The polynomial G(z) = z –7 + z –4 + 1 shall be used to scramble all bits transmitted by the DSSS PHY."
+   }
+  ]
+ },
+ {
+  "file": "dsss_rx.py",
+  "anchor": "def descramble(raw_bits, prev7=None):",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "JHCW99MH",
+    "page": "2756",
+    "quote": "which requires no prior knowledge of the transmitter initialization of the scrambler for receive processing"
+   }
+  ]
+ },
+ {
+  "file": "dsss_rx.py",
+  "anchor": "def bits_to_int_lsb_first(bits):",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "JHCW99MH",
+    "page": "2754",
+    "quote": "The LSB shall be transmitted first in time."
+   }
+  ]
+ },
+ {
+  "file": "dsss_rx.py",
+  "anchor": "def bits_to_int_lsb_first(bits):",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "JHCW99MH",
+    "page": "755",
+    "quote": "The Individual/Group bit is always transferred first and is bit 0 of the MAC address."
+   }
+  ]
+ },
+ {
+  "file": "dsss_rx.py",
+  "anchor": "def crc16_ok(field_bits32, crc_bits16):",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "JHCW99MH",
+    "page": "2755",
+    "quote": "The CRC-16 FCS shall be the 1s complement of the remainder"
+   }
+  ]
+ },
+ {
+  "file": "dsss_rx.py",
+  "anchor": "def crc16_ok(field_bits32, crc_bits16):",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "JHCW99MH",
+    "page": "2755",
+    "quote": "x16 + x12 + x5 + 1"
+   },
+   {
+    "kind": "cite",
+    "key": "JHCW99MH",
+    "page": "2755",
+    "quote": "The protected bits shall be processed in transmit order."
+   }
+  ]
+ },
+ {
+  "file": "dsss_rx.py",
+  "anchor": "def crc16_ok(field_bits32, crc_bits16):",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "JHCW99MH",
+    "page": "2756",
+    "quote": "1111111111111111 ; initialize preset to 1s"
+   }
+  ]
+ },
+ {
+  "file": "dsss_rx.py",
+  "anchor": "FCS_POLY = 0x04C11DB7",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "JHCW99MH",
+    "page": "790",
+    "quote": "G(x) = x32 + x26 + x23 + x22 + x16 + x12 + x11 + x10 + x8 + x7 + x5 + x4 + x2 + x + 1"
+   }
+  ]
+ },
+ {
+  "file": "dsss_rx.py",
+  "anchor": "FCS_RESIDUE = 0xC704DD7B",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "JHCW99MH",
+    "page": "791",
+    "quote": "x31 + x30 + x26 + x25 + x24 + x18 + x15 + x14 + x12 + x11 + x10 + x8 + x6 + x5 + x4 + x3 + x + 1"
+   }
+  ]
+ },
+ {
+  "file": "dsss_rx.py",
+  "anchor": "def fcs_ok(mpdu_bits):",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "JHCW99MH",
+    "page": "791",
+    "quote": "At the receiver, the initial remainder is preset to all 1s and the serial incoming bits of the calculation fields and FCS, when divided by G(x), results (in the absence of transmission errors) in a unique nonzero remainder value."
+   }
+  ]
+ },
+ {
+  "file": "dsss_rx.py",
+  "anchor": "z = s[1:] * torch.conj(s[:-1])",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "visual",
+    "key": "JHCW99MH",
+    "page": "2765",
+    "loc": "табл. 15-7"
+   }
+  ]
+ },
+ {
+  "file": "dsss_rx.py",
+  "anchor": "b = (zr.real < 0).to(torch.int32)",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "visual",
+    "key": "JHCW99MH",
+    "page": "2765",
+    "loc": "табл. 15-7"
+   }
+  ]
+ },
+ {
+  "file": "dsss_rx.py",
+  "anchor": "return np.correlate(x, TEMPLATE, mode=\"valid\")",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "5FRQD424",
+    "page": "30",
+    "quote": "Определяет меру сходства между двумя различными сигналами"
+   }
+  ]
+ },
+ {
+  "file": "dsss_rx.py",
+  "anchor": "return (z.real < 0).astype(np.uint8)",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "visual",
+    "key": "JHCW99MH",
+    "page": "2765",
+    "loc": "табл. 15-7"
+   }
+  ]
+ },
+ {
+  "file": "dsss_rx.py",
+  "anchor": "def _dqpsk_bits(s_prev, s, theta):",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "visual",
+    "key": "JHCW99MH",
+    "page": "2765",
+    "loc": "табл. 15-8"
+   }
+  ]
+ },
+ {
+  "file": "dsss_rx.py",
+  "anchor": "def _dqpsk_bits(s_prev, s, theta):",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "JHCW99MH",
+    "page": "2765",
+    "quote": "shall be defined as counterclockwise rotation."
+   }
+  ]
+ },
+ {
+  "file": "dsss_rx.py",
+  "anchor": "def _dqpsk_bits(s_prev, s, theta):",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "JHCW99MH",
+    "page": "2765",
+    "quote": "d0 is first in time"
+   }
+  ]
+ },
+ {
+  "file": "dsss_rx.py",
+  "anchor": "d = int(np.argmax(energy)) - TIMING_SEARCH",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "5FRQD424",
+    "page": "97",
+    "quote": "Критерием оптимальности таких фильтров является получение на выходе максимально возможного отношения амплитудного значения сигнала к действующему значению помехи"
+   }
+  ]
+ },
+ {
+  "file": "dsss_rx.py",
+  "anchor": "hraw = _dqpsk_bits(sh[:-1], sh[1:], theta)",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "JHCW99MH",
+    "page": "2775",
+    "quote": "The short PHY header uses the 2 Mb/s Barker code spreading with DQPSK modulation"
+   }
+  ]
+ },
+ {
+  "file": "dsss_rx.py",
+  "anchor": "hy = descramble(hraw, prev7=raw[-7:])",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "JHCW99MH",
+    "page": "2754",
+    "quote": "All transmitted bits shall be scrambled using the feedthrough scrambler"
+   }
+  ]
+ },
+ {
+  "file": "dsss_rx.py",
+  "anchor": "crc16=bool(crc16_ok(hy[0:32], hy[32:48])))",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "JHCW99MH",
+    "page": "2781",
+    "quote": "The CRC in the short header shall be the same as the CRC field defined in 16.2.3.7."
+   }
+  ]
+ },
+ {
+  "file": "dsss_rx.py",
+  "anchor": "n_oct = length * OCTET_PER_US[rate]",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "JHCW99MH",
+    "page": "2754",
+    "quote": "indicates the number of microseconds required to transmit the MPDU"
+   }
+  ]
+ },
+ {
+  "file": "dsss_rx.py",
+  "anchor": "p0 = a + SPS * hdr_syms",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "JHCW99MH",
+    "page": "2757",
+    "quote": "starting with the first symbol (1 bit for DBPSK or 2 bits for DQPSK) of the MPDU"
+   }
+  ]
+ },
+ {
+  "file": "dsss_rx.py",
+  "anchor": "praw = _dbpsk_bits(sp[:-1], sp[1:], theta)",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "visual",
+    "key": "JHCW99MH",
+    "page": "2765",
+    "loc": "табл. 15-7"
+   }
+  ]
+ },
+ {
+  "file": "dsss_rx.py",
+  "anchor": "praw = _dqpsk_bits(sp[:-1], sp[1:], theta)",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "visual",
+    "key": "JHCW99MH",
+    "page": "2765",
+    "loc": "табл. 15-8"
+   }
+  ]
+ },
+ {
+  "file": "mac80211.py",
+  "anchor": "(0, 5): \"probe_resp\",",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "JHCW99MH",
+    "page": "759",
+    "quote": "00 Management 0101 Probe Response"
+   }
+  ]
+ },
+ {
+  "file": "mac80211.py",
+  "anchor": "(0, 8): \"beacon\",",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "JHCW99MH",
+    "page": "760",
+    "quote": "00 Management 1000 Beacon"
+   }
+  ]
+ },
+ {
+  "file": "mac80211.py",
+  "anchor": "(0, 10): \"disassoc\",",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "JHCW99MH",
+    "page": "760",
+    "quote": "00 Management 1010 Disassociation"
+   }
+  ]
+ },
+ {
+  "file": "mac80211.py",
+  "anchor": "(0, 12): \"deauth\",",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "JHCW99MH",
+    "page": "760",
+    "quote": "00 Management 1100 Deauthentication"
+   }
+  ]
+ },
+ {
+  "file": "mac80211.py",
+  "anchor": "(1, 13): \"ack\",",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "JHCW99MH",
+    "page": "760",
+    "quote": "01 Control 1101 Ack"
+   }
+  ]
+ },
+ {
+  "file": "mac80211.py",
+  "anchor": "(2, 0): \"data\",",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "JHCW99MH",
+    "page": "760",
+    "quote": "10 Data 0000 Data"
+   }
+  ]
+ },
+ {
+  "file": "mac80211.py",
+  "anchor": "(2, 8): \"qos_data\",",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "JHCW99MH",
+    "page": "760",
+    "quote": "10 Data 1000 QoS Data"
+   }
+  ]
+ },
+ {
+  "file": "mac80211.py",
+  "anchor": "8,",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "JHCW99MH",
+    "page": "800",
+    "quote": "Frame Control Duration RA TA BAR Control BAR Information FCS"
+   }
+  ]
+ },
+ {
+  "file": "mac80211.py",
+  "anchor": "9,",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "JHCW99MH",
+    "page": "803",
+    "quote": "Frame Control Duration RA TA BA Control BA Information FCS"
+   }
+  ]
+ },
+ {
+  "file": "mac80211.py",
+  "anchor": "10,",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "JHCW99MH",
+    "page": "799",
+    "quote": "Frame Control Duration/ID BSSID(RA) TA FCS"
+   }
+  ]
+ },
+ {
+  "file": "mac80211.py",
+  "anchor": "11,",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "JHCW99MH",
+    "page": "797",
+    "quote": "Frame Control Duration RA TA FCS"
+   }
+  ]
+ },
+ {
+  "file": "mac80211.py",
+  "anchor": "14,",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "JHCW99MH",
+    "page": "799",
+    "quote": "Frame Control Duration RA BSSID(TA) FCS"
+   }
+  ]
+ },
+ {
+  "file": "mac80211.py",
+  "anchor": "MIN_LEN = 2 + 2 + 6 + 4",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "JHCW99MH",
+    "page": "757",
+    "quote": "the first three fields (Frame Control, Duration/ID, and Address 1) and the last field (FCS)"
+   }
+  ]
+ },
+ {
+  "file": "mac80211.py",
+  "anchor": "def parse(mpdu):",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "JHCW99MH",
+    "page": "770",
+    "quote": "The TA field contains an IEEE MAC address that identifies the STA that has transmitted, onto the WM, the"
+   }
+  ]
+ },
+ {
+  "file": "mac80211.py",
+  "anchor": "fc = mpdu[0] | (mpdu[1] << 8)",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "JHCW99MH",
+    "page": "755",
+    "quote": "The octets in fields longer than a single octet are sent to the PHY in order from the octet containing the lowest numbered bits"
+   }
+  ]
+ },
+ {
+  "file": "mac80211.py",
+  "anchor": "if fc & 0b11:",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "JHCW99MH",
+    "page": "759",
+    "quote": "the value of the protocol version is 0 for MAC frames as described in 9.2"
+   }
+  ]
+ },
+ {
+  "file": "mac80211.py",
+  "anchor": "ftype, sub = (fc >> 2) & 0b11, (fc >> 4) & 0b1111",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "visual",
+    "key": "JHCW99MH",
+    "page": "758",
+    "loc": "рис. 9-3"
+   }
+  ]
+ },
+ {
+  "file": "mac80211.py",
+  "anchor": "out[\"a1\"] = mac_str(mpdu[4:10])",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "JHCW99MH",
+    "page": "822",
+    "quote": "2 2 6 6 6 2 0 or 4 variable 4"
+   }
+  ]
+ },
+ {
+  "file": "mac80211.py",
+  "anchor": "out[\"a2\"] = mac_str(mpdu[10:16])",
+  "occurrence": 1,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "JHCW99MH",
+    "page": "823",
+    "quote": "The Address 2 field of the Management frame is the TA (=SA)"
+   }
+  ]
+ },
+ {
+  "file": "mac80211.py",
+  "anchor": "out[\"a2\"] = mac_str(mpdu[10:16])",
+  "occurrence": 1,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "JHCW99MH",
+    "page": "815",
+    "quote": "The Frame Control, Duration, Address 1, Address 2, Address 3, and Sequence Control fields are present in all data frame subtypes."
+   }
+  ]
+ },
+ {
+  "file": "mac80211.py",
+  "anchor": "out[\"seq\"] = (mpdu[22] | (mpdu[23] << 8)) >> 4",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "visual",
+    "key": "JHCW99MH",
+    "page": "770",
+    "loc": "рис. 9-7"
+   }
+  ]
+ },
+ {
+  "file": "mac80211.py",
+  "anchor": "i = 8 + 2 + 2",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "JHCW99MH",
+    "page": "825",
+    "quote": "1 Timestamp See 9.4.1.10 for Timestamp field format."
+   }
+  ]
+ },
+ {
+  "file": "mac80211.py",
+  "anchor": "i = 8 + 2 + 2",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "JHCW99MH",
+    "page": "880",
+    "quote": "The length of the Timestamp field is 8 octets."
+   }
+  ]
+ },
+ {
+  "file": "mac80211.py",
+  "anchor": "i = 8 + 2 + 2",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "JHCW99MH",
+    "page": "868",
+    "quote": "The length of the Beacon Interval field is 2 octets."
+   }
+  ]
+ },
+ {
+  "file": "mac80211.py",
+  "anchor": "i = 8 + 2 + 2",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "JHCW99MH",
+    "page": "868",
+    "quote": "The length of the Capability Information field is 2 octets."
+   }
+  ]
+ },
+ {
+  "file": "mac80211.py",
+  "anchor": "eid, ln = body[i], body[i + 1]",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "JHCW99MH",
+    "page": "940",
+    "quote": "Octets: 1 1 0 or 1 variable"
+   }
+  ]
+ },
+ {
+  "file": "mac80211.py",
+  "anchor": "if eid == 0:",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "JHCW99MH",
+    "page": "940",
+    "quote": "SSID (see 9.4.2.2) 0"
+   }
+  ]
+ },
+ {
+  "file": "mac80211.py",
+  "anchor": "out[\"reason\"] = body[0] | (body[1] << 8)",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "JHCW99MH",
+    "page": "856",
+    "quote": "1 Reason code"
+   }
+  ]
+ },
+ {
+  "file": "mac80211.py",
+  "anchor": "out[\"reason\"] = body[0] | (body[1] << 8)",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "JHCW99MH",
+    "page": "871",
+    "quote": "The length of the Reason Code field is 2 octets."
+   }
+  ]
+ },
+ {
+  "file": "dataset_build.py",
+  "anchor": "<модуль>",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "item",
+    "key": "6GGC73ZD"
+   }
+  ]
+ },
+ {
+  "file": "dataset_build.py",
+  "anchor": "ROUTER = \"28:28:5d:e0:6c:c6\"",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "JV2GWUWN",
+    "page": null,
+    "quote": "MAC-адрес (BSSID) легитимного роутера ZyXEL — 28:28:5d:e0:6c:c6"
+   }
+  ]
+ },
+ {
+  "file": "dataset_build.py",
+  "anchor": "SESSIONS = [\"R1\", \"E1\", \"R2\", \"R3\", \"E3\"]",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "MTFI5CTD",
+    "page": null,
+    "quote": "Значит эту сессию надо исключить из обучения"
+   }
+  ]
+ },
+ {
+  "file": "dataset_build.py",
+  "anchor": "WIN_SYMBOLS = 64",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "prereg",
+    "section": "§2 C3"
+   }
+  ]
+ },
+ {
+  "file": "dataset_build.py",
+  "anchor": "WIN = WIN_SYMBOLS * rx.SPS",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "5AG9M5DK",
+    "page": "7",
+    "quote": "there is no sharp increase past 800 samples"
+   }
+  ]
+ },
+ {
+  "file": "dataset_build.py",
+  "anchor": "def tsf_offset_s(r):",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "prereg",
+    "section": "§1"
+   }
+  ]
+ },
+ {
+  "file": "dataset_build.py",
+  "anchor": "tsf = int.from_bytes(b[24:32], \"little\")",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "JHCW99MH",
+    "page": "880",
+    "quote": "The length of the Timestamp field is 8 octets."
+   }
+  ]
+ },
+ {
+  "file": "dataset_build.py",
+  "anchor": "return round((tsf - t_us) / 1e6)",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "JHCW99MH",
+    "page": "2050",
+    "quote": "counting in increments of microseconds"
+   }
+  ]
+ },
+ {
+  "file": "dataset_build.py",
+  "anchor": "router_fams = {f for f in fams if prev_router_offset is None or f >= prev_router_offset}",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "prereg",
+    "section": "§1 L2"
+   }
+  ]
+ },
+ {
+  "file": "dataset_build.py",
+  "anchor": "lab, rule = 1, \"L1\"",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "prereg",
+    "section": "§1 L1"
+   }
+  ]
+ },
+ {
+  "file": "dataset_build.py",
+  "anchor": "lab, rule = 1, \"L2\"",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "prereg",
+    "section": "§1 L2"
+   }
+  ]
+ },
+ {
+  "file": "dataset_build.py",
+  "anchor": "lab, rule = 0, \"L3\"",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "prereg",
+    "section": "§1 L3"
+   }
+  ]
+ },
+ {
+  "file": "dataset_build.py",
+  "anchor": "def noise_power(mm, rows, rng):",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "JHCW99MH",
+    "page": "159",
+    "quote": "1) the station (STA) is not transmitting a frame, and 2) the station (STA) is not receiving a frame"
+   }
+  ]
+ },
+ {
+  "file": "metrics.py",
+  "anchor": "<модуль>",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "item",
+    "key": "6GGC73ZD"
+   }
+  ]
+ },
+ {
+  "file": "metrics.py",
+  "anchor": "def auc(scores, labels):",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "343EFDIU",
+    "page": "8",
+    "quote": "the AUC of a classifier is equivalent to the probability that the classifier will rank a randomly chosen positive instance higher than a randomly chosen negative instance"
+   }
+  ]
+ },
+ {
+  "file": "metrics.py",
+  "anchor": "def auc(scores, labels):",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "343EFDIU",
+    "page": "8",
+    "quote": "This is equivalent to the Wilcoxon test of ranks"
+   }
+  ]
+ },
+ {
+  "file": "metrics.py",
+  "anchor": "def block_length(n, c):",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "visual",
+    "key": "DDSA936W",
+    "page": "6",
+    "loc": "формула (2.3)"
+   }
+  ]
+ },
+ {
+  "file": "metrics.py",
+  "anchor": "def block_length(n, c):",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "DDSA936W",
+    "page": "6",
+    "quote": "we shall create a collection of block lengths"
+   },
+   {
+    "kind": "prereg",
+    "section": "§5.2."
+   }
+  ]
+ },
+ {
+  "file": "metrics.py",
+  "anchor": "def block_length(n, c):",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "visual",
+    "key": "T5MH3E88",
+    "page": "1",
+    "loc": ""
+   }
+  ]
+ },
+ {
+  "file": "metrics.py",
+  "anchor": "def block_bootstrap_auc(scores, labels, order_key, c, n_boot, seed):",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "T5MH3E88",
+    "page": "1",
+    "quote": "Bootstrap replicates are constructed by selecting blocks of length"
+   }
+  ]
+ },
+ {
+  "file": "metrics.py",
+  "anchor": "def block_bootstrap_auc(scores, labels, order_key, c, n_boot, seed):",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "T5MH3E88",
+    "page": "1",
+    "quote": "randomly with replacement among the blocks of observations"
+   }
+  ]
+ },
+ {
+  "file": "metrics.py",
+  "anchor": "def block_bootstrap_auc(scores, labels, order_key, c, n_boot, seed):",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "visual",
+    "key": "T5MH3E88",
+    "page": "2",
+    "loc": "(журнальная с.1218)"
+   }
+  ]
+ },
+ {
+  "file": "metrics.py",
+  "anchor": "lo, hi = np.percentile(reps, [2.5, 97.5])",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "prereg",
+    "section": "§5.2"
+   }
+  ]
+ },
+ {
+  "file": "models.py",
+  "anchor": "<модуль>",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "prereg",
+    "section": "§2"
+   },
+   {
+    "kind": "prereg",
+    "section": "§3"
+   },
+   {
+    "kind": "item",
+    "key": "6GGC73ZD"
+   }
+  ]
+ },
+ {
+  "file": "models.py",
+  "anchor": "def remove_cfo(iq, cfo_hz):",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "prereg",
+    "section": "§2 C4"
+   }
+  ]
+ },
+ {
+  "file": "models.py",
+  "anchor": "def match_snr(iq, p_win, noise, is_router, pair_snr, rng):",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "ZVD6ASEA",
+    "page": "17",
+    "quote": "added white Gaussian noise to the training samples to simulate the received signals with different SNRs"
+   }
+  ]
+ },
+ {
+  "file": "models.py",
+  "anchor": "def energy_normalize(iq):",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "8B73M9ND",
+    "page": "4",
+    "quote": "helperNormalizeFramePower(txWaveform)"
+   }
+  ]
+ },
+ {
+  "file": "models.py",
+  "anchor": "def to_tensor_m1(iq):",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "M8AF4MW7",
+    "page": "3",
+    "quote": "we force each kernel to jointly learn a pattern across the I and Q components"
+   }
+  ]
+ },
+ {
+  "file": "models.py",
+  "anchor": "class Homegrown(nn.Module):",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "M8AF4MW7",
+    "page": "3",
+    "quote": "It is a very simple architecture composed by two one-dimensional (1D) convolutional layers (ConvLayers), each operating with 50 filters"
+   }
+  ]
+ },
+ {
+  "file": "models.py",
+  "anchor": "class Homegrown(nn.Module):",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "M8AF4MW7",
+    "page": "3",
+    "quote": "of size 1x7 and 2x7 for the first and second ConvLayer, respectively"
+   }
+  ]
+ },
+ {
+  "file": "models.py",
+  "anchor": "class Homegrown(nn.Module):",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "M8AF4MW7",
+    "page": "3",
+    "quote": "The output of the ConvLayers is then fed to two dense layers of 256, and 80 neurons, respectively."
+   }
+  ]
+ },
+ {
+  "file": "models.py",
+  "anchor": "class Homegrown(nn.Module):",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "M8AF4MW7",
+    "page": "3",
+    "quote": "a softmax layer is used to get the classification probability"
+   }
+  ]
+ },
+ {
+  "file": "models.py",
+  "anchor": "class Homegrown(nn.Module):",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "M8AF4MW7",
+    "page": "3",
+    "quote": "A dropout of rate 0.5 is also used to reduce overfitting."
+   }
+  ]
+ },
+ {
+  "file": "models.py",
+  "anchor": "self.act = nn.ReLU()",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "M8AF4MW7",
+    "page": "3",
+    "quote": "and rectified linear units (ReLU) as activation function"
+   }
+  ]
+ },
+ {
+  "file": "models.py",
+  "anchor": "class CDAE(nn.Module):",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "8M6KI8HE",
+    "page": "4",
+    "quote": "1280 (or 480) × 2"
+   },
+   {
+    "kind": "item",
+    "key": "8M6KI8HE"
+   }
+  ]
+ },
+ {
+  "file": "models.py",
+  "anchor": "class CDAE(nn.Module):",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "8M6KI8HE",
+    "page": "4",
+    "quote": "128 × (10 × 1)"
+   },
+   {
+    "kind": "cite",
+    "key": "8M6KI8HE",
+    "page": "4",
+    "quote": "128 × (3 × 2)"
+   }
+  ]
+ },
+ {
+  "file": "models.py",
+  "anchor": "class CDAE(nn.Module):",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "8M6KI8HE",
+    "page": "4",
+    "quote": "UpSampling"
+   },
+   {
+    "kind": "cite",
+    "key": "8M6KI8HE",
+    "page": "4",
+    "quote": "1 × (3 × 1)"
+   },
+   {
+    "kind": "cite",
+    "key": "8M6KI8HE",
+    "page": "4",
+    "quote": "Sigmoid"
+   }
+  ]
+ },
+ {
+  "file": "models.py",
+  "anchor": "class CDAE(nn.Module):",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "4WI4S249",
+    "page": "5",
+    "quote": "Because rogue devices do not appear in the training stage"
+   }
+  ]
+ },
+ {
+  "file": "models.py",
+  "anchor": "def minmax_fit(x):",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "8M6KI8HE",
+    "page": "2",
+    "quote": "values in each dimension of the preprocessed vector"
+   }
+  ]
+ },
+ {
+  "file": "models.py",
+  "anchor": "def minmax_fit(x):",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "8M6KI8HE",
+    "page": "2",
+    "quote": "is always between 0 and 1"
+   }
+  ]
+ },
+ {
+  "file": "models.py",
+  "anchor": "return torch.from_numpy(x[:, None])",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "8M6KI8HE",
+    "page": "4",
+    "quote": "using an Adam solver with a batch size of 64"
+   },
+   {
+    "kind": "cite",
+    "key": "8M6KI8HE",
+    "page": "4",
+    "quote": "The initial learning rate was set to 0.001"
+   }
+  ]
+ },
+ {
+  "file": "models.py",
+  "anchor": "return torch.from_numpy(x[:, None])",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "8M6KI8HE",
+    "page": "4",
+    "quote": "The training was repeated until the validation accuracy didn't improve within ten epochs."
+   }
+  ]
+ },
+ {
+  "file": "models.py",
+  "anchor": "return torch.from_numpy(x[:, None])",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "8M6KI8HE",
+    "page": "4",
+    "quote": "Then the best validation parameters were stored for performance evaluation."
+   }
+  ]
+ },
+ {
+  "file": "models.py",
+  "anchor": "BATCH, LR, PATIENCE = 64, 1e-3, 10",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "M6RCP432",
+    "page": "10",
+    "quote": "Ideally, we should use a statistical test of significance and accept a new minimum (over a longer training period) only if the improvement is statistically significant"
+   }
+  ]
+ },
+ {
+  "file": "models.py",
+  "anchor": "BATCH, LR, PATIENCE = 64, 1e-3, 10",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "M6RCP432",
+    "page": "10",
+    "quote": "A heuristic introduced in the Deep Learning Tutorials"
+   }
+  ]
+ },
+ {
+  "file": "models.py",
+  "anchor": "BATCH, LR, PATIENCE = 64, 1e-3, 10",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "V5RD886G",
+    "page": null,
+    "quote": "improvement_threshold = 0.995 # a relative improvement of this much is"
+   },
+   {
+    "kind": "cite",
+    "key": "V5RD886G",
+    "page": null,
+    "quote": "# considered significant"
+   }
+  ]
+ },
+ {
+  "file": "models.py",
+  "anchor": "BATCH, LR, PATIENCE = 64, 1e-3, 10",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "V5RD886G",
+    "page": null,
+    "quote": "this_validation_loss < best_validation_loss * improvement_threshold"
+   }
+  ]
+ },
+ {
+  "file": "models.py",
+  "anchor": "IMPROVEMENT_THRESHOLD = 0.995",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "UP4AH8PI",
+    "page": "5",
+    "quote": "or after at most 3000 epochs"
+   }
+  ]
+ },
+ {
+  "file": "models.py",
+  "anchor": "def significant(new_loss, best_loss):",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "item",
+    "key": "V5RD886G"
+   }
+  ]
+ },
+ {
+  "file": "models.py",
+  "anchor": "def train_m1(xtr, ytr, xva, yva, device, seed, log):",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "M8AF4MW7",
+    "page": "3",
+    "quote": "By using the categorical cross-entropy as loss function"
+   }
+  ]
+ },
+ {
+  "file": "models.py",
+  "anchor": "def train_m1(xtr, ytr, xva, yva, device, seed, log):",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "V5RD886G",
+    "page": null,
+    "quote": "# compute zero-one loss on validation set"
+   },
+   {
+    "kind": "item",
+    "key": "V5RD886G"
+   }
+  ]
+ },
+ {
+  "file": "models.py",
+  "anchor": "def train_m2(xtr, xva, device, seed, log):",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "4WI4S249",
+    "page": "6",
+    "quote": "The mean square error (MSE) between u and u"
+   }
+  ]
+ },
+ {
+  "file": "models.py",
+  "anchor": "def score_m3(cfo_test, cfo_train_router):",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "prereg",
+    "section": "§3"
+   }
+  ]
+ },
+ {
+  "file": "experiments.py",
+  "anchor": "<модуль>",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "item",
+    "key": "6GGC73ZD"
+   }
+  ]
+ },
+ {
+  "file": "experiments.py",
+  "anchor": "SESSIONS = [\"R1\", \"E1\", \"R2\", \"R3\", \"E3\"]",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "prereg",
+    "section": "§1"
+   }
+  ]
+ },
+ {
+  "file": "experiments.py",
+  "anchor": "SESSION_S = 120.0",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "83U3GZXN",
+    "page": null,
+    "quote": "поэтому бери 120 секунд"
+   }
+  ]
+ },
+ {
+  "file": "experiments.py",
+  "anchor": "BOOT_C = (0.5, 1, 2)",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "prereg",
+    "section": "§5.2–5.3"
+   }
+  ]
+ },
+ {
+  "file": "experiments.py",
+  "anchor": "BOOT_N = (1000, 2000)",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "prereg",
+    "section": "§5.3"
+   }
+  ]
+ },
+ {
+  "file": "experiments.py",
+  "anchor": "def splits(d):",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "prereg",
+    "section": "§4."
+   }
+  ]
+ },
+ {
+  "file": "experiments.py",
+  "anchor": "variants = [v for v in variants if v[0] == \"M1\"]",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "prereg",
+    "section": "§4 S4"
+   }
+  ]
+ },
+ {
+  "file": "analyze_labels.py",
+  "anchor": "lines.append(f\"    номер последовательности deauth/disassoc: {dict(Counter(r['seq'] for r in da).most_common(5))}\")",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "JHCW99MH",
+    "page": "880",
+    "quote": "This field represents the timing synchronization function (TSF) timer"
+   }
+  ]
+ },
+ {
+  "file": "analyze_labels.py",
+  "anchor": "lines.append(f\"    номер последовательности deauth/disassoc: {dict(Counter(r['seq'] for r in da).most_common(5))}\")",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "JHCW99MH",
+    "page": "2050",
+    "quote": "Each STA shall maintain a TSF timer with modulus 264 counting in increments of microseconds."
+   }
+  ]
+ },
+ {
+  "file": "test_dsss_rx.py",
+  "anchor": "data = [int(c) for c in \"01010000000000000000001100000000\"]",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "JHCW99MH",
+    "page": "2755",
+    "quote": "0101 0000 0000 0000 0000 0011 0000 0000 (leftmost bit transmitted first in time)"
+   }
+  ]
+ },
+ {
+  "file": "test_dsss_rx.py",
+  "anchor": "crc = [int(c) for c in \"0101101101010111\"]",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "JHCW99MH",
+    "page": "2755",
+    "quote": "0101 1011 0101 0111 (leftmost bit transmitted first in time)"
+   }
+  ]
+ },
+ {
+  "file": "test_dsss_rx.py",
+  "anchor": "def fcs_tx_bits(octets):",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "JHCW99MH",
+    "page": "790",
+    "quote": "As a typical implementation, at the transmitter, the initial remainder of the division is preset to all 1s"
+   }
+  ]
+ },
+ {
+  "file": "test_dsss_rx.py",
+  "anchor": "def fcs_tx_bits(octets):",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "JHCW99MH",
+    "page": "790",
+    "quote": "The 1s complement of this remainder is transmitted, with the highest-order bit first, as the FCS field."
+   }
+  ]
+ },
+ {
+  "file": "test_models.py",
+  "anchor": "<модуль>",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "prereg",
+    "section": "§2"
+   }
+  ]
+ },
+ {
+  "file": "label_sessions.py",
+  "anchor": "iq_io.check_sha(sid, hasher.hexdigest())",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "item",
+    "key": "GJI5ZH7N"
+   }
+  ]
+ },
+ {
+  "file": "report.py",
+  "anchor": "<модуль>",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "prereg",
+    "section": "§5.4"
+   },
+   {
+    "kind": "item",
+    "key": "6GGC73ZD"
+   }
+  ]
+ }
+]

@@ -1,6 +1,8 @@
 # Код test_dsss_rx.py
 
-Файл verification/test_dsss_rx.py на сервере. Сгенерировано obsidian_export.py — не править вручную.
+Оригинал и история изменений — [запись в Zotero](zotero://select/library/items/FEKQQRB9).
+
+Сгенерировано obsidian_export.py — не править вручную.
 
 ```python
 """Тесты приёмника. Соответствие стандарту проверяют только тесты с примерами из самого стандарта
@@ -56,24 +58,30 @@ def test_crc16_example_from_standard():
     """Пример из стандарта для MPDU 192 мкс."""
 ```
 
-`data = [int(c) for c in "01010000000000000000001100000000"]` [[IEEE Std 802.11-2020#^ieee-2755-qv8b3jc7|↗ IEEE 802.11-2020, с. 2755]] ^l52
+```python
+    data = [int(c) for c in "01010000000000000000001100000000"]
+```
+↳ [[IEEE Std 802.11-2020#^ieee-2755-qv8b3jc7|↗ IEEE 802.11-2020, с. 2755]] ^c-ef3d5e
 
-`crc = [int(c) for c in "0101101101010111"]` [[IEEE Std 802.11-2020#^ieee-2755-ur6v43dn|↗ IEEE 802.11-2020, с. 2755]] ^l53
+```python
+    crc = [int(c) for c in "0101101101010111"]
+```
+↳ [[IEEE Std 802.11-2020#^ieee-2755-ur6v43dn|↗ IEEE 802.11-2020, с. 2755]] ^c-38a9f0
 
 ```python
     assert rx.crc16_ok(data, crc)
     assert not rx.crc16_ok(data, crc[:-1] + [1 - crc[-1]])
 
 
-def fcs_tx_bits(octets):
-    """Передатчик FCS:
 ```
 
-↳ [[IEEE Std 802.11-2020#^ieee-790-xn6dv3dq|↗ IEEE 802.11-2020, с. 790]] ^l60
-
-↳ [[IEEE Std 802.11-2020#^ieee-790-vf5gbz3v|↗ IEEE 802.11-2020, с. 790]] ^l61
+```python
+def fcs_tx_bits(octets):
+```
+↳ [[IEEE Std 802.11-2020#^ieee-790-xn6dv3dq|↗ IEEE 802.11-2020, с. 790]] · [[IEEE Std 802.11-2020#^ieee-790-vf5gbz3v|↗ IEEE 802.11-2020, с. 790]] ^c-47a7ba
 
 ```python
+    """Передатчик FCS:
     Биты полей — в порядке передачи, младший бит октета первым (см. dsss_rx.bits_to_int_lsb_first)."""
     reg = 0xFFFFFFFF
     for byte in octets:
