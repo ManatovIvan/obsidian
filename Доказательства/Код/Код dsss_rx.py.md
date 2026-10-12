@@ -29,10 +29,7 @@ from iq_io import SAMPLE_RATE, read_samples       # частота дискре�
 # --- Параметры PHY ----------------------------------------------------------------------------
 ```
 
-```python
-SYMBOL_RATE = 1_000_000                           # ⟦JHCW99MH с.2754: «The entire PHY preamble and header shall be transmitted using the 1 Mb/s DBPSK modulation»⟧
-```
-↳ [[IEEE Std 802.11-2020#^ieee-2754-z9z2qhce|IEEE Std 802.11-2020, с. 2754]] ^l25
+`SYMBOL_RATE = 1_000_000` [[IEEE Std 802.11-2020#^ieee-2754-z9z2qhce|↗ IEEE 802.11-2020, с. 2754]] ^l25
 
 ```python
                                                   # ВЫБОР: DBPSK — один бит на символ, значит 1 Мсимв/с
@@ -40,24 +37,15 @@ SPS = SAMPLE_RATE // SYMBOL_RATE                  # 20 отсчётов на с�
 assert SPS * SYMBOL_RATE == SAMPLE_RATE           # ПРОВЕРКА: 20e6 / 1e6 — целое
 ```
 
-```python
-CHIPS = 11                                        # ⟦JHCW99MH с.2765: «The symbol duration shall be exactly 11 chips long.»⟧
-```
-↳ [[IEEE Std 802.11-2020#^ieee-2765-7rnvvtj7|IEEE Std 802.11-2020, с. 2765]] ^l29
+`CHIPS = 11` [[IEEE Std 802.11-2020#^ieee-2765-7rnvvtj7|↗ IEEE 802.11-2020, с. 2765]] ^l29
 
 ```python
 BARKER = np.array([+1, -1, +1, +1, -1, +1, +1, +1, -1, -1, -1], dtype=np.float32)
 ```
 
-```python
-                                                  # ⟦JHCW99MH с.2765: «+1, –1, +1, +1, –1, +1, +1, +1, –1, –1, –1»⟧
-```
-↳ [[IEEE Std 802.11-2020#^ieee-2765-nshcwn8j|IEEE Std 802.11-2020, с. 2765]] ^l31
+↳ [[IEEE Std 802.11-2020#^ieee-2765-nshcwn8j|↗ IEEE 802.11-2020, с. 2765]] ^l31
 
-```python
-                                                  # ⟦JHCW99MH с.2765: «The leftmost chip shall be output first in time.»⟧
-```
-↳ [[IEEE Std 802.11-2020#^ieee-2765-a63d3ej6|IEEE Std 802.11-2020, с. 2765]] ^l32
+↳ [[IEEE Std 802.11-2020#^ieee-2765-a63d3ej6|↗ IEEE 802.11-2020, с. 2765]] ^l32
 
 ```python
 
@@ -66,19 +54,13 @@ def make_template():
     """Отсчёты кода Баркера на сетке 20 MSPS: отсчёт k (момент k/20 мкс) попадает в чип ⌊k·11/20⌋;
 ```
 
-```python
-    ⟦JHCW99MH с.2765: «The first chip shall be aligned at the start of a transmitted symbol.»⟧
-```
-↳ [[IEEE Std 802.11-2020#^ieee-2765-wp8je8fb|IEEE Std 802.11-2020, с. 2765]] ^l37
+↳ [[IEEE Std 802.11-2020#^ieee-2765-wp8je8fb|↗ IEEE 802.11-2020, с. 2765]] ^l37
 
 ```python
     ВЫБОР: прямоугольная форма чипа — стандарт ограничивает спектр маской
 ```
 
-```python
-    ⟦JHCW99MH с.2767: «The transmitted spectral products shall be less than –30 dBr»⟧, а форму
-```
-↳ [[IEEE Std 802.11-2020#^ieee-2767-s9k5b7f7|IEEE Std 802.11-2020, с. 2767]] ^l39
+↳ [[IEEE Std 802.11-2020#^ieee-2767-s9k5b7f7|↗ IEEE 802.11-2020, с. 2767]] , а форму ^l39
 
 ```python
     импульса не задаёт; потери от несовпадения формы видны по доле кадров, прошедших CRC."""
@@ -88,30 +70,18 @@ def make_template():
 
 ```
 
-```python
-TEMPLATE = make_template()                        # ⟦5FRQD424 с.97: «Согласованные фильтры предназначены для выделения сигналов известной формы на фоне шумов»⟧
-```
-↳ [[Цифровая обработка сигналов#^5frqd424-97-chvmzeqe|Цифровая обработка сигналов, с. 97]] ^l45
+`TEMPLATE = make_template()` [[Цифровая обработка сигналов#^5frqd424-97-chvmzeqe|↗ Матвеев 2013, с. 97]] ^l45
 
-```python
-                                                  # ⟦5FRQD424 с.97: «Реакция согласованного фильтра эквивалентна действию корреляционного приемника»⟧
-```
-↳ [[Цифровая обработка сигналов#^5frqd424-97-cafv2utp|Цифровая обработка сигналов, с. 97]] ^l46
+↳ [[Цифровая обработка сигналов#^5frqd424-97-cafv2utp|↗ Матвеев 2013, с. 97]] ^l46
 
 ```python
 
 # --- Поля PHY-заголовка ----------------------------------------------------------------------
 ```
 
-```python
-SFD_LONG = 0xF3A0                                 # ⟦JHCW99MH с.2754: «The SFD shall be X'F3A0' (MSB to LSB). The LSB shall be transmitted first in time.»⟧
-```
-↳ [[IEEE Std 802.11-2020#^ieee-2754-qjb4e5nm|IEEE Std 802.11-2020, с. 2754]] ^l49
+`SFD_LONG = 0xF3A0` [[IEEE Std 802.11-2020#^ieee-2754-qjb4e5nm|↗ IEEE 802.11-2020, с. 2754]] ^l49
 
-```python
-SFD_SHORT = 0x05CF                                # ⟦JHCW99MH с.2780: «The field is the bit pattern 0000 0101 1100 1111. The right end bit shall be transmitted first in time.»⟧
-```
-↳ [[IEEE Std 802.11-2020#^ieee-2780-3r7zsiqp|IEEE Std 802.11-2020, с. 2780]] ^l50
+`SFD_SHORT = 0x05CF` [[IEEE Std 802.11-2020#^ieee-2780-3r7zsiqp|↗ IEEE 802.11-2020, с. 2780]] ^l50
 
 ```python
 SFD_PATTERNS = {                                  # слово w из 16 дескремблированных бит, первый по времени = бит 0
@@ -123,35 +93,17 @@ SFD_PATTERNS = {                                  # слово w из 16 дес�
 SIGNAL_RATE = {0x0A: 1, 0x14: 2, 0x37: 5.5, 0x6E: 11}
 ```
 
-```python
-# ⟦JHCW99MH с.2754: «X'0A' (MSB to LSB) for 1 Mb/s DBPSK»⟧ ⟦JHCW99MH с.2754: «X'14' (MSB to LSB) for 2 Mb/s DQPSK»⟧
-```
-↳ [[IEEE Std 802.11-2020#^ieee-2754-vveitadp|IEEE Std 802.11-2020, с. 2754]] · [[IEEE Std 802.11-2020#^ieee-2754-ubi9g2x5|IEEE Std 802.11-2020, с. 2754]] ^l58
+↳ [[IEEE Std 802.11-2020#^ieee-2754-vveitadp|↗ IEEE 802.11-2020, с. 2754]] [[IEEE Std 802.11-2020#^ieee-2754-ubi9g2x5|↗ IEEE 802.11-2020, с. 2754]] ^l58
 
-```python
-# ⟦JHCW99MH с.2781: «X'37' (MSB to LSB) for 5.5 Mb/s»⟧ ⟦JHCW99MH с.2781: «X'6E' (MSB to LSB) for 11 Mb/s»⟧
-```
-↳ [[IEEE Std 802.11-2020#^ieee-2781-hj8qtn6t|IEEE Std 802.11-2020, с. 2781]] · [[IEEE Std 802.11-2020#^ieee-2781-rhgz5d2c|IEEE Std 802.11-2020, с. 2781]] ^l59
+↳ [[IEEE Std 802.11-2020#^ieee-2781-hj8qtn6t|↗ IEEE 802.11-2020, с. 2781]] [[IEEE Std 802.11-2020#^ieee-2781-rhgz5d2c|↗ IEEE 802.11-2020, с. 2781]] ^l59
 
-```python
-OCTET_PER_US = {1: 1 / 8, 2: 1 / 4}               # ⟦JHCW99MH с.2757: «by multiplying by 8 for 1 Mb/s and by 4 for 2 Mb/s»⟧
-```
-↳ [[IEEE Std 802.11-2020#^ieee-2757-isfpz4bj|IEEE Std 802.11-2020, с. 2757]] ^l60
+`OCTET_PER_US = {1: 1 / 8, 2: 1 / 4}` [[IEEE Std 802.11-2020#^ieee-2757-isfpz4bj|↗ IEEE 802.11-2020, с. 2757]] ^l60
 
-```python
-PSDU_MAX_OCTETS = 2 ** 12 - 1                     # ⟦JHCW99MH с.2764: «aPSDUMaxLength 212 – 1 octets»⟧ (степень 2^12 при извлечении текста теряет верхний индекс)
-```
-↳ [[IEEE Std 802.11-2020#^ieee-2764-qsii4cd5|IEEE Std 802.11-2020, с. 2764]] ^l61
+`PSDU_MAX_OCTETS = 2 ** 12 - 1` [[IEEE Std 802.11-2020#^ieee-2764-qsii4cd5|↗ IEEE 802.11-2020, с. 2764]] (степень 2^12 при извлечении текста теряет верхний индекс) ^l61
 
-```python
-HDR_SYMBOLS = {"long": 48, "short": 24}           # ⟦JHCW99MH с.2753: «144 bits 48 bits»⟧ (преамбула, заголовок); ⟦JHCW99MH с.2775: «48 bits at 2 Mb/s»⟧ — 2 бита на символ
-```
-↳ [[IEEE Std 802.11-2020#^ieee-2753-zi4cbs7a|IEEE Std 802.11-2020, с. 2753]] · [[IEEE Std 802.11-2020#^ieee-2775-a6xmjeir|IEEE Std 802.11-2020, с. 2775]] ^l62
+`HDR_SYMBOLS = {"long": 48, "short": 24}` [[IEEE Std 802.11-2020#^ieee-2753-zi4cbs7a|↗ IEEE 802.11-2020, с. 2753]] (преамбула, заголовок); [[IEEE Std 802.11-2020#^ieee-2775-a6xmjeir|↗ IEEE 802.11-2020, с. 2775]] — 2 бита на символ ^l62
 
-```python
-SYNC_SYMBOLS = {"long": 128, "short": 56}         # ⟦JHCW99MH с.2753: «128 bits 16 bits 8 bits 8 bits 16 bits 16 bits»⟧ ⟦JHCW99MH с.2775: «56 bits 16 bits»⟧
-```
-↳ [[IEEE Std 802.11-2020#^ieee-2753-hseiqbkd|IEEE Std 802.11-2020, с. 2753]] · [[IEEE Std 802.11-2020#^ieee-2775-9tvx3iej|IEEE Std 802.11-2020, с. 2775]] ^l63
+`SYNC_SYMBOLS = {"long": 128, "short": 56}` [[IEEE Std 802.11-2020#^ieee-2753-hseiqbkd|↗ IEEE 802.11-2020, с. 2753]] [[IEEE Std 802.11-2020#^ieee-2775-9tvx3iej|↗ IEEE 802.11-2020, с. 2775]] ^l63
 
 ```python
 CFO_SYMBOLS = 48                                  # ВЫБОР: 48 символов перед концом SFD лежат внутри SYNC+SFD
@@ -161,10 +113,7 @@ TIMING_SEARCH = 5                                 # ВЫБОР: ±5 отсчёт
 TRACK_BLOCK = 32                                  # ВЫБОР: подстройка момента отсчёта раз в 32 символа (32 мкс).
 ```
 
-```python
-                                                  #   ⟦JHCW99MH с.2767: «The PN code chip clock frequency tolerance shall be ± 25 ppm.»⟧;
-```
-↳ [[IEEE Std 802.11-2020#^ieee-2767-hj8ej2ht|IEEE Std 802.11-2020, с. 2767]] ^l69
+↳ [[IEEE Std 802.11-2020#^ieee-2767-hj8ej2ht|↗ IEEE 802.11-2020, с. 2767]] ^l69
 
 ```python
                                                   #   точность HackRF в источниках нет, поэтому фактический сдвиг
@@ -174,15 +123,9 @@ TRACK_BLOCK = 32                                  # ВЫБОР: подстрой
 def descramble(raw_bits, prev7=None):
 ```
 
-```python
-    """Дескремблер: ⟦JHCW99MH с.2756: «The polynomial G(z) = z –7 + z –4 + 1 shall be used to scramble all bits transmitted by the DSSS PHY.»⟧
-```
-↳ [[IEEE Std 802.11-2020#^ieee-2756-2maumi5g|IEEE Std 802.11-2020, с. 2756]] ^l75
+↳ """Дескремблер: [[IEEE Std 802.11-2020#^ieee-2756-2maumi5g|↗ IEEE 802.11-2020, с. 2756]] ^l75
 
-```python
-    ⟦JHCW99MH с.2756: «which requires no prior knowledge of the transmitter initialization of the scrambler for receive processing»⟧
-```
-↳ [[IEEE Std 802.11-2020#^ieee-2756-ig7zcsj6|IEEE Std 802.11-2020, с. 2756]] ^l76
+↳ [[IEEE Std 802.11-2020#^ieee-2756-ig7zcsj6|↗ IEEE 802.11-2020, с. 2756]] ^l76
 
 ```python
     ВЫБОР: y[k] = b[k] ⊕ b[k−4] ⊕ b[k−7] — прямое прочтение G(z) для самосинхронизирующейся (feedthrough)
@@ -197,15 +140,9 @@ def bits_to_int_lsb_first(bits):
     """Первый переданный бит — младший разряд.
 ```
 
-```python
-    Поля PHY: ⟦JHCW99MH с.2754: «The LSB shall be transmitted first in time.»⟧
-```
-↳ [[IEEE Std 802.11-2020#^ieee-2754-jcuv8g7p|IEEE Std 802.11-2020, с. 2754]] ^l87
+↳ Поля PHY: [[IEEE Std 802.11-2020#^ieee-2754-jcuv8g7p|↗ IEEE 802.11-2020, с. 2754]] ^l87
 
-```python
-    Октеты MAC: ⟦JHCW99MH с.755: «The Individual/Group bit is always transferred first and is bit 0 of the MAC address.»⟧"""
-```
-↳ [[IEEE Std 802.11-2020#^ieee-755-dbfsw9h6|IEEE Std 802.11-2020, с. 755]] ^l88
+↳ Октеты MAC: [[IEEE Std 802.11-2020#^ieee-755-dbfsw9h6|↗ IEEE 802.11-2020, с. 755]] ^l88
 
 ```python
     return int(sum(int(b) << i for i, b in enumerate(bits)))
@@ -219,20 +156,11 @@ def bits_to_bytes(bits):
 def crc16_ok(field_bits32, crc_bits16):
 ```
 
-```python
-    """⟦JHCW99MH с.2755: «The CRC-16 FCS shall be the 1s complement of the remainder»⟧
-```
-↳ [[IEEE Std 802.11-2020#^ieee-2755-a2swpbhi|IEEE Std 802.11-2020, с. 2755]] ^l98
+↳ [[IEEE Std 802.11-2020#^ieee-2755-a2swpbhi|↗ IEEE 802.11-2020, с. 2755]] ^l98
 
-```python
-    ⟦JHCW99MH с.2755: «x16 + x12 + x5 + 1»⟧ ⟦JHCW99MH с.2755: «The protected bits shall be processed in transmit order.»⟧
-```
-↳ [[IEEE Std 802.11-2020#^ieee-2755-vgqes27r|IEEE Std 802.11-2020, с. 2755]] · [[IEEE Std 802.11-2020#^ieee-2755-v8gwqc6f|IEEE Std 802.11-2020, с. 2755]] ^l99
+↳ [[IEEE Std 802.11-2020#^ieee-2755-vgqes27r|↗ IEEE 802.11-2020, с. 2755]] [[IEEE Std 802.11-2020#^ieee-2755-v8gwqc6f|↗ IEEE 802.11-2020, с. 2755]] ^l99
 
-```python
-    ⟦JHCW99MH с.2756: «1111111111111111 ; initialize preset to 1s»⟧
-```
-↳ [[IEEE Std 802.11-2020#^ieee-2756-rfpq56cc|IEEE Std 802.11-2020, с. 2756]] ^l100
+↳ [[IEEE Std 802.11-2020#^ieee-2756-rfpq56cc|↗ IEEE 802.11-2020, с. 2756]] ^l100
 
 ```python
     ВЫБОР: первый по времени бит FCS сравнивается со старшим разрядом регистра — так устроен пример
@@ -250,15 +178,9 @@ def crc16_ok(field_bits32, crc_bits16):
 
 ```
 
-```python
-FCS_POLY = 0x04C11DB7                             # ⟦JHCW99MH с.790: «G(x) = x32 + x26 + x23 + x22 + x16 + x12 + x11 + x10 + x8 + x7 + x5 + x4 + x2 + x + 1»⟧ без x^32
-```
-↳ [[IEEE Std 802.11-2020#^ieee-790-tvp5hc7r|IEEE Std 802.11-2020, с. 790]] ^l114
+`FCS_POLY = 0x04C11DB7` [[IEEE Std 802.11-2020#^ieee-790-tvp5hc7r|↗ IEEE 802.11-2020, с. 790]] без x^32 ^l114
 
-```python
-FCS_RESIDUE = 0xC704DD7B                          # ⟦JHCW99MH с.791: «x31 + x30 + x26 + x25 + x24 + x18 + x15 + x14 + x12 + x11 + x10 + x8 + x6 + x5 + x4 + x3 + x + 1»⟧
-```
-↳ [[IEEE Std 802.11-2020#^ieee-791-xhactgja|IEEE Std 802.11-2020, с. 791]] ^l115
+`FCS_RESIDUE = 0xC704DD7B` [[IEEE Std 802.11-2020#^ieee-791-xhactgja|↗ IEEE 802.11-2020, с. 791]] ^l115
 
 ```python
 
@@ -266,10 +188,7 @@ FCS_RESIDUE = 0xC704DD7B                          # ⟦JHCW99MH с.791: «x31 + 
 def fcs_ok(mpdu_bits):
 ```
 
-```python
-    """⟦JHCW99MH с.791: «At the receiver, the initial remainder is preset to all 1s and the serial incoming bits of the calculation fields and FCS, when divided by G(x), results (in the absence of transmission errors) in a unique nonzero remainder value.»⟧
-```
-↳ [[IEEE Std 802.11-2020#^ieee-791-98bmew6d|IEEE Std 802.11-2020, с. 791]] ^l119
+↳ [[IEEE Std 802.11-2020#^ieee-791-98bmew6d|↗ IEEE 802.11-2020, с. 791]] ^l119
 
 ```python
     mpdu_bits — дескремблированные биты MPDU в порядке поступления."""
@@ -334,10 +253,7 @@ def cluster(positions, gap=10):
 def _corr(x):
 ```
 
-```python
-    return np.correlate(x, TEMPLATE, mode="valid")  # ⟦5FRQD424 с.30: «Определяет меру сходства между двумя различными сигналами»⟧ — тот же c[n], что на этапе 1
-```
-↳ [[Цифровая обработка сигналов#^5frqd424-30-9rnk83v3|Цифровая обработка сигналов, с. 30]] ^l180
+`return np.correlate(x, TEMPLATE, mode="valid")` [[Цифровая обработка сигналов#^5frqd424-30-9rnk83v3|↗ Матвеев 2013, с. 30]] — тот же c[n], что на этапе 1 ^l180
 
 ```python
 
@@ -351,15 +267,9 @@ def _dqpsk_bits(s_prev, s, theta):
     """ВИЗУАЛЬНО JHCW99MH с.2765, табл. 15-8: дибит (d0,d1): 00 -> 0, 01 -> π/2, 11 -> π, 10 -> 3π/2.
 ```
 
-```python
-    ⟦JHCW99MH с.2765: «shall be defined as counterclockwise rotation.»⟧ (символ «+jω» в PDF — нестандартный глиф)
-```
-↳ [[IEEE Std 802.11-2020#^ieee-2765-9ufuczkb|IEEE Std 802.11-2020, с. 2765]] ^l190
+↳ [[IEEE Std 802.11-2020#^ieee-2765-9ufuczkb|↗ IEEE 802.11-2020, с. 2765]] (символ «+jω» в PDF — нестандартный глиф) ^l190
 
-```python
-    ⟦JHCW99MH с.2765: «d0 is first in time»⟧"""
-```
-↳ [[IEEE Std 802.11-2020#^ieee-2765-dbw8p5kz|IEEE Std 802.11-2020, с. 2765]] ^l191
+↳ [[IEEE Std 802.11-2020#^ieee-2765-dbw8p5kz|↗ IEEE 802.11-2020, с. 2765]] ^l191
 
 ```python
     z = s * np.conj(s_prev) * np.exp(-1j * theta)
@@ -383,10 +293,7 @@ def decode_candidate(mm, a0):
     energy = [np.sum(np.abs(c[base + d + SPS * js]) ** 2) for d in range(-TIMING_SEARCH, TIMING_SEARCH + 1)]
 ```
 
-```python
-    d = int(np.argmax(energy)) - TIMING_SEARCH    # ⟦5FRQD424 с.97: «Критерием оптимальности таких фильтров является получение на выходе максимально возможного отношения амплитудного значения сигнала к действующему значению помехи»⟧
-```
-↳ [[Цифровая обработка сигналов#^5frqd424-97-5q5pr8rc|Цифровая обработка сигналов, с. 97]] ^l211
+`d = int(np.argmax(energy)) - TIMING_SEARCH` [[Цифровая обработка сигналов#^5frqd424-97-5q5pr8rc|↗ Матвеев 2013, с. 97]] ^l211
 
 ```python
     a = int(a0) + d
@@ -413,15 +320,9 @@ def decode_candidate(mm, a0):
     else:
 ```
 
-```python
-        hraw = _dqpsk_bits(sh[:-1], sh[1:], theta)  # ⟦JHCW99MH с.2775: «The short PHY header uses the 2 Mb/s Barker code spreading with DQPSK modulation»⟧
-```
-↳ [[IEEE Std 802.11-2020#^ieee-2775-8zwmj3ej|IEEE Std 802.11-2020, с. 2775]] ^l234
+`hraw = _dqpsk_bits(sh[:-1], sh[1:], theta)` [[IEEE Std 802.11-2020#^ieee-2775-8zwmj3ej|↗ IEEE 802.11-2020, с. 2775]] ^l234
 
-```python
-    hy = descramble(hraw, prev7=raw[-7:])         # ⟦JHCW99MH с.2754: «All transmitted bits shall be scrambled using the feedthrough scrambler»⟧
-```
-↳ [[IEEE Std 802.11-2020#^ieee-2754-nbtrxdqt|IEEE Std 802.11-2020, с. 2754]] ^l235
+`hy = descramble(hraw, prev7=raw[-7:])` [[IEEE Std 802.11-2020#^ieee-2754-nbtrxdqt|↗ IEEE 802.11-2020, с. 2754]] ^l235
 
 ```python
     signal = bits_to_int_lsb_first(hy[0:8])       # порядок и длины полей — см. SYNC_SYMBOLS (рис. 15-1)
@@ -430,10 +331,7 @@ def decode_candidate(mm, a0):
     rec.update(signal=signal, service=service, length_us=length,
 ```
 
-```python
-               crc16=bool(crc16_ok(hy[0:32], hy[32:48])))  # ⟦JHCW99MH с.2781: «The CRC in the short header shall be the same as the CRC field defined in 16.2.3.7.»⟧
-```
-↳ [[IEEE Std 802.11-2020#^ieee-2781-fbazsqkj|IEEE Std 802.11-2020, с. 2781]] ^l240
+`crc16=bool(crc16_ok(hy[0:32], hy[32:48])))` [[IEEE Std 802.11-2020#^ieee-2781-fbazsqkj|↗ IEEE 802.11-2020, с. 2781]] ^l240
 
 ```python
     if not rec["crc16"]:
@@ -446,10 +344,7 @@ def decode_candidate(mm, a0):
         return rec
 ```
 
-```python
-    n_oct = length * OCTET_PER_US[rate]           # ⟦JHCW99MH с.2754: «indicates the number of microseconds required to transmit the MPDU»⟧
-```
-↳ [[IEEE Std 802.11-2020#^ieee-2754-sbuu78gz|IEEE Std 802.11-2020, с. 2754]] ^l249
+`n_oct = length * OCTET_PER_US[rate]` [[IEEE Std 802.11-2020#^ieee-2754-sbuu78gz|↗ IEEE 802.11-2020, с. 2754]] ^l249
 
 ```python
     if n_oct != int(n_oct) or not (1 <= n_oct <= PSDU_MAX_OCTETS):
@@ -460,10 +355,7 @@ def decode_candidate(mm, a0):
     p0 = a + SPS * hdr_syms                       # последний символ заголовка; MPDU — со следующего:
 ```
 
-```python
-                                                  # ⟦JHCW99MH с.2757: «starting with the first symbol (1 bit for DBPSK or 2 bits for DQPSK) of the MPDU»⟧
-```
-↳ [[IEEE Std 802.11-2020#^ieee-2757-vxfxue4x|IEEE Std 802.11-2020, с. 2757]] ^l256
+↳ [[IEEE Std 802.11-2020#^ieee-2757-vxfxue4x|↗ IEEE 802.11-2020, с. 2757]] ^l256
 
 ```python
     xp = read_samples(mm, p0 - 2 * SPS, p0 + SPS * (n_sym + 2) + 4 * SPS)

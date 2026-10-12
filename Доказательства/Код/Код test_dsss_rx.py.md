@@ -56,15 +56,9 @@ def test_crc16_example_from_standard():
     """Пример из стандарта для MPDU 192 мкс."""
 ```
 
-```python
-    data = [int(c) for c in "01010000000000000000001100000000"]  # ⟦JHCW99MH с.2755: «0101 0000 0000 0000 0000 0011 0000 0000 (leftmost bit transmitted first in time)»⟧
-```
-↳ [[IEEE Std 802.11-2020#^ieee-2755-qv8b3jc7|IEEE Std 802.11-2020, с. 2755]] ^l52
+`data = [int(c) for c in "01010000000000000000001100000000"]` [[IEEE Std 802.11-2020#^ieee-2755-qv8b3jc7|↗ IEEE 802.11-2020, с. 2755]] ^l52
 
-```python
-    crc = [int(c) for c in "0101101101010111"]  # ⟦JHCW99MH с.2755: «0101 1011 0101 0111 (leftmost bit transmitted first in time)»⟧
-```
-↳ [[IEEE Std 802.11-2020#^ieee-2755-ur6v43dn|IEEE Std 802.11-2020, с. 2755]] ^l53
+`crc = [int(c) for c in "0101101101010111"]` [[IEEE Std 802.11-2020#^ieee-2755-ur6v43dn|↗ IEEE 802.11-2020, с. 2755]] ^l53
 
 ```python
     assert rx.crc16_ok(data, crc)
@@ -75,15 +69,9 @@ def fcs_tx_bits(octets):
     """Передатчик FCS:
 ```
 
-```python
-    ⟦JHCW99MH с.790: «As a typical implementation, at the transmitter, the initial remainder of the division is preset to all 1s»⟧
-```
-↳ [[IEEE Std 802.11-2020#^ieee-790-xn6dv3dq|IEEE Std 802.11-2020, с. 790]] ^l60
+↳ [[IEEE Std 802.11-2020#^ieee-790-xn6dv3dq|↗ IEEE 802.11-2020, с. 790]] ^l60
 
-```python
-    ⟦JHCW99MH с.790: «The 1s complement of this remainder is transmitted, with the highest-order bit first, as the FCS field.»⟧
-```
-↳ [[IEEE Std 802.11-2020#^ieee-790-vf5gbz3v|IEEE Std 802.11-2020, с. 790]] ^l61
+↳ [[IEEE Std 802.11-2020#^ieee-790-vf5gbz3v|↗ IEEE 802.11-2020, с. 790]] ^l61
 
 ```python
     Биты полей — в порядке передачи, младший бит октета первым (см. dsss_rx.bits_to_int_lsb_first)."""

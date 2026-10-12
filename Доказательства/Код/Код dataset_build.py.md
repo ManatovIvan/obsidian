@@ -26,24 +26,15 @@ import iq_io
 OUT = Path(__file__).resolve().parent / "out"
 ```
 
-```python
-ROUTER = "28:28:5d:e0:6c:c6"                      # ⟦JV2GWUWN: «MAC-адрес (BSSID) легитимного роутера ZyXEL — 28:28:5d:e0:6c:c6»⟧
-```
-↳ [Показание автора  роутер ZyXEL — MAC 28 28 5d e0 6c c6, SSID «urfu»](zotero://select/library/items/JV2GWUWN) ^l22
+`ROUTER = "28:28:5d:e0:6c:c6"` [↗ Манатов 2026](zotero://select/library/items/JV2GWUWN) ^l22
 
-```python
-SESSIONS = ["R1", "E1", "R2", "R3", "E3"]         # ⟦MTFI5CTD: «Значит эту сессию надо исключить из обучения»⟧ (E2)
-```
-↳ [Показание автора  во всех E-сессиях запускалась атака deauth; в E2 (Bruce) прошивка отработала некорректно — E2 исключить из обучения](zotero://select/library/items/MTFI5CTD) ^l23
+`SESSIONS = ["R1", "E1", "R2", "R3", "E3"]` [↗ Манатов 2026](zotero://select/library/items/MTFI5CTD) (E2) ^l23
 
 ```python
 WIN_SYMBOLS = 64                                  # ПРЕДРЕГ §2 C3: последние 64 символа SYNC+SFD
 ```
 
-```python
-WIN = WIN_SYMBOLS * rx.SPS                        # 1280 отсчётов; ⟦5AG9M5DK с.7: «there is no sharp increase past 800 samples»⟧
-```
-↳ [[Deep Learning for RF Fingerprinting  A Massive Experimental Study#^5ag9m5dk-7-wnwnxzpg|Deep Learning for RF Fingerprinting  A Massive Experimental Study, с. 7]] ^l25
+`WIN = WIN_SYMBOLS * rx.SPS` 1280 отсчётов; [[Deep Learning for RF Fingerprinting  A Massive Experimental Study#^5ag9m5dk-7-wnwnxzpg|↗ Jian 2020, с. 7]] ^l25
 
 ```python
 NOISE_BLOCK = 2000                                # ВЫБОР: 100 мкс — короче любого промежутка между кадрами роутера (beacon раз в ~0,1 с)
@@ -63,19 +54,13 @@ def tsf_offset_s(r):
     b = bytes.fromhex(r["mpdu_hex"])
 ```
 
-```python
-    tsf = int.from_bytes(b[24:32], "little")      # ⟦JHCW99MH с.880: «The length of the Timestamp field is 8 octets.»⟧
-```
-↳ [[IEEE Std 802.11-2020#^ieee-880-kxg73qva|IEEE Std 802.11-2020, с. 880]] ^l41
+`tsf = int.from_bytes(b[24:32], "little")` [[IEEE Std 802.11-2020#^ieee-880-kxg73qva|↗ IEEE 802.11-2020, с. 880]] ^l41
 
 ```python
     t_us = int(r["a"]) / iq_io.SAMPLE_RATE * 1e6
 ```
 
-```python
-    return round((tsf - t_us) / 1e6)              # ⟦JHCW99MH с.2050: «counting in increments of microseconds»⟧
-```
-↳ [[IEEE Std 802.11-2020#^ieee-2050-hk6zva2u|IEEE Std 802.11-2020, с. 2050]] ^l43
+`return round((tsf - t_us) / 1e6)` [[IEEE Std 802.11-2020#^ieee-2050-hk6zva2u|↗ IEEE 802.11-2020, с. 2050]] ^l43
 
 ```python
 
@@ -120,10 +105,7 @@ def noise_power(mm, rows, rng):
     """C2: мощность шума на интервалах без найденных кадров —
 ```
 
-```python
-    ⟦JHCW99MH с.159: «1) the station (STA) is not transmitting a frame, and 2) the station (STA) is not receiving a frame»⟧.
-```
-↳ [[IEEE Std 802.11-2020#^ieee-159-ztf6ht9v|IEEE Std 802.11-2020, с. 159]] ^l84
+↳ [[IEEE Std 802.11-2020#^ieee-159-ztf6ht9v|↗ IEEE 802.11-2020, с. 159]] ^l84
 
 ```python
     Медиана по блокам (ВЫБОР: устойчива к редким кадрам OFDM, которые приёмник DSSS не видит)."""

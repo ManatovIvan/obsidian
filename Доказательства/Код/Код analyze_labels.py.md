@@ -61,15 +61,9 @@ def main():
         # длина MPDU и поле Timestamp — первое поле тела (см. mac80211.parse):
 ```
 
-```python
-        # ⟦JHCW99MH с.880: «This field represents the timing synchronization function (TSF) timer»⟧
-```
-↳ [[IEEE Std 802.11-2020#^ieee-880-tftuir4k|IEEE Std 802.11-2020, с. 880]] ^l57
+↳ [[IEEE Std 802.11-2020#^ieee-880-tftuir4k|↗ IEEE 802.11-2020, с. 880]] ^l57
 
-```python
-        # ⟦JHCW99MH с.2050: «Each STA shall maintain a TSF timer with modulus 264 counting in increments of microseconds.»⟧
-```
-↳ [[IEEE Std 802.11-2020#^ieee-2050-r8zi8mqn|IEEE Std 802.11-2020, с. 2050]] ^l58
+↳ [[IEEE Std 802.11-2020#^ieee-2050-r8zi8mqn|↗ IEEE 802.11-2020, с. 2050]] ^l58
 
 ```python
         # (2^64 — верхний индекс теряется при извлечении текста); младший октет первым — см. mac80211.parse.

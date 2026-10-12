@@ -18,15 +18,9 @@ def auc(scores, labels):
     """AUC как вероятность того, что случайный положительный пример оценён выше случайного
 ```
 
-```python
-    отрицательного: ⟦343EFDIU с.8: «the AUC of a classifier is equivalent to the probability that the classifier will rank a randomly chosen positive instance higher than a randomly chosen negative instance»⟧.
-```
-↳ [[An introduction to ROC analysis#^343efdiu-8-em2j99s8|An introduction to ROC analysis, с. 8]] ^l14
+↳ отрицательного: [[An introduction to ROC analysis#^343efdiu-8-em2j99s8|↗ Fawcett 2006, с. 8]] ^l14
 
-```python
-    Вычисление через ранги — ⟦343EFDIU с.8: «This is equivalent to the Wilcoxon test of ranks»⟧;
-```
-↳ [[An introduction to ROC analysis#^343efdiu-8-7cskaxiq|An introduction to ROC analysis, с. 8]] ^l15
+↳ Вычисление через ранги — [[An introduction to ROC analysis#^343efdiu-8-7cskaxiq|↗ Fawcett 2006, с. 8]] ^l15
 
 ```python
     равные оценки получают средний ранг (вклад 1/2), ПРОВЕРКА (tests): совпадает с перебором пар."""
@@ -43,10 +37,7 @@ def block_length(n, c):
     """ℓ = ⌈C·n^(1/3)⌉: порядок MSE-оптимальной длины блока (ВИЗУАЛЬНО DDSA936W с.6, формула (2.3));
 ```
 
-```python
-    сетка значений C — ⟦DDSA936W с.6: «we shall create a collection of block lengths»⟧; C ∈ {0,5; 1; 2} — ПРЕДРЕГ §5.2.
-```
-↳ [[Convergence rates of empirical block length selectors for block bootstrap#^ddsa936w-6-frdk5ten|Convergence rates of empirical block length selectors for block bootstrap, с. 6]] ^l28
+↳ сетка значений C — [[Convergence rates of empirical block length selectors for block bootstrap#^ddsa936w-6-frdk5ten|↗ Nordman 2014, с. 6]] ; C ∈ {0,5; 1; 2} — ПРЕДРЕГ §5.2. ^l28
 
 ```python
     Условия Künsch l(n) → ∞, l(n)/n → 0 (ВИЗУАЛЬНО T5MH3E88 с.1) выполняются: n^(1/3)/n → 0."""
@@ -58,15 +49,9 @@ def block_bootstrap_auc(scores, labels, order_key, c, n_boot, seed):
     идущих кадров выбираются случайно с возвращением:
 ```
 
-```python
-    ⟦T5MH3E88 с.1: «Bootstrap replicates are constructed by selecting blocks of length»⟧
-```
-↳ [[The Jackknife and the Bootstrap for General Stationary Observations#^t5mh3e88-1-8na4xig7|The Jackknife and the Bootstrap for General Stationary Observations, с. 1]] ^l36
+↳ [[The Jackknife and the Bootstrap for General Stationary Observations#^t5mh3e88-1-8na4xig7|↗ Künsch 1989, с. 1]] ^l36
 
-```python
-    ⟦T5MH3E88 с.1: «randomly with replacement among the blocks of observations»⟧
-```
-↳ [[The Jackknife and the Bootstrap for General Stationary Observations#^t5mh3e88-1-d9up7pp7|The Jackknife and the Bootstrap for General Stationary Observations, с. 1]] ^l37
+↳ [[The Jackknife and the Bootstrap for General Stationary Observations#^t5mh3e88-1-d9up7pp7|↗ Künsch 1989, с. 1]] ^l37
 
 ```python
     Перекрывающиеся блоки (их n − ℓ + 1) — ВИЗУАЛЬНО T5MH3E88 с.2 (журнальная с.1218), первая строка:
