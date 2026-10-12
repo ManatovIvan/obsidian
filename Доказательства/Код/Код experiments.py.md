@@ -37,7 +37,7 @@ SESSIONS = ["R1", "E1", "R2", "R3", "E3"]  # порядок записи без 
 ```python
 SESSION_S = 120.0
 ```
-↳ [[Показание 83U3GZXN#^t-83u3gzxn-0|↗ Показание 83U3GZXN]] ^c-feae7f
+↳ [[Показание 83U3GZXN#^t-83u3gzxn-2|↗ Показание 83U3GZXN]] ^c-feae7f
 
 ```python
 SEED = 20260504                                   # ВЫБОР: одно фиксированное зерно для всего
@@ -56,7 +56,7 @@ BOOT_N = (1000, 2000)
 ```python
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 torch.backends.cudnn.deterministic = False        # ВЫБОР: в 2,8 раза быстрее (замер 36,5 → 12,9 с/эпоху M2);
-torch.backends.cudnn.benchmark = False            #   зёрна фиксированы, повтор может отличаться в последних знаках (DEVIATIONS.md п.11)
+torch.backends.cudnn.benchmark = False            #   зёрна фиксированы, повтор может отличаться в последних знаках (Журнал отступлений, п. 11)
 
 
 def log(msg):

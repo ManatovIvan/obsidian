@@ -26,12 +26,12 @@ import numpy as np
 ```python
 SAMPLE_RATE = 20_000_000
 ```
-↳ [[Показание AFRD8SPW#^t-afrd8spw-3|↗ Показание AFRD8SPW]] ^c-04b95b
+↳ [[Показание AFRD8SPW#^t-afrd8spw-0|↗ Показание AFRD8SPW]] ^c-04b95b
 
 ```python
 N_SAMPLES = 2_400_000_000
 ```
-↳ [[Показание AFRD8SPW#^t-afrd8spw-3|↗ Показание AFRD8SPW]] ^c-a1e0d7
+↳ [[Показание AFRD8SPW#^t-afrd8spw-0|↗ Показание AFRD8SPW]] ^c-a1e0d7
 
 ```python
 BYTES_PER_SAMPLE = 2
@@ -54,7 +54,7 @@ DATASET = Path(__file__).resolve().parent.parent / "dataset"
 ```python
 SESSION_ORDER = ["R1", "E1", "R2", "E2", "R3", "E3"]
 ```
-↳ [[Показание QNVEHN9R#^t-qnvehn9r-5|↗ Показание QNVEHN9R]] ^c-cacaea
+↳ [[Показание QNVEHN9R|↗ Показание QNVEHN9R]] ^c-cacaea
 
 ```python
 

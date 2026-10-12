@@ -32,12 +32,12 @@ OUT = Path(__file__).resolve().parent / "out"
 ```python
 ROUTER = "28:28:5d:e0:6c:c6"
 ```
-↳ [[Показание JV2GWUWN#^t-jv2gwuwn-4|↗ Показание JV2GWUWN]] ^c-52518d
+↳ [[Показание JV2GWUWN|↗ Показание JV2GWUWN]] ^c-52518d
 
 ```python
 SESSIONS = ["R1", "E1", "R2", "R3", "E3"]
 ```
-↳ [[Показание MTFI5CTD#^t-mtfi5ctd-0|↗ Показание MTFI5CTD]] ^c-84cdca
+↳ [[Показание MTFI5CTD#^t-mtfi5ctd-2|↗ Показание MTFI5CTD]] ^c-84cdca
 
 ```python
 WIN_SYMBOLS = 64  # последние 64 символа SYNC+SFD

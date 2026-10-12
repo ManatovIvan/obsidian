@@ -352,16 +352,10 @@
 
 **Происхождение и пояснения:**
 
-`ВЕРСИЯ 2 (2026-10-12, после сверки с PDF IEEE 802.11-2020: ссылки STD-N на заметку E7BSWDCM; FCS по 9.2.4.8 вместо zlib; короткая преамбула — Clause 16; CF-End с TA; тест CRC-16 по примеру рис. 15-3).` ^o-wmrvfds5-175
+`Файл: hackrf_poc/verification/out/summary_<ID>.json, 3870 байт, SHA-256 = 50665df9b51b84bbe5c6d21cb2e00cd6a5c029cffa0a67db2d119a88acadd8ca.` ^o-wmrvfds5-175
 
-`Файл: hackrf_poc/verification/out/summary_<ID>.json, 3870 байт, SHA-256 = 50665df9b51b84bbe5c6d21cb2e00cd6a5c029cffa0a67db2d119a88acadd8ca.` ^o-wmrvfds5-176
-
-`Родители: M4AK8KZB, GJI5ZH7N.` ^o-wmrvfds5-177
-
-`Версия 1 (до сверки с PDF, заменена): —` ^o-wmrvfds5-178
+`Версия 1 (до сверки с PDF, заменена): —` ^o-wmrvfds5-176
 
 **Происхождение и пояснения:**
 
-`Тип: дословное содержимое файлов hackrf_poc/verification/out/summary_{R1,E1,R2,E2,R3,E3}.json.` ^o-wmrvfds5-180
-
-`Во всех шести sha256 == sha256_expected (GJI5ZH7N). Полные таблицы кадров: out/frames_<ID>.csv на диске (по строке на кадр с верным CRC-16).` ^o-wmrvfds5-181
+`Тип: дословное содержимое файлов hackrf_poc/verification/out/summary_{R1,E1,R2,E2,R3,E3}.json.` ^o-wmrvfds5-178

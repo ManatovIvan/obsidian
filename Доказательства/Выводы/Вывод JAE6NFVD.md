@@ -34,16 +34,10 @@
 
 **Происхождение и пояснения:**
 
-`ВЕРСИЯ 2 (2026-10-12, после сверки с PDF IEEE 802.11-2020: ссылки STD-N на заметку E7BSWDCM; FCS по 9.2.4.8 вместо zlib; короткая преамбула — Clause 16; CF-End с TA; тест CRC-16 по примеру рис. 15-3).` ^o-jae6nfvd-18
+`Файл: hackrf_poc/verification/out/pytest_output.txt, 1191 байт, SHA-256 = 4a45ba97cd5a3ba4b84dbb1a7345c994ffee4a03dfd41e9e2b8a6e9a07cbc3df.` ^o-jae6nfvd-18
 
-`Файл: hackrf_poc/verification/out/pytest_output.txt, 1191 байт, SHA-256 = 4a45ba97cd5a3ba4b84dbb1a7345c994ffee4a03dfd41e9e2b8a6e9a07cbc3df.` ^o-jae6nfvd-19
-
-`Родители: FEKQQRB9.` ^o-jae6nfvd-20
-
-`Версия 1 (до сверки с PDF, заменена): Тип: дословный вывод (файл hackrf_poc/verification/out/pytest_output.txt, SHA-256 = 033a54c194670acb5457599808711883ccce0d96cbccb36a679e60d7e0aa6975).` ^o-jae6nfvd-21
+`Версия 1 (до сверки с PDF, заменена): Тип: дословный вывод (файл hackrf_poc/verification/out/pytest_output.txt, SHA-256 = 033a54c194670acb5457599808711883ccce0d96cbccb36a679e60d7e0aa6975).` ^o-jae6nfvd-19
 
 **Происхождение и пояснения:**
 
-`Тип: дословный вывод (файл hackrf_poc/verification/out/pytest_output.txt, SHA-256 = 033a54c194670acb5457599808711883ccce0d96cbccb36a679e60d7e0aa6975).` ^o-jae6nfvd-23
-
-`Получен кодом коллекции 7 на файлах сессий, SHA-256 которых совпали с GJI5ZH7N (проверено в label_sessions.py за тот же проход чтения).` ^o-jae6nfvd-24
+`Тип: дословный вывод (файл hackrf_poc/verification/out/pytest_output.txt, SHA-256 = 033a54c194670acb5457599808711883ccce0d96cbccb36a679e60d7e0aa6975).` ^o-jae6nfvd-21

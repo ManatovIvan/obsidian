@@ -154,16 +154,10 @@
 
 **Происхождение и пояснения:**
 
-`ВЕРСИЯ 2 (2026-10-12, после сверки с PDF IEEE 802.11-2020: ссылки STD-N на заметку E7BSWDCM; FCS по 9.2.4.8 вместо zlib; короткая преамбула — Clause 16; CF-End с TA; тест CRC-16 по примеру рис. 15-3).` ^o-gzjdppnf-76
+`Файл: hackrf_poc/verification/out/label_summary.txt, 6977 байт, SHA-256 = 464bfe157ec222659f938a2ddf36864d814bd87ef7daffd07c837e0aeacc0394.` ^o-gzjdppnf-76
 
-`Файл: hackrf_poc/verification/out/label_summary.txt, 6977 байт, SHA-256 = 464bfe157ec222659f938a2ddf36864d814bd87ef7daffd07c837e0aeacc0394.` ^o-gzjdppnf-77
-
-`Родители: 6XPPT36A, GJI5ZH7N, JV2GWUWN.` ^o-gzjdppnf-78
-
-`Версия 1 (до сверки с PDF, заменена): Тип: дословный вывод (файл hackrf_poc/verification/out/label_summary.txt, SHA-256 = 464bfe157ec222659f938a2ddf36864d814bd87ef7daffd07c837e0aeacc0394).` ^o-gzjdppnf-79
+`Версия 1 (до сверки с PDF, заменена): Тип: дословный вывод (файл hackrf_poc/verification/out/label_summary.txt, SHA-256 = 464bfe157ec222659f938a2ddf36864d814bd87ef7daffd07c837e0aeacc0394).` ^o-gzjdppnf-77
 
 **Происхождение и пояснения:**
 
-`Тип: дословный вывод (файл hackrf_poc/verification/out/label_summary.txt, SHA-256 = 464bfe157ec222659f938a2ddf36864d814bd87ef7daffd07c837e0aeacc0394).` ^o-gzjdppnf-81
-
-`Получен кодом коллекции 7 на файлах сессий, SHA-256 которых совпали с GJI5ZH7N (проверено в label_sessions.py за тот же проход чтения).` ^o-gzjdppnf-82
+`Тип: дословный вывод (файл hackrf_poc/verification/out/label_summary.txt, SHA-256 = 464bfe157ec222659f938a2ddf36864d814bd87ef7daffd07c837e0aeacc0394).` ^o-gzjdppnf-79
