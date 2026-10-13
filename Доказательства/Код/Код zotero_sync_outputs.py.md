@@ -50,11 +50,13 @@ def _form(path, fields):
     return json.loads(out) if out else None
 
 
-def attach_file(parent, p):
+def attach_file(parent, p, content_type="text/plain"):
     """Файл p как вложение (imported_file) к записи parent: создание вложения, авторизация, загрузка, регистрация."""
     data = p.read_bytes()
     att = [{"itemType": "attachment", "parentItem": parent, "linkMode": "imported_file", "title": p.name,
-            "contentType": "text/plain", "charset": "utf-8", "filename": p.name}]
+            "contentType": content_type, "filename": p.name}]
+    if content_type == "text/plain":
+        att[0]["charset"] = "utf-8"
     key = write("POST", "items", att)["successful"]["0"]["key"]
     auth = _form(f"items/{key}/file", {"md5": hashlib.md5(data).hexdigest(), "filename": p.name,
                                       "filesize": len(data), "mtime": int(p.stat().st_mtime * 1000)})
@@ -64,6 +66,7 @@ def attach_file(parent, p):
                                                       headers={"Content-Type": auth["contentType"]}), timeout=600)
         _form(f"items/{key}/file", {"upload": auth["uploadKey"]})
     print("   вложение", key, p.name)
+    return key
 
 
 def main():

@@ -1,0 +1,11 @@
+# Показание ZQSDDIQV: Показание автора: атакующие в E1 и E3 — разные платы; Penetration Tool — плата без экрана, вторая — CYD
+
+Оригинал — [запись в Zotero](zotero://select/library/items/ZQSDDIQV).
+
+Вопрос (Claude): «Какая плата была атакующим в E3? В E1 CFO −193 кГц, в E3 — −183 кГц, похоже на разные платы.» ^t-zqsddiqv-0
+
+Ответ автора: Да, это были разные платы. Одна из них - без экрана, прошивка esp32 penetration tool, вторая - cyd ^t-zqsddiqv-2
+
+**Происхождение и пояснения:**
+
+Дата: 2026-10-13. Сессия Claude Code: https://claude.ai/code/session_01D2gEwEtZbH7TnLruCtscax ^t-zqsddiqv-4

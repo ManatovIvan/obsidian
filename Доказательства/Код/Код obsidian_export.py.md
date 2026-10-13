@@ -15,7 +15,7 @@
   verification/*.py             — чистый код без ссылок;
   out/zotero_code_items.json    — ключи записей кода в Zotero.
 Выходы (перезаписываются целиком, руками не править): Источники/, Доказательства/Код, Доказательства/Показания,
-Доказательства/Выводы, Доказательства/Расчёты, Предрегистрация.md. Журнал отступлений ведётся вручную.
+Доказательства/Выводы, Доказательства/Расчёты, заметки предрегистраций (PREREGS). Журнал отступлений ведётся вручную.
 Статья/ генератор не трогает.
 
 Метки блоков: ^c-<хэш> — строка кода, ^<источник>-<стр>-<выделение> — цитата PDF, ^t-<ключ>-<n> — строка
@@ -39,7 +39,7 @@ TESTIMONY_COLL, CALC_COLL = "564MFDE5", "3EWN8SPF"
 OUTPUT_KEYS = ["GZJDPPNF", "WMRVFDS5", "JAE6NFVD", "GJI5ZH7N"]   # выводы, которые остаются артефактами
 _OUT_MAP = HERE / "out" / "zotero_output_items.json"              # выводы экспериментов (zotero_sync_outputs.py)
 OUTPUT_KEYS += list(json.loads(_OUT_MAP.read_text()).values()) if _OUT_MAP.exists() else []
-PREREG_KEY = "6GGC73ZD"
+PREREGS = {"6GGC73ZD": "Предрегистрация", "QDQWWNXQ": "Предрегистрация v4"}   # запись Zotero -> заметка
 
 snap = json.loads(sorted((HERE / "out").glob("zotero_backup_*.json"))[-1].read_text())
 ITEMS = {d["key"]: d for d in snap["items"]}
@@ -82,8 +82,8 @@ def note_of(key):
         return f"Вывод {key}"
     if CALC_COLL in d.get("collections", []):
         return f"Расчёт {key}"
-    if key == PREREG_KEY:
-        return "Предрегистрация"
+    if key in PREREGS:
+        return PREREGS[key]
     return None
 
 
@@ -125,7 +125,8 @@ def ref_link(r):
         loc = f", {r['loc']}" if r.get("loc") else ""
         return f"[↗ {label(k)}, с. {r['page']}{loc} — сверить глазами]({target})"
     if r["kind"] == "prereg":
-        return f"[[Предрегистрация|↗ предрегистрация {r['section']}]]"
+        nt = PREREGS[r.get("key", "6GGC73ZD")]          # связи без ключа — к v3
+        return f"[[{nt}|↗ {nt.lower()} {r['section']}]]"
     if r["kind"] == "item":
         k = r["key"]
         nt = note_of(k)
@@ -238,7 +239,7 @@ def export_artifacts():
             f.unlink()
     for k, d in ITEMS.items():
         nt = note_of(k)
-        if not nt or nt == "Предрегистрация":
+        if not nt or k in PREREGS:
             continue
         sub = {"Показание": "Показания", "Вывод": "Выводы", "Расчёт": "Расчёты"}[nt.split()[0]]
         pref = "t" if sub == "Показания" else "o"
@@ -264,9 +265,9 @@ def linkify(text):
 
 
 def export_documents():
-    (VAULT / "Предрегистрация.md").write_text(
-        f"> Утверждённый оригинал (без ссылок) — [запись в Zotero]({zsel(PREREG_KEY)}).\n\n"
-        + linkify(ITEMS[PREREG_KEY]["abstractNote"]))
+    for k, nt in PREREGS.items():
+        (VAULT / f"{nt}.md").write_text(
+            f"> Утверждённый оригинал (без ссылок) — [запись в Zotero]({zsel(k)}).\n\n" + linkify(ITEMS[k]["abstractNote"]))
     # «Журнал отступлений.md» ведётся вручную в хранилище и генератором не перезаписывается
 
 
