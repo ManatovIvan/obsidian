@@ -25,3 +25,6 @@
 
 «we force each kernel to jointly learn a pattern across the I and Q components» — с. 3 [↗ PDF](zotero://open-pdf/library/items/FHVB2WDX?page=3&annotation=QFBXFMH9)
 Используется в коде: [[Код models.py#^c-0caa6b|models.py:38]] ^m8af4mw7-3-qfbxfmh9
+
+«70% for training, 20% for validation, and 10% for testing» — с. 6 [↗ PDF](zotero://open-pdf/library/items/FHVB2WDX?page=6&annotation=9MC327QF)
+Пока не используется ^m8af4mw7-6-9mc327qf

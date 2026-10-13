@@ -356,6 +356,6 @@
 
 `Версия 1 (до сверки с PDF, заменена): —` ^o-wmrvfds5-176
 
-**Происхождение и пояснения:**
+`---` ^o-wmrvfds5-177
 
 `Тип: дословное содержимое файлов hackrf_poc/verification/out/summary_{R1,E1,R2,E2,R3,E3}.json.` ^o-wmrvfds5-178

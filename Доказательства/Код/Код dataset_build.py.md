@@ -32,7 +32,7 @@ OUT = Path(__file__).resolve().parent / "out"
 ```python
 ROUTER = "28:28:5d:e0:6c:c6"
 ```
-↳ [[Показание JV2GWUWN|↗ Показание JV2GWUWN]] ^c-52518d
+↳ [[Показание JV2GWUWN#^t-jv2gwuwn-0|↗ Показание JV2GWUWN]] · [[Показание JV2GWUWN#^t-jv2gwuwn-2|↗ Показание JV2GWUWN]] ^c-52518d
 
 ```python
 SESSIONS = ["R1", "E1", "R2", "R3", "E3"]

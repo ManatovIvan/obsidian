@@ -71,7 +71,13 @@
     "kind": "cite",
     "key": "QNVEHN9R",
     "page": null,
-    "quote": "сессии записывались в порядке R1, E1, R2, E2, R3, E3"
+    "quote": "Порядок сессий R1 → E1 → R2 → E2 → R3 → E3"
+   },
+   {
+    "kind": "cite",
+    "key": "QNVEHN9R",
+    "page": null,
+    "quote": "Порядок как в чате."
    }
   ]
  },
@@ -1204,7 +1210,13 @@
     "kind": "cite",
     "key": "JV2GWUWN",
     "page": null,
-    "quote": "MAC-адрес (BSSID) легитимного роутера ZyXEL — 28:28:5d:e0:6c:c6"
+    "quote": "Подтвердите: 28:28:5d:e0:6c:c6 с SSID urfu — мой роутер ZyXEL"
+   },
+   {
+    "kind": "cite",
+    "key": "JV2GWUWN",
+    "page": null,
+    "quote": "Да."
    }
   ]
  },
@@ -1718,7 +1730,7 @@
  },
  {
   "file": "models.py",
-  "anchor": "return torch.from_numpy(x[:, None])",
+  "anchor": "BATCH, LR, PATIENCE = 64, 1e-3, 10",
   "occurrence": 0,
   "refs": [
    {
@@ -1737,7 +1749,7 @@
  },
  {
   "file": "models.py",
-  "anchor": "return torch.from_numpy(x[:, None])",
+  "anchor": "BATCH, LR, PATIENCE = 64, 1e-3, 10",
   "occurrence": 0,
   "refs": [
    {
@@ -1750,7 +1762,7 @@
  },
  {
   "file": "models.py",
-  "anchor": "return torch.from_numpy(x[:, None])",
+  "anchor": "BATCH, LR, PATIENCE = 64, 1e-3, 10",
   "occurrence": 0,
   "refs": [
    {
@@ -1763,7 +1775,7 @@
  },
  {
   "file": "models.py",
-  "anchor": "BATCH, LR, PATIENCE = 64, 1e-3, 10",
+  "anchor": "IMPROVEMENT_THRESHOLD = 0.995",
   "occurrence": 0,
   "refs": [
    {
@@ -1776,7 +1788,7 @@
  },
  {
   "file": "models.py",
-  "anchor": "BATCH, LR, PATIENCE = 64, 1e-3, 10",
+  "anchor": "IMPROVEMENT_THRESHOLD = 0.995",
   "occurrence": 0,
   "refs": [
    {
@@ -1789,7 +1801,7 @@
  },
  {
   "file": "models.py",
-  "anchor": "BATCH, LR, PATIENCE = 64, 1e-3, 10",
+  "anchor": "IMPROVEMENT_THRESHOLD = 0.995",
   "occurrence": 0,
   "refs": [
    {
@@ -1808,7 +1820,7 @@
  },
  {
   "file": "models.py",
-  "anchor": "BATCH, LR, PATIENCE = 64, 1e-3, 10",
+  "anchor": "IMPROVEMENT_THRESHOLD = 0.995",
   "occurrence": 0,
   "refs": [
    {
@@ -1821,7 +1833,7 @@
  },
  {
   "file": "models.py",
-  "anchor": "IMPROVEMENT_THRESHOLD = 0.995",
+  "anchor": "MAX_EPOCHS = 3000",
   "occurrence": 0,
   "refs": [
    {
@@ -1978,7 +1990,7 @@
  },
  {
   "file": "analyze_labels.py",
-  "anchor": "lines.append(f\"    номер последовательности deauth/disassoc: {dict(Counter(r['seq'] for r in da).most_common(5))}\")",
+  "anchor": "tsf = int.from_bytes(b[24:32], \"little\")",
   "occurrence": 0,
   "refs": [
    {
@@ -1991,7 +2003,7 @@
  },
  {
   "file": "analyze_labels.py",
-  "anchor": "lines.append(f\"    номер последовательности deauth/disassoc: {dict(Counter(r['seq'] for r in da).most_common(5))}\")",
+  "anchor": "tsf = int.from_bytes(b[24:32], \"little\")",
   "occurrence": 0,
   "refs": [
    {

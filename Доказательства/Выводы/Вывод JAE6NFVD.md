@@ -38,6 +38,6 @@
 
 `Версия 1 (до сверки с PDF, заменена): Тип: дословный вывод (файл hackrf_poc/verification/out/pytest_output.txt, SHA-256 = 033a54c194670acb5457599808711883ccce0d96cbccb36a679e60d7e0aa6975).` ^o-jae6nfvd-19
 
-**Происхождение и пояснения:**
+`---` ^o-jae6nfvd-20
 
 `Тип: дословный вывод (файл hackrf_poc/verification/out/pytest_output.txt, SHA-256 = 033a54c194670acb5457599808711883ccce0d96cbccb36a679e60d7e0aa6975).` ^o-jae6nfvd-21

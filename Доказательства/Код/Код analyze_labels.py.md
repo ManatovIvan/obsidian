@@ -58,24 +58,24 @@ def main():
         if da:
             lines.append(f"    адресаты deauth/disassoc (A1): {dict(Counter(r['a1'] for r in da).most_common(5))}")
             lines.append(f"    reason code: {dict(Counter(r['reason'] for r in da).most_common(5))}")
-```
-
-```python
             lines.append(f"    номер последовательности deauth/disassoc: {dict(Counter(r['seq'] for r in da).most_common(5))}")
         # Признаки содержимого beacon/probe_resp, не зависящие от физического уровня:
         # длина MPDU и поле Timestamp — первое поле тела (см. mac80211.parse):
         # (2^64 — верхний индекс теряется при извлечении текста); младший октет первым — см. mac80211.parse.
         # Разность TSF − время в записи постоянна для одного передатчика (оба идут в микросекундах),
         # ВЫБОР: группируем по этой разности с шагом 1 с — сдвиги часов за 120 с много меньше секунды.
-```
-↳ [[IEEE Std 802.11-2020#^ieee-880-tftuir4k|↗ IEEE 802.11-2020, с. 880]] · [[IEEE Std 802.11-2020#^ieee-2050-r8zi8mqn|↗ IEEE 802.11-2020, с. 2050]] ^c-69b050
-
-```python
         fam = defaultdict(list)
         for r in ok:
             if r["name"] in ("beacon", "probe_resp"):
                 b = bytes.fromhex(r["mpdu_hex"])
+```
+
+```python
                 tsf = int.from_bytes(b[24:32], "little")
+```
+↳ [[IEEE Std 802.11-2020#^ieee-880-tftuir4k|↗ IEEE 802.11-2020, с. 880]] · [[IEEE Std 802.11-2020#^ieee-2050-r8zi8mqn|↗ IEEE 802.11-2020, с. 2050]] ^c-4e0f45
+
+```python
                 t_us = int(r["a"]) / iq_io.SAMPLE_RATE * 1e6
                 fam[(round((tsf - t_us) / 1e6), r["name"], len(b))].append(r)
         if fam:

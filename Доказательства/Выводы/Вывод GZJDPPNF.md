@@ -158,6 +158,6 @@
 
 `Версия 1 (до сверки с PDF, заменена): Тип: дословный вывод (файл hackrf_poc/verification/out/label_summary.txt, SHA-256 = 464bfe157ec222659f938a2ddf36864d814bd87ef7daffd07c837e0aeacc0394).` ^o-gzjdppnf-77
 
-**Происхождение и пояснения:**
+`---` ^o-gzjdppnf-78
 
 `Тип: дословный вывод (файл hackrf_poc/verification/out/label_summary.txt, SHA-256 = 464bfe157ec222659f938a2ddf36864d814bd87ef7daffd07c837e0aeacc0394).` ^o-gzjdppnf-79

@@ -24,16 +24,16 @@
 Используется в коде: [[Код models.py#^c-fcf652|models.py:72]] ^8m6ki8he-4-erpih9vi
 
 «The initial learning rate was set to 0.001» — с. 4 [↗ PDF](zotero://open-pdf/library/items/EFPBWX22?page=4&annotation=R6MQJU5G)
-Используется в коде: [[Код models.py#^c-30e0ef|models.py:41]] ^8m6ki8he-4-r6mqju5g
+Используется в коде: [[Код models.py#^c-f61f50|models.py:106]] ^8m6ki8he-4-r6mqju5g
 
 «The training was repeated until the validation accuracy didn't improve within ten epochs.» — с. 4 [↗ PDF](zotero://open-pdf/library/items/EFPBWX22?page=4&annotation=TTGGMSGA)
-Используется в коде: [[Код models.py#^c-30e0ef|models.py:41]] ^8m6ki8he-4-ttggmsga
+Используется в коде: [[Код models.py#^c-f61f50|models.py:106]] ^8m6ki8he-4-ttggmsga
 
 «Then the best validation parameters were stored for performance evaluation.» — с. 4 [↗ PDF](zotero://open-pdf/library/items/EFPBWX22?page=4&annotation=MRNW7IF3)
-Используется в коде: [[Код models.py#^c-30e0ef|models.py:41]] ^8m6ki8he-4-mrnw7if3
+Используется в коде: [[Код models.py#^c-f61f50|models.py:106]] ^8m6ki8he-4-mrnw7if3
 
 «UpSampling» — с. 4 [↗ PDF](zotero://open-pdf/library/items/EFPBWX22?page=4&annotation=8UIC8A9P)
 Используется в коде: [[Код models.py#^c-fcf652|models.py:72]] ^8m6ki8he-4-8uic8a9p
 
 «using an Adam solver with a batch size of 64» — с. 4 [↗ PDF](zotero://open-pdf/library/items/EFPBWX22?page=4&annotation=IXQHA2NE)
-Используется в коде: [[Код models.py#^c-30e0ef|models.py:41]] ^8m6ki8he-4-ixqha2ne
+Используется в коде: [[Код models.py#^c-f61f50|models.py:106]] ^8m6ki8he-4-ixqha2ne

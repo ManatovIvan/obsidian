@@ -74,12 +74,12 @@ def main():
         for cfo in (False, True):
             s3 = [get(R, s, "M2", snr, cfo) for s in ("S3-A", "S3-B")]
             if all(s3):
-                ok = all(min(lows(r)) <= 0.5 <= max(highs(r)) for r in s3)
+                ok = all(max(lows(r)) <= 0.5 <= min(highs(r)) for r in s3)   # §5.3: интервал содержит 0,5 при каждом из 6 сочетаний
                 L.append(f"H3 M2 [SNR={int(snr)}, CFO снят={int(cfo)}]: S3-A {fmt(s3[0])}; S3-B {fmt(s3[1])} -> "
                          + ("ПОДТВЕРЖДЕНА (≈ 0,5)" if ok else "НЕ подтверждена") + "; аннотация: ≈ 0,50")
     s3 = [get(R, s, "M3", False, False) for s in ("S3-A", "S3-B")]
     if all(s3):
-        ok = all(min(lows(r)) <= 0.5 <= max(highs(r)) for r in s3)
+        ok = all(max(lows(r)) <= 0.5 <= min(highs(r)) for r in s3)   # §5.3: интервал содержит 0,5 при каждом из 6 сочетаний
         L.append(f"H3 M3 (CFO): S3-A {fmt(s3[0])}; S3-B {fmt(s3[1])} -> "
                  + ("ПОДТВЕРЖДЕНА (≈ 0,5)" if ok else "НЕ подтверждена") + "; аннотация: ≈ 0,50")
     # H4 — подпись сессии; сравнение S3 и S2 при выровненном SNR выводится числами для решения автора

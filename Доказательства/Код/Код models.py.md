@@ -75,14 +75,7 @@ def to_tensor_m1(iq):
 ```python
     """M1: вход 2 × L (строки I и Q), чтобы ядра свёртки видели I и Q вместе."""
     x = np.stack([iq.real, iq.imag], axis=1).astype(np.float32)       # (N, 2, L)
-```
-
-```python
     return torch.from_numpy(x[:, None])                               # (N, 1, 2, L)
-```
-↳ [[Radio Frequency Fingerprint Identification Based on Denoising Autoencoders#^8m6ki8he-4-ixqha2ne|↗ Yu 2019, с. 4]] · [[Radio Frequency Fingerprint Identification Based on Denoising Autoencoders#^8m6ki8he-4-r6mqju5g|↗ Yu 2019, с. 4]] · [[Radio Frequency Fingerprint Identification Based on Denoising Autoencoders#^8m6ki8he-4-ttggmsga|↗ Yu 2019, с. 4]] · [[Radio Frequency Fingerprint Identification Based on Denoising Autoencoders#^8m6ki8he-4-mrnw7if3|↗ Yu 2019, с. 4]] ^c-30e0ef
-
-```python
 
 
 # --- M1: CNN «Homegrown» ---------------------------------------------------------------------
@@ -182,7 +175,7 @@ BATCH, LR, PATIENCE = 64, 1e-3, 10
 # Что считать улучшением при обучении мини-батчами — только значимое улучшение на валидации;
 # порог значимости — относительное улучшение не менее 0,5 % (improvement_threshold = 0.995).
 ```
-↳ [[Practical recommendations for gradient-based training of deep architectures#^m6rcp432-10-kuk4ruqs|↗ Bengio 2012, с. 10]] · [[Practical recommendations for gradient-based training of deep architectures#^m6rcp432-10-qmi9kw9w|↗ Bengio 2012, с. 10]] · [↗ DeepLearningTutorials  code mlp.py (ранн](zotero://select/library/items/V5RD886G) ^c-f61f50
+↳ [[Radio Frequency Fingerprint Identification Based on Denoising Autoencoders#^8m6ki8he-4-ixqha2ne|↗ Yu 2019, с. 4]] · [[Radio Frequency Fingerprint Identification Based on Denoising Autoencoders#^8m6ki8he-4-r6mqju5g|↗ Yu 2019, с. 4]] · [[Radio Frequency Fingerprint Identification Based on Denoising Autoencoders#^8m6ki8he-4-ttggmsga|↗ Yu 2019, с. 4]] · [[Radio Frequency Fingerprint Identification Based on Denoising Autoencoders#^8m6ki8he-4-mrnw7if3|↗ Yu 2019, с. 4]] ^c-f61f50
 
 ```python
 IMPROVEMENT_THRESHOLD = 0.995
@@ -190,10 +183,14 @@ IMPROVEMENT_THRESHOLD = 0.995
 # как в Tutorials (best_validation_loss обновляется при любом this_validation_loss < best_validation_loss).
 # Предел числа эпох — только страховка
 ```
-↳ [[Early Stopping - But When#^up4ah8pi-5-4cb8krm9|↗ Prechelt 1998, с. 5]] ^c-11aea1
+↳ [[Practical recommendations for gradient-based training of deep architectures#^m6rcp432-10-kuk4ruqs|↗ Bengio 2012, с. 10]] · [[Practical recommendations for gradient-based training of deep architectures#^m6rcp432-10-qmi9kw9w|↗ Bengio 2012, с. 10]] · [↗ DeepLearningTutorials  code mlp.py (ранн](zotero://select/library/items/V5RD886G) ^c-11aea1
 
 ```python
 MAX_EPOCHS = 3000
+```
+↳ [[Early Stopping - But When#^up4ah8pi-5-4cb8krm9|↗ Prechelt 1998, с. 5]] ^c-740325
+
+```python
 
 
 ```

@@ -5,5 +5,14 @@
 «Because rogue devices do not appear in the training stage» — с. 5 [↗ PDF](zotero://open-pdf/library/items/8GW9NDIN?page=5&annotation=X7AIUCM3)
 Используется в коде: [[Код models.py#^c-fcf652|models.py:72]] ^4wi4s249-5-x7aiucm3
 
+«Autoencoder (AE) is a popular unsupervised deep learning architecture for anomaly detection» — с. 6 [↗ PDF](zotero://open-pdf/library/items/8GW9NDIN?page=6&annotation=P3G5KXV5)
+Пока не используется ^4wi4s249-6-p3g5kxv5
+
 «The mean square error (MSE) between u and u» — с. 6 [↗ PDF](zotero://open-pdf/library/items/8GW9NDIN?page=6&annotation=2ZDP597X)
 Используется в коде: [[Код models.py#^c-7b16f0|models.py:177]] ^4wi4s249-6-2zdp597x
+
+«The output frequency is not stable but is subject to temperature and ageing» — с. 6 [↗ PDF](zotero://open-pdf/library/items/8GW9NDIN?page=6&annotation=PISH2WXG)
+Пока не используется ^4wi4s249-6-pish2wxg
+
+«it is not practical to assume attackers are cooperative» — с. 6 [↗ PDF](zotero://open-pdf/library/items/8GW9NDIN?page=6&annotation=Z5NHWBH2)
+Пока не используется ^4wi4s249-6-z5nhwbh2

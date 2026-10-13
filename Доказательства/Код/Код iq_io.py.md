@@ -54,7 +54,7 @@ DATASET = Path(__file__).resolve().parent.parent / "dataset"
 ```python
 SESSION_ORDER = ["R1", "E1", "R2", "E2", "R3", "E3"]
 ```
-↳ [[Показание QNVEHN9R|↗ Показание QNVEHN9R]] ^c-cacaea
+↳ [[Показание QNVEHN9R#^t-qnvehn9r-0|↗ Показание QNVEHN9R]] · [[Показание QNVEHN9R#^t-qnvehn9r-2|↗ Показание QNVEHN9R]] ^c-cacaea
 
 ```python
 

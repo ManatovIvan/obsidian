@@ -5,6 +5,9 @@
 «1) the station (STA) is not transmitting a frame, and 2) the station (STA) is not receiving a frame» — с. 159 [↗ PDF](zotero://open-pdf/library/items/VI9FAQRH?page=159&annotation=ZTF6HT9V)
 Используется в коде: [[Код dataset_build.py#^c-9a363b|dataset_build.py:81]] ^ieee-159-ztf6ht9v
 
+«the average noise plus interference power measured on a channel that meets the two simultaneous» — с. 159 [↗ PDF](zotero://open-pdf/library/items/VI9FAQRH?page=159&annotation=KHM5Z85P)
+Пока не используется ^ieee-159-khm5z85p
+
 «The Individual/Group bit is always transferred first and is bit 0 of the MAC address.» — с. 755 [↗ PDF](zotero://open-pdf/library/items/VI9FAQRH?page=755&annotation=DBFSW9H6)
 Используется в коде: [[Код dsss_rx.py#^c-a0e887|dsss_rx.py:70]] ^ieee-755-dbfsw9h6
 
@@ -99,7 +102,7 @@
 Используется в коде: [[Код dataset_build.py#^c-49ec4b|dataset_build.py:40]], [[Код mac80211.py#^c-fc091a|mac80211.py:69]] ^ieee-880-kxg73qva
 
 «This field represents the timing synchronization function (TSF) timer» — с. 880 [↗ PDF](zotero://open-pdf/library/items/VI9FAQRH?page=880&annotation=TFTUIR4K)
-Используется в коде: [[Код analyze_labels.py#^c-69b050|analyze_labels.py:54]] ^ieee-880-tftuir4k
+Используется в коде: [[Код analyze_labels.py#^c-4e0f45|analyze_labels.py:64]] ^ieee-880-tftuir4k
 
 «Octets: 1 1 0 or 1 variable» — с. 940 [↗ PDF](zotero://open-pdf/library/items/VI9FAQRH?page=940&annotation=BMMMZIMV)
 Используется в коде: [[Код mac80211.py#^c-84f34a|mac80211.py:72]] ^ieee-940-bmmmzimv
@@ -108,7 +111,7 @@
 Используется в коде: [[Код mac80211.py#^c-17fe80|mac80211.py:73]] ^ieee-940-7jk274ne
 
 «Each STA shall maintain a TSF timer with modulus 264 counting in increments of microseconds.» — с. 2050 [↗ PDF](zotero://open-pdf/library/items/VI9FAQRH?page=2050&annotation=R8ZI8MQN)
-Используется в коде: [[Код analyze_labels.py#^c-69b050|analyze_labels.py:54]] ^ieee-2050-r8zi8mqn
+Используется в коде: [[Код analyze_labels.py#^c-4e0f45|analyze_labels.py:64]] ^ieee-2050-r8zi8mqn
 
 «counting in increments of microseconds» — с. 2050 [↗ PDF](zotero://open-pdf/library/items/VI9FAQRH?page=2050&annotation=HK6ZVA2U)
 Используется в коде: [[Код dataset_build.py#^c-60eab4|dataset_build.py:42]] ^ieee-2050-hk6zva2u
@@ -160,6 +163,9 @@
 
 «The polynomial G(z) = z –7 + z –4 + 1 shall be used to scramble all bits transmitted by the DSSS PHY.» — с. 2756 [↗ PDF](zotero://open-pdf/library/items/VI9FAQRH?page=2756&annotation=2MAUMI5G)
 Используется в коде: [[Код dsss_rx.py#^c-fef0f9|dsss_rx.py:59]] ^ieee-2756-2maumi5g
+
+«The scrambler should be initialized to any state except all 1s when transmitting.» — с. 2756 [↗ PDF](zotero://open-pdf/library/items/VI9FAQRH?page=2756&annotation=QC5HJNT6)
+Пока не используется ^ieee-2756-qc5hjnt6
 
 «which requires no prior knowledge of the transmitter initialization of the scrambler for receive processing» — с. 2756 [↗ PDF](zotero://open-pdf/library/items/VI9FAQRH?page=2756&annotation=IG7ZCSJ6)
 Используется в коде: [[Код dsss_rx.py#^c-fef0f9|dsss_rx.py:59]] ^ieee-2756-ig7zcsj6
