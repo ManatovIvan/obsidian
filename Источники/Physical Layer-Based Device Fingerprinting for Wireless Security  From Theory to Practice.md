@@ -9,7 +9,7 @@
 Пока не используется ^4wi4s249-6-p3g5kxv5
 
 «Because it is not practical to assume attackers are cooperative, hence, they are not available in the training stage» — с. 6 [↗ PDF](zotero://open-pdf/library/items/8GW9NDIN?page=6&annotation=DZF28R5A)
-Используется в коде: [[Код experiments_v4.py#^c-94231c|experiments_v4.py:25]] ^4wi4s249-6-dzf28r5a
+Используется в коде: [[Код experiments_v4.py#^c-94231c|experiments_v4.py:26]] ^4wi4s249-6-dzf28r5a
 
 «In the training stage, similar to the binary classification approach, the K DUTs are treated as a single class. But differently, there is no other device required» — с. 6 [↗ PDF](zotero://open-pdf/library/items/8GW9NDIN?page=6&annotation=7UXSNZ3C)
 Пока не используется ^4wi4s249-6-7uxsnz3c
@@ -18,7 +18,7 @@
 Пока не используется ^4wi4s249-6-gu629vud
 
 «The mean square error (MSE) between u and u» — с. 6 [↗ PDF](zotero://open-pdf/library/items/8GW9NDIN?page=6&annotation=2ZDP597X)
-Используется в коде: [[Код models.py#^c-7b16f0|models.py:177]] ^4wi4s249-6-2zdp597x
+Используется в коде: [[Код models.py#^c-7b16f0|models.py:177]], [[Код rc_cdae.py#^c-59dc16|rc_cdae.py:14]], [[Код rc_cdae.py#^c-11617e|rc_cdae.py:27]], [[Код rc_cdae.py#^c-b87eaa|rc_cdae.py:42]] ^4wi4s249-6-2zdp597x
 
 «The output frequency is not stable but is subject to temperature and ageing» — с. 6 [↗ PDF](zotero://open-pdf/library/items/8GW9NDIN?page=6&annotation=PISH2WXG)
 Пока не используется ^4wi4s249-6-pish2wxg

@@ -2590,32 +2590,6 @@
  },
  {
   "file": "svdd.py",
-  "anchor": "return nn.BatchNorm2d(n, affine=False)",
-  "occurrence": 0,
-  "refs": [
-   {
-    "kind": "cite",
-    "key": "P5CB3PIF",
-    "page": "7",
-    "quote": "we use the Adam optimizer (Kingma & Ba, 2014) with parameters as recommended in the original work and apply Batch Normalization"
-   }
-  ]
- },
- {
-  "file": "svdd.py",
-  "anchor": "return nn.BatchNorm2d(n, affine=False)",
-  "occurrence": 0,
-  "refs": [
-   {
-    "kind": "cite",
-    "key": "P5CB3PIF",
-    "page": "6",
-    "quote": "For Deep SVDD, we remove the bias terms in all network units to prevent a hypersphere collapse"
-   }
-  ]
- },
- {
-  "file": "svdd.py",
   "anchor": "class Encoder(nn.Module):",
   "occurrence": 0,
   "refs": [
@@ -2676,19 +2650,6 @@
     "key": "IBQ835R2",
     "page": null,
     "quote": "Делаем как в источнике"
-   }
-  ]
- },
- {
-  "file": "svdd.py",
-  "anchor": "nn.Conv2d(1, 50, (1, 7), bias=False), _bn2(50), nn.LeakyReLU(LEAK),",
-  "occurrence": 0,
-  "refs": [
-   {
-    "kind": "cite",
-    "key": "P5CB3PIF",
-    "page": "6",
-    "quote": "For Deep SVDD, we remove the bias terms in all network units to prevent a hypersphere collapse"
    }
   ]
  },
@@ -2824,7 +2785,7 @@
  },
  {
   "file": "svdd.py",
-  "anchor": "_run(ae.parameters(), lambda xb: torch.mean((ae(xb) - xb) ** 2), x, EPOCHS_DCAE, rng, device, log, \"DCAE\")",
+  "anchor": "_run(ae.parameters(), lambda xb: torch.mean((ae(xb).float() - xb) ** 2), x, EPOCHS_DCAE, rng, device, log, \"DCAE\")",
   "occurrence": 0,
   "refs": [
    {
@@ -2850,7 +2811,7 @@
  },
  {
   "file": "svdd.py",
-  "anchor": "_run(enc.parameters(), lambda xb: torch.mean(torch.sum((enc(xb) - c) ** 2, dim=1)), x, EPOCHS_SVDD, rng,",
+  "anchor": "_run(enc.parameters(), lambda xb: torch.mean(torch.sum((enc(xb).float() - c) ** 2, dim=1)), x, EPOCHS_SVDD, rng,",
   "occurrence": 0,
   "refs": [
    {
@@ -2863,7 +2824,7 @@
  },
  {
   "file": "svdd.py",
-  "anchor": "_run(enc.parameters(), lambda xb: torch.mean(torch.sum((enc(xb) - c) ** 2, dim=1)), x, EPOCHS_SVDD, rng,",
+  "anchor": "_run(enc.parameters(), lambda xb: torch.mean(torch.sum((enc(xb).float() - c) ** 2, dim=1)), x, EPOCHS_SVDD, rng,",
   "occurrence": 0,
   "refs": [
    {
@@ -3120,7 +3081,7 @@
  },
  {
   "file": "experiments_v4.py",
-  "anchor": "m = models.train_m2(models.to_tensor_m2(xtr, mm), models.to_tensor_m2(xva, mm),",
+  "anchor": "m = rc_cdae.train(models.to_tensor_m2(xtr, mm), models.to_tensor_m2(xva, mm),",
   "occurrence": 0,
   "refs": [
    {
@@ -3139,6 +3100,620 @@
     "kind": "prereg",
     "key": "QDQWWNXQ",
     "section": "§3"
+   }
+  ]
+ },
+ {
+  "file": "svdd.py",
+  "anchor": "self.c1 = nn.Conv1d(1, 50, 7, bias=False)",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "M8AF4MW7",
+    "page": "3",
+    "quote": "of size 1x7 and 2x7 for the first and second ConvLayer, respectively"
+   }
+  ]
+ },
+ {
+  "file": "svdd.py",
+  "anchor": "self.c1 = nn.Conv1d(1, 50, 7, bias=False)",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "P5CB3PIF",
+    "page": "6",
+    "quote": "For Deep SVDD, we remove the bias terms in all network units to prevent a hypersphere collapse"
+   }
+  ]
+ },
+ {
+  "file": "svdd.py",
+  "anchor": "self.c1 = nn.Conv1d(1, 50, 7, bias=False)",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "item",
+    "key": "R9STE4E2"
+   }
+  ]
+ },
+ {
+  "file": "svdd.py",
+  "anchor": "self.c2 = nn.Conv1d(100, 50, 7, bias=False)",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "M8AF4MW7",
+    "page": "3",
+    "quote": "of size 1x7 and 2x7 for the first and second ConvLayer, respectively"
+   }
+  ]
+ },
+ {
+  "file": "svdd.py",
+  "anchor": "self.c2 = nn.Conv1d(100, 50, 7, bias=False)",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "P5CB3PIF",
+    "page": "6",
+    "quote": "For Deep SVDD, we remove the bias terms in all network units to prevent a hypersphere collapse"
+   }
+  ]
+ },
+ {
+  "file": "svdd.py",
+  "anchor": "self.c2 = nn.Conv1d(100, 50, 7, bias=False)",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "item",
+    "key": "R9STE4E2"
+   }
+  ]
+ },
+ {
+  "file": "svdd.py",
+  "anchor": "self.d2 = nn.ConvTranspose1d(50, 100, 7, bias=False)",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "P5CB3PIF",
+    "page": "6",
+    "quote": "The decoder is then created symmetrically, where we substitute max-pooling with upsampling"
+   }
+  ]
+ },
+ {
+  "file": "svdd.py",
+  "anchor": "self.d2 = nn.ConvTranspose1d(50, 100, 7, bias=False)",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "item",
+    "key": "R9STE4E2"
+   }
+  ]
+ },
+ {
+  "file": "svdd.py",
+  "anchor": "self.d1 = nn.ConvTranspose1d(50, 1, 7, bias=False)",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "P5CB3PIF",
+    "page": "6",
+    "quote": "The decoder is then created symmetrically, where we substitute max-pooling with upsampling"
+   }
+  ]
+ },
+ {
+  "file": "svdd.py",
+  "anchor": "scaler = torch.amp.GradScaler()",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "AEPHRIQM",
+    "page": "1",
+    "quote": "we propose loss-scaling to preserve gradient values with small magnitudes"
+   }
+  ]
+ },
+ {
+  "file": "svdd.py",
+  "anchor": "scaler = torch.amp.GradScaler()",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "AEPHRIQM",
+    "page": "5",
+    "quote": "One option is to skip the weight update when an overflow is detected and simply move on to the next iteration"
+   }
+  ]
+ },
+ {
+  "file": "svdd.py",
+  "anchor": "scaler = torch.amp.GradScaler()",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "AEPHRIQM",
+    "page": "4",
+    "quote": "ensuring that no hyper-parameters (such as gradient clipping threshold, weight decay, etc.) have to be adjusted"
+   }
+  ]
+ },
+ {
+  "file": "svdd.py",
+  "anchor": "scaler = torch.amp.GradScaler()",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "item",
+    "key": "R9STE4E2"
+   }
+  ]
+ },
+ {
+  "file": "svdd.py",
+  "anchor": "with torch.autocast(device.type, dtype=torch.float16):",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "AEPHRIQM",
+    "page": "1",
+    "quote": "we recommend maintaining a single-precision copy of weights that accumulates"
+   }
+  ]
+ },
+ {
+  "file": "svdd.py",
+  "anchor": "with torch.autocast(device.type, dtype=torch.float16):",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "AEPHRIQM",
+    "page": "5",
+    "quote": "mostly come up in batch-normalization layers when accumulating statistics and softmax layers"
+   }
+  ]
+ },
+ {
+  "file": "svdd.py",
+  "anchor": "with torch.autocast(device.type, dtype=torch.float16):",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "item",
+    "key": "R9STE4E2"
+   }
+  ]
+ },
+ {
+  "file": "svdd.py",
+  "anchor": "with torch.autocast(device.type, dtype=torch.float16):",
+  "occurrence": 1,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "AEPHRIQM",
+    "page": "1",
+    "quote": "we recommend maintaining a single-precision copy of weights that accumulates"
+   }
+  ]
+ },
+ {
+  "file": "svdd.py",
+  "anchor": "with torch.autocast(device.type, dtype=torch.float16):",
+  "occurrence": 1,
+  "refs": [
+   {
+    "kind": "item",
+    "key": "R9STE4E2"
+   }
+  ]
+ },
+ {
+  "file": "svdd.py",
+  "anchor": "out.append(model(x[i:i + 1024].to(device)).float().cpu())",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "AEPHRIQM",
+    "page": "5",
+    "quote": "Large reductions (sums across elements of a vector) should be carried out in FP32"
+   }
+  ]
+ },
+ {
+  "file": "rc_cdae.py",
+  "anchor": "<модуль>",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "prereg",
+    "key": "QDQWWNXQ",
+    "section": "§4 R-C"
+   }
+  ]
+ },
+ {
+  "file": "rc_cdae.py",
+  "anchor": "<модуль>",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "item",
+    "key": "QDQWWNXQ"
+   }
+  ]
+ },
+ {
+  "file": "rc_cdae.py",
+  "anchor": "<модуль>",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "item",
+    "key": "R9STE4E2"
+   }
+  ]
+ },
+ {
+  "file": "rc_cdae.py",
+  "anchor": "from models import BATCH, CDAE, LR, MAX_EPOCHS, PATIENCE, _batches, significant",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "8M6KI8HE",
+    "page": "4",
+    "quote": "using an Adam solver with a batch size of 64"
+   }
+  ]
+ },
+ {
+  "file": "rc_cdae.py",
+  "anchor": "from models import BATCH, CDAE, LR, MAX_EPOCHS, PATIENCE, _batches, significant",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "8M6KI8HE",
+    "page": "4",
+    "quote": "The initial learning rate was set to 0.001"
+   }
+  ]
+ },
+ {
+  "file": "rc_cdae.py",
+  "anchor": "from models import BATCH, CDAE, LR, MAX_EPOCHS, PATIENCE, _batches, significant",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "8M6KI8HE",
+    "page": "4",
+    "quote": "The training was repeated until the validation accuracy didn't improve within ten epochs."
+   }
+  ]
+ },
+ {
+  "file": "rc_cdae.py",
+  "anchor": "from models import BATCH, CDAE, LR, MAX_EPOCHS, PATIENCE, _batches, significant",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "8M6KI8HE",
+    "page": "4",
+    "quote": "Then the best validation parameters were stored for performance evaluation."
+   }
+  ]
+ },
+ {
+  "file": "rc_cdae.py",
+  "anchor": "from models import BATCH, CDAE, LR, MAX_EPOCHS, PATIENCE, _batches, significant",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "M6RCP432",
+    "page": "10",
+    "quote": "Ideally, we should use a statistical test of significance and accept a new minimum (over a longer training period) only if the improvement is statistically significant"
+   }
+  ]
+ },
+ {
+  "file": "rc_cdae.py",
+  "anchor": "from models import BATCH, CDAE, LR, MAX_EPOCHS, PATIENCE, _batches, significant",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "M6RCP432",
+    "page": "10",
+    "quote": "A heuristic introduced in the Deep Learning Tutorials"
+   }
+  ]
+ },
+ {
+  "file": "rc_cdae.py",
+  "anchor": "from models import BATCH, CDAE, LR, MAX_EPOCHS, PATIENCE, _batches, significant",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "V5RD886G",
+    "page": null,
+    "quote": "improvement_threshold = 0.995 # a relative improvement of this much is"
+   }
+  ]
+ },
+ {
+  "file": "rc_cdae.py",
+  "anchor": "from models import BATCH, CDAE, LR, MAX_EPOCHS, PATIENCE, _batches, significant",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "V5RD886G",
+    "page": null,
+    "quote": "# considered significant"
+   }
+  ]
+ },
+ {
+  "file": "rc_cdae.py",
+  "anchor": "from models import BATCH, CDAE, LR, MAX_EPOCHS, PATIENCE, _batches, significant",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "V5RD886G",
+    "page": null,
+    "quote": "this_validation_loss < best_validation_loss * improvement_threshold"
+   }
+  ]
+ },
+ {
+  "file": "rc_cdae.py",
+  "anchor": "from models import BATCH, CDAE, LR, MAX_EPOCHS, PATIENCE, _batches, significant",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "UP4AH8PI",
+    "page": "5",
+    "quote": "or after at most 3000 epochs"
+   }
+  ]
+ },
+ {
+  "file": "rc_cdae.py",
+  "anchor": "def score(model, x, device):",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "4WI4S249",
+    "page": "6",
+    "quote": "The mean square error (MSE) between u and u"
+   }
+  ]
+ },
+ {
+  "file": "rc_cdae.py",
+  "anchor": "def train(xtr, xva, device, seed, log):",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "4WI4S249",
+    "page": "6",
+    "quote": "The mean square error (MSE) between u and u"
+   }
+  ]
+ },
+ {
+  "file": "rc_cdae.py",
+  "anchor": "def train(xtr, xva, device, seed, log):",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "8M6KI8HE",
+    "page": "4",
+    "quote": "using an Adam solver with a batch size of 64"
+   }
+  ]
+ },
+ {
+  "file": "rc_cdae.py",
+  "anchor": "def train(xtr, xva, device, seed, log):",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "8M6KI8HE",
+    "page": "4",
+    "quote": "The initial learning rate was set to 0.001"
+   }
+  ]
+ },
+ {
+  "file": "rc_cdae.py",
+  "anchor": "def train(xtr, xva, device, seed, log):",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "8M6KI8HE",
+    "page": "4",
+    "quote": "The training was repeated until the validation accuracy didn't improve within ten epochs."
+   }
+  ]
+ },
+ {
+  "file": "rc_cdae.py",
+  "anchor": "def train(xtr, xva, device, seed, log):",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "8M6KI8HE",
+    "page": "4",
+    "quote": "Then the best validation parameters were stored for performance evaluation."
+   }
+  ]
+ },
+ {
+  "file": "rc_cdae.py",
+  "anchor": "scaler = torch.amp.GradScaler()",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "AEPHRIQM",
+    "page": "1",
+    "quote": "we propose loss-scaling to preserve gradient values with small magnitudes"
+   }
+  ]
+ },
+ {
+  "file": "rc_cdae.py",
+  "anchor": "scaler = torch.amp.GradScaler()",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "AEPHRIQM",
+    "page": "5",
+    "quote": "One option is to skip the weight update when an overflow is detected and simply move on to the next iteration"
+   }
+  ]
+ },
+ {
+  "file": "rc_cdae.py",
+  "anchor": "scaler = torch.amp.GradScaler()",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "AEPHRIQM",
+    "page": "4",
+    "quote": "ensuring that no hyper-parameters (such as gradient clipping threshold, weight decay, etc.) have to be adjusted"
+   }
+  ]
+ },
+ {
+  "file": "rc_cdae.py",
+  "anchor": "scaler = torch.amp.GradScaler()",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "item",
+    "key": "R9STE4E2"
+   }
+  ]
+ },
+ {
+  "file": "rc_cdae.py",
+  "anchor": "with torch.autocast(device.type, dtype=torch.float16):",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "AEPHRIQM",
+    "page": "1",
+    "quote": "we recommend maintaining a single-precision copy of weights that accumulates"
+   }
+  ]
+ },
+ {
+  "file": "rc_cdae.py",
+  "anchor": "with torch.autocast(device.type, dtype=torch.float16):",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "item",
+    "key": "R9STE4E2"
+   }
+  ]
+ },
+ {
+  "file": "rc_cdae.py",
+  "anchor": "with torch.autocast(device.type, dtype=torch.float16):",
+  "occurrence": 1,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "AEPHRIQM",
+    "page": "1",
+    "quote": "we recommend maintaining a single-precision copy of weights that accumulates"
+   }
+  ]
+ },
+ {
+  "file": "rc_cdae.py",
+  "anchor": "with torch.autocast(device.type, dtype=torch.float16):",
+  "occurrence": 1,
+  "refs": [
+   {
+    "kind": "item",
+    "key": "R9STE4E2"
+   }
+  ]
+ },
+ {
+  "file": "rc_cdae.py",
+  "anchor": "out.append(torch.mean((y.float() - xb) ** 2, dim=(1, 2, 3)).cpu())",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "AEPHRIQM",
+    "page": "5",
+    "quote": "Large reductions (sums across elements of a vector) should be carried out in FP32"
+   }
+  ]
+ },
+ {
+  "file": "rc_cdae.py",
+  "anchor": "loss = torch.mean((y.float() - xb) ** 2)",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "AEPHRIQM",
+    "page": "5",
+    "quote": "Large reductions (sums across elements of a vector) should be carried out in FP32"
+   }
+  ]
+ },
+ {
+  "file": "rc_cdae.py",
+  "anchor": "loss = torch.mean((y.float() - xb) ** 2)",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "4WI4S249",
+    "page": "6",
+    "quote": "The mean square error (MSE) between u and u"
    }
   ]
  }

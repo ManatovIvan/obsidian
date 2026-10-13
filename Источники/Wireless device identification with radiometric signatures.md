@@ -36,7 +36,7 @@
 Используется в коде: [[Код paradis.py#^c-147e2b|paradis.py:16]], [[Код paradis.py#^c-48d316|paradis.py:39]], [[Код paradis.py#^c-3a1490|paradis.py:40]] ^uxhxnmqg-6-msebf9ix
 
 «This is the amount by which the receiver's frequency had to be adjusted from channel center to achieve carrier lock» — с. 6 [↗ PDF](zotero://open-pdf/library/items/379NZ664?page=6&annotation=8TVB7FIP)
-Используется в коде: [[Код experiments_v4.py#^c-b6e8d2|experiments_v4.py:48]], [[Код paradis.py#^c-8732be|paradis.py:30]] ^uxhxnmqg-6-8tvb7fip
+Используется в коде: [[Код experiments_v4.py#^c-b6e8d2|experiments_v4.py:49]], [[Код paradis.py#^c-8732be|paradis.py:30]] ^uxhxnmqg-6-8tvb7fip
 
 «average errors across all symbols in a frame» — с. 6 [↗ PDF](zotero://open-pdf/library/items/379NZ664?page=6&annotation=K8IGA64I)
 Используется в коде: [[Код paradis.py#^c-8732be|paradis.py:30]], [[Код paradis.py#^c-ca5c6f|paradis.py:37]], [[Код paradis.py#^c-2a4df2|paradis.py:38]] ^uxhxnmqg-6-k8iga64i

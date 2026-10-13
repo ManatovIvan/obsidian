@@ -28,6 +28,7 @@ import numpy as np
 import experiments as v3
 import models
 import paradis
+import rc_cdae
 import svdd
 
 OUT = Path(__file__).resolve().parent / "out"
@@ -211,13 +212,13 @@ def main():
 ```
 
 ```python
-                        m = models.train_m2(models.to_tensor_m2(xtr, mm), models.to_tensor_m2(xva, mm),
+                        m = rc_cdae.train(models.to_tensor_m2(xtr, mm), models.to_tensor_m2(xva, mm),
 ```
-↳ [[Предрегистрация v4|↗ предрегистрация v4 §4 R-C]] ^c-e273ef
+↳ [[Предрегистрация v4|↗ предрегистрация v4 §4 R-C]] ^c-cd4ead
 
 ```python
-                                            v3.DEVICE, seed, log)
-                        scores = {t: models.score_m2(m, models.to_tensor_m2(xt, mm), v3.DEVICE) for t, xt in xtest.items()}
+                                          v3.DEVICE, seed, log)
+                        scores = {t: rc_cdae.score(m, models.to_tensor_m2(xt, mm), v3.DEVICE) for t, xt in xtest.items()}
                     for t, te in tests.items():
                         evaluate(f"{t}|{impl}|{var}|seed={seed}", scores[t], d, te, lab, done,
                                  extra(impl, seed, t), t0, h)
