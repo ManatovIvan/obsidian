@@ -9,7 +9,7 @@
 Пока не используется ^4wi4s249-6-p3g5kxv5
 
 «Because it is not practical to assume attackers are cooperative, hence, they are not available in the training stage» — с. 6 [↗ PDF](zotero://open-pdf/library/items/8GW9NDIN?page=6&annotation=DZF28R5A)
-Пока не используется ^4wi4s249-6-dzf28r5a
+Используется в коде: [[Код experiments_v4.py#^c-94231c|experiments_v4.py:25]] ^4wi4s249-6-dzf28r5a
 
 «In the training stage, similar to the binary classification approach, the K DUTs are treated as a single class. But differently, there is no other device required» — с. 6 [↗ PDF](zotero://open-pdf/library/items/8GW9NDIN?page=6&annotation=7UXSNZ3C)
 Пока не используется ^4wi4s249-6-7uxsnz3c

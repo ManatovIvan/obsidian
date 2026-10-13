@@ -2102,5 +2102,1044 @@
     "key": "6GGC73ZD"
    }
   ]
+ },
+ {
+  "file": "paradis.py",
+  "anchor": "<модуль>",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "prereg",
+    "key": "QDQWWNXQ",
+    "section": "§4 R-A"
+   }
+  ]
+ },
+ {
+  "file": "paradis.py",
+  "anchor": "<модуль>",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "item",
+    "key": "QDQWWNXQ"
+   }
+  ]
+ },
+ {
+  "file": "paradis.py",
+  "anchor": "N_SYM = 64",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "prereg",
+    "key": "QDQWWNXQ",
+    "section": "§1"
+   }
+  ]
+ },
+ {
+  "file": "paradis.py",
+  "anchor": "NAMES = (\"frequency_error\", \"sync_correlation\", \"iq_offset\", \"magnitude_error\", \"phase_error\")",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "UXHXNMQG",
+    "page": "6",
+    "quote": "Ordered from most to least effective: (i) frequency error, (ii) SYNC correlation, (iii) I/Q offset, (iv) magnitude error, and (v), phase error"
+   }
+  ]
+ },
+ {
+  "file": "paradis.py",
+  "anchor": "NAMES = (\"frequency_error\", \"sync_correlation\", \"iq_offset\", \"magnitude_error\", \"phase_error\")",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "UXHXNMQG",
+    "page": "6",
+    "quote": "Best results were achieved when all the metrics were combined together"
+   }
+  ]
+ },
+ {
+  "file": "paradis.py",
+  "anchor": "def ideal_signs(bits):",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "UXHXNMQG",
+    "page": "6",
+    "quote": "SYNC correlation: the correlation of I/Q values from an observed and the ideal SYNC"
+   }
+  ]
+ },
+ {
+  "file": "paradis.py",
+  "anchor": "def ideal_signs(bits):",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "visual",
+    "key": "JHCW99MH",
+    "page": "2765",
+    "loc": "табл. 15-7 (DBPSK: бит 1 — смена фазы на π)"
+   }
+  ]
+ },
+ {
+  "file": "paradis.py",
+  "anchor": "def phasors(iq):",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "UXHXNMQG",
+    "page": "5",
+    "quote": "Modulation errors are typically measured by comparing phasors"
+   }
+  ]
+ },
+ {
+  "file": "paradis.py",
+  "anchor": "def phasors(iq):",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "UXHXNMQG",
+    "page": "5",
+    "quote": "the instant in time when a symbol was detected"
+   }
+  ]
+ },
+ {
+  "file": "paradis.py",
+  "anchor": "def features(iq, bits, cfo_hz):",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "UXHXNMQG",
+    "page": "6",
+    "quote": "This is the amount by which the receiver's frequency had to be adjusted from channel center to achieve carrier lock"
+   }
+  ]
+ },
+ {
+  "file": "paradis.py",
+  "anchor": "def features(iq, bits, cfo_hz):",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "UXHXNMQG",
+    "page": "6",
+    "quote": "average errors across all symbols in a frame"
+   }
+  ]
+ },
+ {
+  "file": "paradis.py",
+  "anchor": "offset = np.mean(m - sgn, axis=1)",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "UXHXNMQG",
+    "page": "6",
+    "quote": "I/Q origin offset: the distance between the origin of the ideal I/Q plane and the origin of the observed symbols"
+   }
+  ]
+ },
+ {
+  "file": "paradis.py",
+  "anchor": "mag_err = np.mean(np.abs(np.abs(m) - 1), axis=1)",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "UXHXNMQG",
+    "page": "5",
+    "quote": "Magnitude error: the difference in magnitudes of the ideal and measured phasor"
+   }
+  ]
+ },
+ {
+  "file": "paradis.py",
+  "anchor": "mag_err = np.mean(np.abs(np.abs(m) - 1), axis=1)",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "UXHXNMQG",
+    "page": "6",
+    "quote": "average errors across all symbols in a frame"
+   }
+  ]
+ },
+ {
+  "file": "paradis.py",
+  "anchor": "ph_err = np.mean(np.abs(np.angle(m * sgn)), axis=1)",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "UXHXNMQG",
+    "page": "5",
+    "quote": "Phase error: the angle between the ideal and measured phasor"
+   }
+  ]
+ },
+ {
+  "file": "paradis.py",
+  "anchor": "ph_err = np.mean(np.abs(np.angle(m * sgn)), axis=1)",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "UXHXNMQG",
+    "page": "6",
+    "quote": "average errors across all symbols in a frame"
+   }
+  ]
+ },
+ {
+  "file": "paradis.py",
+  "anchor": "wave = (sgn[:, :, None] * rx.TEMPLATE[None, None, :]).reshape(len(iq), -1)",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "UXHXNMQG",
+    "page": "6",
+    "quote": "SYNC correlation: the correlation of I/Q values from an observed and the ideal SYNC"
+   }
+  ]
+ },
+ {
+  "file": "paradis.py",
+  "anchor": "corr = np.abs(np.sum(iq * wave, axis=1)) / (np.linalg.norm(iq, axis=1) * np.linalg.norm(wave, axis=1))",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "UXHXNMQG",
+    "page": "6",
+    "quote": "SYNC correlation: the correlation of I/Q values from an observed and the ideal SYNC"
+   }
+  ]
+ },
+ {
+  "file": "paradis.py",
+  "anchor": "return np.stack([cfo_hz, corr, np.abs(offset), mag_err, ph_err], axis=1)",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "UXHXNMQG",
+    "page": "6",
+    "quote": "Frequency error: the difference between the ideal and observed carrier frequency"
+   }
+  ]
+ },
+ {
+  "file": "paradis.py",
+  "anchor": "return np.stack([cfo_hz, corr, np.abs(offset), mag_err, ph_err], axis=1)",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "UXHXNMQG",
+    "page": "6",
+    "quote": "Ordered from most to least effective: (i) frequency error, (ii) SYNC correlation, (iii) I/Q offset, (iv) magnitude error, and (v), phase error"
+   }
+  ]
+ },
+ {
+  "file": "paradis.py",
+  "anchor": "def fit_signature(f):",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "UXHXNMQG",
+    "page": "6",
+    "quote": "PARADIS-kNN discards half of the signatures as outliers"
+   }
+  ]
+ },
+ {
+  "file": "paradis.py",
+  "anchor": "def fit_signature(f):",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "UXHXNMQG",
+    "page": "6",
+    "quote": "memorizes the per-component average of the rest"
+   }
+  ]
+ },
+ {
+  "file": "paradis.py",
+  "anchor": "keep = np.argsort(d, kind=\"mergesort\")[:len(d) // 2]",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "UXHXNMQG",
+    "page": "6",
+    "quote": "PARADIS-kNN discards half of the signatures as outliers"
+   }
+  ]
+ },
+ {
+  "file": "paradis.py",
+  "anchor": "return mu, sd, z[keep].mean(axis=0)",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "UXHXNMQG",
+    "page": "6",
+    "quote": "memorizes the per-component average of the rest"
+   }
+  ]
+ },
+ {
+  "file": "paradis.py",
+  "anchor": "def score(f, signature):",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "UXHXNMQG",
+    "page": "6",
+    "quote": "measured as the sum of absolute values of component-wise differences between signatures"
+   }
+  ]
+ },
+ {
+  "file": "paradis.py",
+  "anchor": "return np.abs((f - mu) / sd - sig).sum(axis=1)",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "UXHXNMQG",
+    "page": "6",
+    "quote": "measured as the sum of absolute values of component-wise differences between signatures"
+   }
+  ]
+ },
+ {
+  "file": "svdd.py",
+  "anchor": "<модуль>",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "prereg",
+    "key": "QDQWWNXQ",
+    "section": "§4 R-B"
+   }
+  ]
+ },
+ {
+  "file": "svdd.py",
+  "anchor": "<модуль>",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "item",
+    "key": "QDQWWNXQ"
+   }
+  ]
+ },
+ {
+  "file": "svdd.py",
+  "anchor": "<модуль>",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "item",
+    "key": "IBQ835R2"
+   }
+  ]
+ },
+ {
+  "file": "svdd.py",
+  "anchor": "BATCH = 200",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "P5CB3PIF",
+    "page": "7",
+    "quote": "We use a batch size of 200 and set the weight decay hyperparameter to λ = 10−6"
+   }
+  ]
+ },
+ {
+  "file": "svdd.py",
+  "anchor": "WEIGHT_DECAY = 1e-6",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "P5CB3PIF",
+    "page": "7",
+    "quote": "We use a batch size of 200 and set the weight decay hyperparameter to λ = 10−6"
+   }
+  ]
+ },
+ {
+  "file": "svdd.py",
+  "anchor": "LR = (1e-4, 1e-5)",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "P5CB3PIF",
+    "page": "7",
+    "quote": "with initial learning rate η = 10−4 , and subsequently η = 10−5"
+   }
+  ]
+ },
+ {
+  "file": "svdd.py",
+  "anchor": "EPOCHS_SVDD = (150, 100)",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "P5CB3PIF",
+    "page": "7",
+    "quote": "for Deep SVDD 150 + 100"
+   }
+  ]
+ },
+ {
+  "file": "svdd.py",
+  "anchor": "EPOCHS_DCAE = (250, 100)",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "P5CB3PIF",
+    "page": "7",
+    "quote": "For DCAE we train 250 + 100 epochs"
+   }
+  ]
+ },
+ {
+  "file": "svdd.py",
+  "anchor": "LEAK = 0.1",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "P5CB3PIF",
+    "page": "7",
+    "quote": "Leaky ReLU activations are used with leakiness α = 0.1"
+   }
+  ]
+ },
+ {
+  "file": "svdd.py",
+  "anchor": "REP = 80",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "M8AF4MW7",
+    "page": "3",
+    "quote": "The output of the ConvLayers is then fed to two dense layers of 256, and 80 neurons, respectively."
+   }
+  ]
+ },
+ {
+  "file": "svdd.py",
+  "anchor": "return nn.BatchNorm1d(n, affine=False)",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "P5CB3PIF",
+    "page": "7",
+    "quote": "we use the Adam optimizer (Kingma & Ba, 2014) with parameters as recommended in the original work and apply Batch Normalization"
+   }
+  ]
+ },
+ {
+  "file": "svdd.py",
+  "anchor": "return nn.BatchNorm1d(n, affine=False)",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "P5CB3PIF",
+    "page": "6",
+    "quote": "For Deep SVDD, we remove the bias terms in all network units to prevent a hypersphere collapse"
+   }
+  ]
+ },
+ {
+  "file": "svdd.py",
+  "anchor": "return nn.BatchNorm2d(n, affine=False)",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "P5CB3PIF",
+    "page": "7",
+    "quote": "we use the Adam optimizer (Kingma & Ba, 2014) with parameters as recommended in the original work and apply Batch Normalization"
+   }
+  ]
+ },
+ {
+  "file": "svdd.py",
+  "anchor": "return nn.BatchNorm2d(n, affine=False)",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "P5CB3PIF",
+    "page": "6",
+    "quote": "For Deep SVDD, we remove the bias terms in all network units to prevent a hypersphere collapse"
+   }
+  ]
+ },
+ {
+  "file": "svdd.py",
+  "anchor": "class Encoder(nn.Module):",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "M8AF4MW7",
+    "page": "3",
+    "quote": "It is a very simple architecture composed by two one-dimensional (1D) convolutional layers (ConvLayers), each operating with 50 filters"
+   }
+  ]
+ },
+ {
+  "file": "svdd.py",
+  "anchor": "class Encoder(nn.Module):",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "M8AF4MW7",
+    "page": "3",
+    "quote": "of size 1x7 and 2x7 for the first and second ConvLayer, respectively"
+   }
+  ]
+ },
+ {
+  "file": "svdd.py",
+  "anchor": "class Encoder(nn.Module):",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "M8AF4MW7",
+    "page": "3",
+    "quote": "The output of the ConvLayers is then fed to two dense layers of 256, and 80 neurons, respectively."
+   }
+  ]
+ },
+ {
+  "file": "svdd.py",
+  "anchor": "class Encoder(nn.Module):",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "P5CB3PIF",
+    "page": "6",
+    "quote": "For Deep SVDD, we remove the bias terms in all network units to prevent a hypersphere collapse"
+   }
+  ]
+ },
+ {
+  "file": "svdd.py",
+  "anchor": "class Encoder(nn.Module):",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "IBQ835R2",
+    "page": null,
+    "quote": "Делаем как в источнике"
+   }
+  ]
+ },
+ {
+  "file": "svdd.py",
+  "anchor": "nn.Conv2d(1, 50, (1, 7), bias=False), _bn2(50), nn.LeakyReLU(LEAK),",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "P5CB3PIF",
+    "page": "6",
+    "quote": "For Deep SVDD, we remove the bias terms in all network units to prevent a hypersphere collapse"
+   }
+  ]
+ },
+ {
+  "file": "svdd.py",
+  "anchor": "class Decoder(nn.Module):",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "P5CB3PIF",
+    "page": "6",
+    "quote": "For the DCAE encoder, we employ the same network architectures as we use for Deep SVDD"
+   }
+  ]
+ },
+ {
+  "file": "svdd.py",
+  "anchor": "class Decoder(nn.Module):",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "P5CB3PIF",
+    "page": "6",
+    "quote": "The decoder is then created symmetrically, where we substitute max-pooling with upsampling"
+   }
+  ]
+ },
+ {
+  "file": "svdd.py",
+  "anchor": "def _glorot(module):",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "P5CB3PIF",
+    "page": "7",
+    "quote": "For the competing deep AD methods we initialize network weights by uniform Glorot weights"
+   }
+  ]
+ },
+ {
+  "file": "svdd.py",
+  "anchor": "opt = torch.optim.Adam(params, lr=LR[0], weight_decay=WEIGHT_DECAY)",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "P5CB3PIF",
+    "page": "7",
+    "quote": "we use the Adam optimizer (Kingma & Ba, 2014) with parameters as recommended in the original work and apply Batch Normalization"
+   }
+  ]
+ },
+ {
+  "file": "svdd.py",
+  "anchor": "opt = torch.optim.Adam(params, lr=LR[0], weight_decay=WEIGHT_DECAY)",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "P5CB3PIF",
+    "page": "7",
+    "quote": "We use a batch size of 200 and set the weight decay hyperparameter to λ = 10−6"
+   }
+  ]
+ },
+ {
+  "file": "svdd.py",
+  "anchor": "for lr, n_ep in zip(LR, epochs):",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "P5CB3PIF",
+    "page": "7",
+    "quote": "with initial learning rate η = 10−4 , and subsequently η = 10−5"
+   }
+  ]
+ },
+ {
+  "file": "svdd.py",
+  "anchor": "def train(x, device, seed, log):",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "P5CB3PIF",
+    "page": "7",
+    "quote": "for Deep SVDD use the weights from the trained DCAE encoder for initialization"
+   }
+  ]
+ },
+ {
+  "file": "svdd.py",
+  "anchor": "def train(x, device, seed, log):",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "IBQ835R2",
+    "page": null,
+    "quote": "Делаем как в источнике"
+   }
+  ]
+ },
+ {
+  "file": "svdd.py",
+  "anchor": "torch.manual_seed(seed)",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "P5CB3PIF",
+    "page": "7",
+    "quote": "Average AUCs in % with StdDevs (over 10 seeds) per method"
+   }
+  ]
+ },
+ {
+  "file": "svdd.py",
+  "anchor": "torch.manual_seed(seed)",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "IBQ835R2",
+    "page": null,
+    "quote": "Делаем как в источнике"
+   }
+  ]
+ },
+ {
+  "file": "svdd.py",
+  "anchor": "_run(ae.parameters(), lambda xb: torch.mean((ae(xb) - xb) ** 2), x, EPOCHS_DCAE, rng, device, log, \"DCAE\")",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "P5CB3PIF",
+    "page": "6",
+    "quote": "We train the DCAE using the MSE loss"
+   }
+  ]
+ },
+ {
+  "file": "svdd.py",
+  "anchor": "c = _forward_all(enc, x, device).mean(dim=0).to(device)",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "P5CB3PIF",
+    "page": "7",
+    "quote": "we set the hypersphere center c to the mean of the mapped data after performing an initial forward pass"
+   }
+  ]
+ },
+ {
+  "file": "svdd.py",
+  "anchor": "_run(enc.parameters(), lambda xb: torch.mean(torch.sum((enc(xb) - c) ** 2, dim=1)), x, EPOCHS_SVDD, rng,",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "P5CB3PIF",
+    "page": "4",
+    "quote": "One-Class Deep SVDD simply employs a quadratic loss for penalizing the distance of every network representation"
+   }
+  ]
+ },
+ {
+  "file": "svdd.py",
+  "anchor": "_run(enc.parameters(), lambda xb: torch.mean(torch.sum((enc(xb) - c) ** 2, dim=1)), x, EPOCHS_SVDD, rng,",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "P5CB3PIF",
+    "page": "4",
+    "quote": "consistent with the assumption that the majority of training data is from one class"
+   }
+  ]
+ },
+ {
+  "file": "svdd.py",
+  "anchor": "def score(enc, c, x, device):",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "P5CB3PIF",
+    "page": "4",
+    "quote": "we can naturally define an anomaly score s for both variants of Deep SVDD by the distance of the point to the center of the hypersphere"
+   }
+  ]
+ },
+ {
+  "file": "experiments_v4.py",
+  "anchor": "<модуль>",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "item",
+    "key": "QDQWWNXQ"
+   }
+  ]
+ },
+ {
+  "file": "experiments_v4.py",
+  "anchor": "<модуль>",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "prereg",
+    "key": "QDQWWNXQ",
+    "section": "§2"
+   }
+  ]
+ },
+ {
+  "file": "experiments_v4.py",
+  "anchor": "<модуль>",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "prereg",
+    "key": "QDQWWNXQ",
+    "section": "§6"
+   }
+  ]
+ },
+ {
+  "file": "experiments_v4.py",
+  "anchor": "TRAIN_S = (\"R1\", \"R2\", \"R3\")",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "prereg",
+    "key": "QDQWWNXQ",
+    "section": "§2"
+   }
+  ]
+ },
+ {
+  "file": "experiments_v4.py",
+  "anchor": "TRAIN_S = (\"R1\", \"R2\", \"R3\")",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "4WI4S249",
+    "page": "6",
+    "quote": "Because it is not practical to assume attackers are cooperative, hence, they are not available in the training stage"
+   }
+  ]
+ },
+ {
+  "file": "experiments_v4.py",
+  "anchor": "TESTS = {\"T1\": \"E1\", \"T2\": \"E3\"}",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "prereg",
+    "key": "QDQWWNXQ",
+    "section": "§2"
+   }
+  ]
+ },
+ {
+  "file": "experiments_v4.py",
+  "anchor": "SEEDS = [v3.SEED + k for k in range(10)]",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "P5CB3PIF",
+    "page": "7",
+    "quote": "Average AUCs in % with StdDevs (over 10 seeds) per method"
+   }
+  ]
+ },
+ {
+  "file": "experiments_v4.py",
+  "anchor": "SEEDS = [v3.SEED + k for k in range(10)]",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "IBQ835R2",
+    "page": null,
+    "quote": "Делаем как в источнике"
+   }
+  ]
+ },
+ {
+  "file": "experiments_v4.py",
+  "anchor": "tr, va, _ = v3.time_split(d, idx, 0.8, 0.2)",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "prereg",
+    "key": "QDQWWNXQ",
+    "section": "§2"
+   }
+  ]
+ },
+ {
+  "file": "experiments_v4.py",
+  "anchor": "iq = v3.prepare(d, idx, lab, snr, True, rng)",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "UXHXNMQG",
+    "page": "6",
+    "quote": "This is the amount by which the receiver's frequency had to be adjusted from channel center to achieve carrier lock"
+   }
+  ]
+ },
+ {
+  "file": "experiments_v4.py",
+  "anchor": "row = dict(key=key, auc=a, score_std=float(np.std(sc)), n_unique=int(len(np.unique(sc))),",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "prereg",
+    "key": "QDQWWNXQ",
+    "section": "§5"
+   }
+  ]
+ },
+ {
+  "file": "experiments_v4.py",
+  "anchor": "row = dict(key=key, auc=a, score_std=float(np.std(sc)), n_unique=int(len(np.unique(sc))),",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "prereg",
+    "key": "QDQWWNXQ",
+    "section": "§6.1"
+   }
+  ]
+ },
+ {
+  "file": "experiments_v4.py",
+  "anchor": "a, boots = v3.bootstrap(sc, lab[te], d[\"order\"][te], v3.SEED)",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "prereg",
+    "key": "QDQWWNXQ",
+    "section": "§6.2"
+   }
+  ]
+ },
+ {
+  "file": "experiments_v4.py",
+  "anchor": "a, boots = v3.bootstrap(sc, lab[te], d[\"order\"][te], v3.SEED)",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "prereg",
+    "key": "QDQWWNXQ",
+    "section": "§6.3"
+   }
+  ]
+ },
+ {
+  "file": "experiments_v4.py",
+  "anchor": "tr_all = np.concatenate([tr, va])",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "prereg",
+    "key": "QDQWWNXQ",
+    "section": "§2"
+   }
+  ]
+ },
+ {
+  "file": "experiments_v4.py",
+  "anchor": "for snr in (False, True):",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "prereg",
+    "key": "QDQWWNXQ",
+    "section": "§3"
+   }
+  ]
+ },
+ {
+  "file": "experiments_v4.py",
+  "anchor": "for cfo_rm in (False, True):",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "prereg",
+    "key": "QDQWWNXQ",
+    "section": "§3"
+   }
+  ]
+ },
+ {
+  "file": "experiments_v4.py",
+  "anchor": "cols = slice(1, None) if cfo_rm else slice(None)",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "prereg",
+    "key": "QDQWWNXQ",
+    "section": "§4 R-A"
+   }
+  ]
+ },
+ {
+  "file": "experiments_v4.py",
+  "anchor": "enc, c = svdd.train(models.to_tensor_m1(x), v3.DEVICE, seed, log)",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "prereg",
+    "key": "QDQWWNXQ",
+    "section": "§4 R-B"
+   }
+  ]
+ },
+ {
+  "file": "experiments_v4.py",
+  "anchor": "m = models.train_m2(models.to_tensor_m2(xtr, mm), models.to_tensor_m2(xva, mm),",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "prereg",
+    "key": "QDQWWNXQ",
+    "section": "§4 R-C"
+   }
+  ]
+ },
+ {
+  "file": "experiments_v4.py",
+  "anchor": "x = v3.prepare(d, tr_all, lab, False, cfo_rm, rng)",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "prereg",
+    "key": "QDQWWNXQ",
+    "section": "§3"
+   }
+  ]
  }
 ]
