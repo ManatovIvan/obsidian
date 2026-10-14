@@ -37,6 +37,12 @@ OUTPUTS = {
                        "python report.py"),
     "out/diag_m1_collapse.txt": ("Вывод: диагностика M1 — эпоха лучших весов, коллапс выхода в S4 (diag_m1_collapse.py)",
                                  "python diag_m1_collapse.py"),
+    "out/experiments_v4_log.txt": ("Вывод: журнал запусков v4 — проверка признаков R-A, обучение R-B и R-C (experiments_v4.py)",
+                                   "python experiments_v4.py --check; python experiments_v4.py"),
+    "out/results_v4.jsonl": ("Вывод: результаты v4 — 168 строк, AUC и интервалы бутстрэпа (experiments_v4.py)",
+                             "python experiments_v4.py"),
+    "out/report_v4.txt": ("Вывод: сводка AUC и решения по §6.4 предрегистрации v4 (report_v4.py)",
+                          "python report_v4.py"),
 }
 
 
