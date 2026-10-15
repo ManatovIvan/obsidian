@@ -2,6 +2,12 @@
 
 Источник Zotero: [P5CB3PIF](zotero://select/library/items/P5CB3PIF). Цитаты — выделения в PDF. Сгенерировано — не править вручную.
 
+«Mappings of normal examples fall within, whereas mappings of anomalies fall outside the hypersphere.» — с. 2 [↗ PDF](zotero://open-pdf/library/items/AV2IMUSR?page=2&annotation=EWN4B75M)
+Пока не используется ^p5cb3pif-2-ewn4b75m
+
+«attempts to map most of the data network representations into a hypersphere characterized by center c and radius R of minimum volume» — с. 2 [↗ PDF](zotero://open-pdf/library/items/AV2IMUSR?page=2&annotation=PRNX8CZA)
+Пока не используется ^p5cb3pif-2-prnx8cza
+
 «One-Class Deep SVDD simply employs a quadratic loss for penalizing the distance of every network representation» — с. 4 [↗ PDF](zotero://open-pdf/library/items/AV2IMUSR?page=4&annotation=WFCC8525)
 Используется в коде: [[Код svdd.py#^c-91f5c2|svdd.py:129]] ^p5cb3pif-4-wfcc8525
 

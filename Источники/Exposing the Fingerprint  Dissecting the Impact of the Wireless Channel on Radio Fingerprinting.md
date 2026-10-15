@@ -2,6 +2,9 @@
 
 Источник Zotero: [M8AF4MW7](zotero://select/library/items/M8AF4MW7). Цитаты — выделения в PDF. Сгенерировано — не править вручную.
 
+«Radio fingerprinting uniquely identifies wireless devices by leveraging tiny hardware-level imperfections inevitably present in off-the-shelf radio circuitry.» — с. 1 [↗ PDF](zotero://open-pdf/library/items/FHVB2WDX?page=1&annotation=MHKJVMMF)
+Пока не используется ^m8af4mw7-1-mhkjvmmf
+
 «A dropout of rate 0.5 is also used to reduce overfitting.» — с. 3 [↗ PDF](zotero://open-pdf/library/items/FHVB2WDX?page=3&annotation=T7PJDBSJ)
 Используется в коде: [[Код models.py#^c-be1a2b|models.py:47]] ^m8af4mw7-3-t7pjdbsj
 

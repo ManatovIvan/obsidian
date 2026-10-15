@@ -2,6 +2,12 @@
 
 Источник Zotero: [4WI4S249](zotero://select/library/items/4WI4S249). Цитаты — выделения в PDF. Сгенерировано — не править вручную.
 
+«signals transmitted by devices at different locations travel through different channels» — с. 2 [↗ PDF](zotero://open-pdf/library/items/8GW9NDIN?page=2&annotation=H32XTHUH)
+Пока не используется ^4wi4s249-2-h32xthuh
+
+«the received signal, y(t), involves both the hardware impairments and channel features» — с. 3 [↗ PDF](zotero://open-pdf/library/items/8GW9NDIN?page=3&annotation=F9MGCPQ7)
+Пока не используется ^4wi4s249-3-f9mgcpq7
+
 «Because rogue devices do not appear in the training stage» — с. 5 [↗ PDF](zotero://open-pdf/library/items/8GW9NDIN?page=5&annotation=X7AIUCM3)
 Используется в коде: [[Код models.py#^c-fcf652|models.py:72]] ^4wi4s249-5-x7aiucm3
 
@@ -25,6 +31,9 @@
 
 «it is not practical to assume attackers are cooperative» — с. 6 [↗ PDF](zotero://open-pdf/library/items/8GW9NDIN?page=6&annotation=Z5NHWBH2)
 Пока не используется ^4wi4s249-6-z5nhwbh2
+
+«the decoder will then try to reconstruct the input signal from the latent feature» — с. 6 [↗ PDF](zotero://open-pdf/library/items/8GW9NDIN?page=6&annotation=RCAHK5E6)
+Пока не используется ^4wi4s249-6-rcahk5e6
 
 «when the signal is from a rogue device, the MSE will be higher than a threshold» — с. 6 [↗ PDF](zotero://open-pdf/library/items/8GW9NDIN?page=6&annotation=CR7NC3UQ)
 Пока не используется ^4wi4s249-6-cr7nc3uq

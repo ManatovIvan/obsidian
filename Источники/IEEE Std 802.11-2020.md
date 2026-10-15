@@ -125,6 +125,9 @@
 «All transmitted bits shall be scrambled using the feedthrough scrambler» — с. 2754 [↗ PDF](zotero://open-pdf/library/items/VI9FAQRH?page=2754&annotation=NBTRXDQT)
 Используется в коде: [[Код dsss_rx.py#^c-e4555e|dsss_rx.py:217]] ^ieee-2754-nbtrxdqt
 
+«The DSSS PHY currently supports two mandatory modulation services» — с. 2754 [↗ PDF](zotero://open-pdf/library/items/VI9FAQRH?page=2754&annotation=G8TV5EVH)
+Пока не используется ^ieee-2754-g8tv5evh
+
 «The LSB shall be transmitted first in time.» — с. 2754 [↗ PDF](zotero://open-pdf/library/items/VI9FAQRH?page=2754&annotation=JCUV8G7P)
 Используется в коде: [[Код dsss_rx.py#^c-a0e887|dsss_rx.py:70]] ^ieee-2754-jcuv8g7p
 
@@ -223,3 +226,6 @@
 
 «X'6E' (MSB to LSB) for 11 Mb/s» — с. 2781 [↗ PDF](zotero://open-pdf/library/items/VI9FAQRH?page=2781&annotation=RHGZ5D2C)
 Используется в коде: [[Код dsss_rx.py#^c-2f6361|dsss_rx.py:45]] ^ieee-2781-rhgz5d2c
+
+«The OFDM system provides a WLAN with data payload communication capabilities of 6, 9, 12, 18, 24, 36, 48, and 54 Mb/s.» — с. 2802 [↗ PDF](zotero://open-pdf/library/items/VI9FAQRH?page=2802&annotation=ESKR3MR8)
+Пока не используется ^ieee-2802-eskr3mr8
