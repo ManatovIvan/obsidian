@@ -46,6 +46,47 @@ ITEMS = {d["key"]: d for d in snap["items"]}
 AMAP = json.loads((HERE / "out" / "citation_annotations.json").read_text())
 LINKS = json.loads((VAULT / "_связи" / "код.json").read_text())
 CODE_ITEMS = json.loads((HERE / "out" / "zotero_code_items.json").read_text())
+GENERATED = ("Источники", "Доказательства")       # папки генератора: обратные ссылки собираются только из остальных заметок
+WIKI = re.compile(r"\[\[([^\]|#]+)(?:#([^\]|]+))?(?:\|[^\]]*)?\]\]")
+BACK = defaultdict(list)                           # (заметка, якорь или "") -> ссылки на места, откуда на неё ссылаются
+
+
+def collect_backlinks():
+    """Обратные ссылки: для каждого блока сгенерированной заметки — места вручную написанных заметок, где он упомянут.
+    Место — блок ^метка абзаца, где стоит ссылка, иначе ближайший заголовок выше, иначе заметка целиком."""
+    BACK.clear()
+    for f in sorted(VAULT.rglob("*.md")):
+        rel = f.relative_to(VAULT)
+        if rel.parts[0] in GENERATED or rel.parts[0].startswith((".", "_")):
+            continue
+        text = re.sub(r"```.*?```", "", f.read_text(), flags=re.S)   # блоки кода — без ссылок Obsidian
+        heading = None
+        for chunk in re.split(r"\n\s*\n", text):
+            for line in chunk.split("\n"):
+                if line.startswith("#"):
+                    heading = line.lstrip("#").strip()
+            bid = re.search(r"\^([A-Za-z0-9-]+)\s*$", chunk)
+            if bid:
+                where = f"[[{f.stem}#^{bid.group(1)}|{f.stem} ^{bid.group(1)}]]"
+            elif heading and not re.search(r"[#|\[\]^]", heading):
+                short = heading if len(heading) <= 40 else heading[:39] + "…"
+                where = f"[[{f.stem}#{heading}|{f.stem} › {short}]]"
+            else:
+                where = f"[[{f.stem}]]"
+            for m in WIKI.finditer(re.sub(r"`[^`\n]*`", "", chunk)):
+                target = Path(m.group(1).strip()).name
+                if target == f.stem:
+                    continue
+                anchor = (m.group(2) or "").strip()
+                key = (target, anchor[1:] if anchor.startswith("^") else "")
+                if where not in BACK[key]:
+                    BACK[key].append(where)
+
+
+def back(note, bid=""):
+    """Строка обратных ссылок на блок bid заметки note (или на заметку целиком при bid="")."""
+    b = BACK.get((note, bid), [])
+    return " · ".join(b)
 
 
 def safe(t):
@@ -177,6 +218,8 @@ def export_code(marks, module):
         if zk:
             md += [f"Оригинал и история изменений — [запись в Zotero]({zsel(zk)}).", ""]
         md += ["Сгенерировано obsidian_export.py — не править вручную.", ""]
+        if back(f"Код {fn}"):
+            md += ["Ссылаются на модуль целиком: " + back(f"Код {fn}"), ""]
         if module.get(fn):
             md += ["Модуль в целом: " + " · ".join(dict.fromkeys(ref_link(r) for r in module[fn])), ""]
         buf = []
@@ -197,8 +240,10 @@ def export_code(marks, module):
                 while n < len(src) and src[n].strip().startswith("#") and (fn, n + 1) not in marks:
                     block.append(src[n])
                     n += 1
+                bl = back(f"Код {fn}", bid)
                 md.extend(["```python", *block, "```",
-                           "↳ " + " · ".join(dict.fromkeys(ref_link(r) for r in refs)) + f" ^{bid}", ""])
+                           "↳ " + " · ".join(dict.fromkeys(ref_link(r) for r in refs))
+                           + (f" · ↩ упоминается: {bl}" if bl else "") + f" ^{bid}", ""])
             else:
                 buf.append(line)
         flush()
@@ -222,12 +267,16 @@ def export_sources(marks):
     for k, rows in by_src.items():
         md = [f"# {title(k)}", "", f"Источник Zotero: [{k}]({zsel(k)}). Цитаты — выделения в PDF. "
               "Сгенерировано — не править вручную.", ""]
+        if back(title(k)):
+            md += ["Ссылаются на источник целиком: " + back(title(k)), ""]
         for pg, q, a in sorted(rows):
             url = f"zotero://open-pdf/library/items/{a['attachment']}?page={pg}&annotation={a['annotation']}"
             u = list(dict.fromkeys(used.get((k, str(pg), q), [])))
+            bid = f"{SHORT.get(k, k.lower())}-{pg}-{a['annotation'].lower()}"
+            parts = (["Используется в коде: " + ", ".join(u)] if u else []) + \
+                    (["в заметках: " + back(title(k), bid)] if back(title(k), bid) else [])
             md += [f"«{q}» — с. {pg} [↗ PDF]({url})",
-                   ("Используется в коде: " + ", ".join(u) if u else "Пока не используется")
-                   + f" ^{SHORT.get(k, k.lower())}-{pg}-{a['annotation'].lower()}", ""]
+                   ("; ".join(parts) if parts else "Пока не используется") + f" ^{bid}", ""]
         (out / f"{title(k)}.md").write_text("\n".join(md))
 
 
@@ -244,6 +293,8 @@ def export_artifacts():
         sub = {"Показание": "Показания", "Вывод": "Выводы", "Расчёт": "Расчёты"}[nt.split()[0]]
         pref = "t" if sub == "Показания" else "o"
         md = [f"# {nt}: {d.get('title', '')}", "", f"Оригинал — [запись в Zotero]({zsel(k)}).", ""]
+        if back(nt):
+            md += ["Ссылаются на заметку целиком: " + back(nt), ""]
         for n, l in enumerate(text_lines(k)):
             if l == SEP:
                 md += ["**Происхождение и пояснения:**", ""]
@@ -253,7 +304,8 @@ def export_artifacts():
             body = f"`{l}`" if sub in ("Выводы", "Расчёты") else l   # моноширинно: в тексте выводов бывают [[ ]]
             if body.strip() == "---":
                 body = "\\---"                     # иначе Markdown превратит строку в горизонтальную черту
-            md += [f"{body} ^{pref}-{k.lower()}-{n}", ""]
+            bid = f"{pref}-{k.lower()}-{n}"
+            md += [f"{body}" + (f" ↩ {back(nt, bid)}" if back(nt, bid) else "") + f" ^{bid}", ""]
         (VAULT / "Доказательства" / sub / f"{nt}.md").write_text("\n".join(md))
 
 
@@ -272,12 +324,14 @@ def export_documents():
 
 
 def main():
+    export_documents()                    # сначала: предрегистрации тоже ссылаются на источники
+    collect_backlinks()
     marks, module = code_blocks()
     export_code(marks, module)
     export_sources(marks)
     export_artifacts()
-    export_documents()
-    print("строк кода со ссылками:", len(marks), "| модулей:", len({k[0] for k in marks}))
+    print("строк кода со ссылками:", len(marks), "| модулей:", len({k[0] for k in marks}),
+          "| обратных ссылок:", sum(len(v) for v in BACK.values()))
 
 
 if __name__ == "__main__":

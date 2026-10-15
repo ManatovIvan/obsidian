@@ -3,10 +3,10 @@
 Источник Zotero: [JHCW99MH](zotero://select/library/items/JHCW99MH). Цитаты — выделения в PDF. Сгенерировано — не править вручную.
 
 «1) the station (STA) is not transmitting a frame, and 2) the station (STA) is not receiving a frame» — с. 159 [↗ PDF](zotero://open-pdf/library/items/VI9FAQRH?page=159&annotation=ZTF6HT9V)
-Используется в коде: [[Код dataset_build.py#^c-9a363b|dataset_build.py:81]] ^ieee-159-ztf6ht9v
+Используется в коде: [[Код dataset_build.py#^c-9a363b|dataset_build.py:81]]; в заметках: [[Предрегистрация#2. Обязательные проверки до моделей|Предрегистрация › 2. Обязательные проверки до моделей]] ^ieee-159-ztf6ht9v
 
 «the average noise plus interference power measured on a channel that meets the two simultaneous» — с. 159 [↗ PDF](zotero://open-pdf/library/items/VI9FAQRH?page=159&annotation=KHM5Z85P)
-Пока не используется ^ieee-159-khm5z85p
+в заметках: [[Предрегистрация#2. Обязательные проверки до моделей|Предрегистрация › 2. Обязательные проверки до моделей]] ^ieee-159-khm5z85p
 
 «The Individual/Group bit is always transferred first and is bit 0 of the MAC address.» — с. 755 [↗ PDF](zotero://open-pdf/library/items/VI9FAQRH?page=755&annotation=DBFSW9H6)
 Используется в коде: [[Код dsss_rx.py#^c-a0e887|dsss_rx.py:70]] ^ieee-755-dbfsw9h6
@@ -111,7 +111,7 @@
 Используется в коде: [[Код mac80211.py#^c-17fe80|mac80211.py:73]] ^ieee-940-7jk274ne
 
 «Each STA shall maintain a TSF timer with modulus 264 counting in increments of microseconds.» — с. 2050 [↗ PDF](zotero://open-pdf/library/items/VI9FAQRH?page=2050&annotation=R8ZI8MQN)
-Используется в коде: [[Код analyze_labels.py#^c-4e0f45|analyze_labels.py:64]] ^ieee-2050-r8zi8mqn
+Используется в коде: [[Код analyze_labels.py#^c-4e0f45|analyze_labels.py:64]]; в заметках: [[Предрегистрация#1. Данные и метки|Предрегистрация › 1. Данные и метки]] ^ieee-2050-r8zi8mqn
 
 «counting in increments of microseconds» — с. 2050 [↗ PDF](zotero://open-pdf/library/items/VI9FAQRH?page=2050&annotation=HK6ZVA2U)
 Используется в коде: [[Код dataset_build.py#^c-60eab4|dataset_build.py:42]] ^ieee-2050-hk6zva2u
@@ -126,7 +126,7 @@
 Используется в коде: [[Код dsss_rx.py#^c-e4555e|dsss_rx.py:217]] ^ieee-2754-nbtrxdqt
 
 «The DSSS PHY currently supports two mandatory modulation services» — с. 2754 [↗ PDF](zotero://open-pdf/library/items/VI9FAQRH?page=2754&annotation=G8TV5EVH)
-Пока не используется ^ieee-2754-g8tv5evh
+в заметках: [[Текст статьи#^u2-2|Текст статьи ^u2-2]] ^ieee-2754-g8tv5evh
 
 «The LSB shall be transmitted first in time.» — с. 2754 [↗ PDF](zotero://open-pdf/library/items/VI9FAQRH?page=2754&annotation=JCUV8G7P)
 Используется в коде: [[Код dsss_rx.py#^c-a0e887|dsss_rx.py:70]] ^ieee-2754-jcuv8g7p
@@ -135,13 +135,13 @@
 Используется в коде: [[Код dsss_rx.py#^c-f41571|dsss_rx.py:37]] ^ieee-2754-qjb4e5nm
 
 «The entire PHY preamble and header shall be transmitted using the 1 Mb/s DBPSK modulation» — с. 2754 [↗ PDF](zotero://open-pdf/library/items/VI9FAQRH?page=2754&annotation=Z9Z2QHCE)
-Используется в коде: [[Код dsss_rx.py#^c-a2ca74|dsss_rx.py:18]] ^ieee-2754-z9z2qhce
+Используется в коде: [[Код dsss_rx.py#^c-a2ca74|dsss_rx.py:18]]; в заметках: [[Текст статьи#^u2-3|Текст статьи ^u2-3]] ^ieee-2754-z9z2qhce
 
 «X'0A' (MSB to LSB) for 1 Mb/s DBPSK» — с. 2754 [↗ PDF](zotero://open-pdf/library/items/VI9FAQRH?page=2754&annotation=VVEITADP)
-Используется в коде: [[Код dsss_rx.py#^c-2f6361|dsss_rx.py:45]] ^ieee-2754-vveitadp
+Используется в коде: [[Код dsss_rx.py#^c-2f6361|dsss_rx.py:45]]; в заметках: [[Текст статьи#^u2-2|Текст статьи ^u2-2]] ^ieee-2754-vveitadp
 
 «X'14' (MSB to LSB) for 2 Mb/s DQPSK» — с. 2754 [↗ PDF](zotero://open-pdf/library/items/VI9FAQRH?page=2754&annotation=UBI9G2X5)
-Используется в коде: [[Код dsss_rx.py#^c-2f6361|dsss_rx.py:45]] ^ieee-2754-ubi9g2x5
+Используется в коде: [[Код dsss_rx.py#^c-2f6361|dsss_rx.py:45]]; в заметках: [[Текст статьи#^u2-2|Текст статьи ^u2-2]] ^ieee-2754-ubi9g2x5
 
 «indicates the number of microseconds required to transmit the MPDU» — с. 2754 [↗ PDF](zotero://open-pdf/library/items/VI9FAQRH?page=2754&annotation=SBUU78GZ)
 Используется в коде: [[Код dsss_rx.py#^c-605841|dsss_rx.py:231]] ^ieee-2754-sbuu78gz
@@ -168,7 +168,7 @@
 Используется в коде: [[Код dsss_rx.py#^c-fef0f9|dsss_rx.py:59]] ^ieee-2756-2maumi5g
 
 «The scrambler should be initialized to any state except all 1s when transmitting.» — с. 2756 [↗ PDF](zotero://open-pdf/library/items/VI9FAQRH?page=2756&annotation=QC5HJNT6)
-Пока не используется ^ieee-2756-qc5hjnt6
+в заметках: [[Предрегистрация#2. Обязательные проверки до моделей|Предрегистрация › 2. Обязательные проверки до моделей]] ^ieee-2756-qc5hjnt6
 
 «which requires no prior knowledge of the transmitter initialization of the scrambler for receive processing» — с. 2756 [↗ PDF](zotero://open-pdf/library/items/VI9FAQRH?page=2756&annotation=IG7ZCSJ6)
 Используется в коде: [[Код dsss_rx.py#^c-fef0f9|dsss_rx.py:59]] ^ieee-2756-ig7zcsj6
@@ -183,7 +183,7 @@
 Используется в коде: [[Код dsss_rx.py#^c-860e26|dsss_rx.py:47]] ^ieee-2764-qsii4cd5
 
 «+1, –1, +1, +1, –1, +1, +1, +1, –1, –1, –1» — с. 2765 [↗ PDF](zotero://open-pdf/library/items/VI9FAQRH?page=2765&annotation=NSHCWN8J)
-Используется в коде: [[Код dsss_rx.py#^c-399c24|dsss_rx.py:23]] ^ieee-2765-nshcwn8j
+Используется в коде: [[Код dsss_rx.py#^c-399c24|dsss_rx.py:23]]; в заметках: [[Текст статьи#^u2-3|Текст статьи ^u2-3]] ^ieee-2765-nshcwn8j
 
 «The first chip shall be aligned at the start of a transmitted symbol.» — с. 2765 [↗ PDF](zotero://open-pdf/library/items/VI9FAQRH?page=2765&annotation=WP8JE8FB)
 Используется в коде: [[Код dsss_rx.py#^c-61ccf5|dsss_rx.py:26]] ^ieee-2765-wp8je8fb
@@ -192,7 +192,7 @@
 Используется в коде: [[Код dsss_rx.py#^c-399c24|dsss_rx.py:23]] ^ieee-2765-a63d3ej6
 
 «The symbol duration shall be exactly 11 chips long.» — с. 2765 [↗ PDF](zotero://open-pdf/library/items/VI9FAQRH?page=2765&annotation=7RNVVTJ7)
-Используется в коде: [[Код dsss_rx.py#^c-25ae19|dsss_rx.py:22]] ^ieee-2765-7rnvvtj7
+Используется в коде: [[Код dsss_rx.py#^c-25ae19|dsss_rx.py:22]]; в заметках: [[Текст статьи#^u2-3|Текст статьи ^u2-3]] ^ieee-2765-7rnvvtj7
 
 «d0 is first in time» — с. 2765 [↗ PDF](zotero://open-pdf/library/items/VI9FAQRH?page=2765&annotation=DBW8P5KZ)
 Используется в коде: [[Код dsss_rx.py#^c-7be28c|dsss_rx.py:171]] ^ieee-2765-dbw8p5kz
