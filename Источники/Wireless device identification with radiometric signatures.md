@@ -2,6 +2,12 @@
 
 Источник Zotero: [UXHXNMQG](zotero://select/library/items/UXHXNMQG). Цитаты — выделения в PDF. Сгенерировано — не править вручную.
 
+«Since the source MAC address in a frame is easy to forge, administrators need other mechanisms to identity the source of frames within their networks» — с. 1 [↗ PDF](zotero://open-pdf/library/items/379NZ664?page=1&annotation=EA2UXCNJ)
+в заметках: [[Текст статьи#^u1-5|Текст статьи ^u1-5]] ^uxhxnmqg-1-ea2uxcnj
+
+«PARADIS should be used a secondary security perimeter that detects breaches in the primary security perimeter, established using the usual cryptographic mechanisms» — с. 2 [↗ PDF](zotero://open-pdf/library/items/379NZ664?page=2&annotation=BERUK4A9)
+в заметках: [[Текст статьи#^u1-5|Текст статьи ^u1-5]] · [[Текст статьи#^u4-4|Текст статьи ^u4-4]] ^uxhxnmqg-2-beruk4a9
+
 «Magnitude error: the difference in magnitudes of the ideal and measured phasor» — с. 5 [↗ PDF](zotero://open-pdf/library/items/379NZ664?page=5&annotation=JX4775IS)
 Используется в коде: [[Код paradis.py#^c-ca5c6f|paradis.py:37]]; в заметках: [[Предрегистрация v4#R-A. Признаки PARADIS и расстояние до сигнатуры роутера (Brik et al.)|Предрегистрация v4 › R-A. Признаки PARADIS и расстояние до с…]] · [[Текст статьи#^u2-3|Текст статьи ^u2-3]] ^uxhxnmqg-5-jx4775is
 

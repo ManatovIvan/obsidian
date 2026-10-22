@@ -2,6 +2,15 @@
 
 Источник Zotero: [4WI4S249](zotero://select/library/items/4WI4S249). Цитаты — выделения в PDF. Сгенерировано — не править вручную.
 
+«Conventional authentication approaches are cryptography-based, which, however, are usually computationally expensive and not adequate in the Internet of Things (IoT), where devices tend to be low-cost and with limited resources» — с. 1 [↗ PDF](zotero://open-pdf/library/items/8GW9NDIN?page=1&annotation=GEIGU3JF)
+в заметках: [[Текст статьи#^u1-5|Текст статьи ^u1-5]] · [[Текст статьи#^u4-4|Текст статьи ^u4-4]] ^4wi4s249-1-geigu3jf
+
+«They are passive techniques that are readily applicable to legacy IoT devices» — с. 1 [↗ PDF](zotero://open-pdf/library/items/8GW9NDIN?page=1&annotation=E66CFVXN)
+в заметках: [[Текст статьи#^u1-5|Текст статьи ^u1-5]] · [[Текст статьи#^u4-4|Текст статьи ^u4-4]] ^4wi4s249-1-e66cfvxn
+
+«This article will focus on device authentication, which is the first important step for network security» — с. 1 [↗ PDF](zotero://open-pdf/library/items/8GW9NDIN?page=1&annotation=DFC3B5EH)
+в заметках: [[Текст статьи#^u1-5|Текст статьи ^u1-5]] ^4wi4s249-1-dfc3b5eh
+
 «signals transmitted by devices at different locations travel through different channels» — с. 2 [↗ PDF](zotero://open-pdf/library/items/8GW9NDIN?page=2&annotation=H32XTHUH)
 в заметках: [[Текст статьи#^u1-3|Текст статьи ^u1-3]] ^4wi4s249-2-h32xthuh
 
