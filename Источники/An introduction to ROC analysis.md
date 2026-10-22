@@ -3,7 +3,22 @@
 Источник Zotero: [343EFDIU](zotero://select/library/items/343EFDIU). Цитаты — выделения в PDF. Сгенерировано — не править вручную.
 
 «ROC graphs are two-dimensional graphs in which tp rate is plotted on the Y axis and fp rate is plotted on the X axis» — с. 2 [↗ PDF](zotero://open-pdf/library/items/7SDFQTKR?page=2&annotation=QQFMXTHB)
-Используется в коде: [[Код roc_chart.py#^c-dc67a5|roc_chart.py:33]] ^343efdiu-2-qqfmxthb
+Используется в коде: [[Код roc_chart.py#^c-dc67a5|roc_chart.py:33]]; в заметках: [[Текст статьи#^u3-4|Текст статьи ^u3-4]] ^343efdiu-2-qqfmxthb
+
+«The false positive rate (also called false alarm rate)» — с. 2 [↗ PDF](zotero://open-pdf/library/items/7SDFQTKR?page=2&annotation=7W6EPJWX)
+в заметках: [[Текст статьи#^u3-4|Текст статьи ^u3-4]] ^343efdiu-2-7w6epjwx
+
+«also called hit rate and recall» — с. 2 [↗ PDF](zotero://open-pdf/library/items/7SDFQTKR?page=2&annotation=6TGJDC8A)
+в заметках: [[Текст статьи#^u3-4|Текст статьи ^u3-4]] ^343efdiu-2-6tgjdc8a
+
+«one point in ROC space is better than another if it is to the northwest (tp rate is higher, fp rate is lower, or both) of the first» — с. 2 [↗ PDF](zotero://open-pdf/library/items/7SDFQTKR?page=2&annotation=BSMHHHG8)
+в заметках: [[Текст статьи#^u3-4|Текст статьи ^u3-4]] ^343efdiu-2-bsmhhhg8
+
+«The diagonal line y = x represents the strategy of randomly guessing a class» — с. 3 [↗ PDF](zotero://open-pdf/library/items/7SDFQTKR?page=3&annotation=J8P67JG4)
+в заметках: [[Текст статьи#^u3-4|Текст статьи ^u3-4]] ^343efdiu-3-j8p67jg4
+
+«if the classifier output is above the threshold, the classifier produces a Y, else a N. Each threshold value produces a different point in ROC space» — с. 3 [↗ PDF](zotero://open-pdf/library/items/7SDFQTKR?page=3&annotation=JPD37SAJ)
+в заметках: [[Текст статьи#^u3-4|Текст статьи ^u3-4]] ^343efdiu-3-jpd37saj
 
 «These are necessary in order to correctly handle sequences of equally scored instances» — с. 6 [↗ PDF](zotero://open-pdf/library/items/7SDFQTKR?page=6&annotation=637Q8WCT)
 Используется в коде: [[Код roc_chart.py#^c-f81311|roc_chart.py:32]] ^343efdiu-6-637q8wct

@@ -200,6 +200,8 @@ def main():
             continue
         for name, bid in WIKI.findall(without_code(text)):
             total += 1
+            if not bid and "." in name and any(VAULT.rglob(name)):   # вложение (рисунок): файл есть в хранилище
+                continue
             if name not in names or (bid and bid not in blocks[name]):
                 fail(f"{p.relative_to(VAULT)}: битая ссылка [[{name}#^{bid}]]")
     ok(f"внутренние ссылки: {total} проверены")

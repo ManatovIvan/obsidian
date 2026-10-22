@@ -110,9 +110,10 @@ def chart_blobs(series, width, height, xtitle, ytitle):
         ax.tick_labels.number_format, ax.tick_labels.number_format_is_linked = "0.0", False
         ax.format.line.color.rgb = RGBColor(0, 0, 0)
         ax.has_title = True
-        ax.axis_title.text_frame.text = title
-        r = ax.axis_title.text_frame.paragraphs[0].runs[0]
-        r.font.size, r.font.bold, r.font.name = Pt(10), False, "Times New Roman"
+        ax.axis_title.text_frame.text = title           # «\n» — вторая строка подписи
+        for para in ax.axis_title.text_frame.paragraphs:
+            for r in para.runs:
+                r.font.size, r.font.bold, r.font.name = Pt(10), False, "Times New Roman"
     part = gf.chart_part
     return part.blob, part.chart_workbook.xlsx_part.blob
 
