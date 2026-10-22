@@ -3716,5 +3716,158 @@
     "quote": "The mean square error (MSE) between u and u"
    }
   ]
+ },
+ {
+  "file": "roc_v4.py",
+  "anchor": "<модуль>",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "item",
+    "key": "9K4WBJ3W"
+   }
+  ]
+ },
+ {
+  "file": "roc_v4.py",
+  "anchor": "SNR, CFO_RM, VAR, SEED = True, True, \"s1c1\", e4.SEEDS[0]",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "prereg",
+    "key": "QDQWWNXQ",
+    "section": "§3"
+   }
+  ]
+ },
+ {
+  "file": "roc_v4.py",
+  "anchor": "SNR, CFO_RM, VAR, SEED = True, True, \"s1c1\", e4.SEEDS[0]",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "item",
+    "key": "9K4WBJ3W"
+   }
+  ]
+ },
+ {
+  "file": "roc_v4.py",
+  "anchor": "sig = paradis.fit_signature(e4.ra_features(d, tr_all, lab, False, np.random.default_rng(v3.SEED))[:, 1:])",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "prereg",
+    "key": "QDQWWNXQ",
+    "section": "§4 R-A"
+   }
+  ]
+ },
+ {
+  "file": "roc_v4.py",
+  "anchor": "enc, c = svdd.train(models.to_tensor_m1(x), v3.DEVICE, SEED, log)",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "prereg",
+    "key": "QDQWWNXQ",
+    "section": "§4 R-B"
+   }
+  ]
+ },
+ {
+  "file": "roc_v4.py",
+  "anchor": "m = rc_cdae.train(models.to_tensor_m2(xtr, mm), models.to_tensor_m2(xva, mm), v3.DEVICE, SEED, log)",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "prereg",
+    "key": "QDQWWNXQ",
+    "section": "§4 R-C"
+   }
+  ]
+ },
+ {
+  "file": "roc_chart.py",
+  "anchor": "<модуль>",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "item",
+    "key": "9K4WBJ3W"
+   }
+  ]
+ },
+ {
+  "file": "roc_chart.py",
+  "anchor": "<модуль>",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "item",
+    "key": "H8X4N5KH"
+   }
+  ]
+ },
+ {
+  "file": "roc_chart.py",
+  "anchor": "o = np.argsort(-scores, kind=\"stable\")",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "343EFDIU",
+    "page": "6",
+    "quote": "can simply sort the test instances decreasing by f scores and move down the list, processing one instance at a time and updating TP and FP as we go"
+   }
+  ]
+ },
+ {
+  "file": "roc_chart.py",
+  "anchor": "last = np.r_[s[1:] != s[:-1], True]",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "343EFDIU",
+    "page": "6",
+    "quote": "These are necessary in order to correctly handle sequences of equally scored instances"
+   }
+  ]
+ },
+ {
+  "file": "roc_chart.py",
+  "anchor": "return np.r_[0, fp[last] / fp[-1]], np.r_[0, tp[last] / tp[-1]]",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "cite",
+    "key": "343EFDIU",
+    "page": "2",
+    "quote": "ROC graphs are two-dimensional graphs in which tp rate is plotted on the Y axis and fp rate is plotted on the X axis"
+   }
+  ]
+ },
+ {
+  "file": "roc_chart.py",
+  "anchor": "XL_CHART_TYPE.XY_SCATTER_LINES_NO_MARKERS, 0, 0, Cm(width), Cm(height), cd)",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "item",
+    "key": "H8X4N5KH"
+   }
+  ]
+ },
+ {
+  "file": "roc_chart.py",
+  "anchor": "ln.color.rgb, ln.width, ln.dash_style = RGBColor(0, 0, 0), Pt(1.25 if dash != DASH.ROUND_DOT else 0.75), dash",
+  "occurrence": 0,
+  "refs": [
+   {
+    "kind": "item",
+    "key": "H8X4N5KH"
+   }
+  ]
  }
 ]

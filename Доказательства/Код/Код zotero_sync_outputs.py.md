@@ -43,6 +43,8 @@ OUTPUTS = {
                              "python experiments_v4.py"),
     "out/report_v4.txt": ("Вывод: сводка AUC и решения по §6.4 предрегистрации v4 (report_v4.py)",
                           "python report_v4.py"),
+    "out/roc_v4_log.txt": ("Вывод: повтор T2 s1c1 (первое зерно) для ROC-кривых рисунка статьи — AUC повтора и v4 (roc_v4.py)",
+                           "python roc_v4.py"),
 }
 
 
